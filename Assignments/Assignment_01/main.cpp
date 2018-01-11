@@ -1,7 +1,17 @@
 #include <iostream>
-#include "Node.h"
+
+#include "LinkedList.h"
 int main() {
 
+    LinkedList newList;
+
+    newList.CreateNode("Here's a node");
+    newList.CreateNode("Also another node");
+    newList.CreateNode("More nodes!");
+    newList.CreateNode("ALL THE NODES!!");
+    newList.CreateNode("This is the last node");
+
+    newList.ReadNodes();
 
 
     return 0;

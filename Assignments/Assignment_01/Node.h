@@ -6,7 +6,6 @@
 #define ASSIGNMENT_01_NODE_H
 
 #include<string>
-#include <wsman.h>
 
 
 using namespace std;
