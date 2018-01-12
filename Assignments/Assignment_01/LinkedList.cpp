@@ -21,6 +21,18 @@ void LinkedList::CreateNode(string text)
     //Our new node.
     Node *curNode = new Node;
     curNode->nodeData = text; //Assigns the text value to the node
+    curNode->nodePtr = NULL; //Initially makes the next pointer null, since initially it has nothing to point to
+
+    if(head == NULL) //if the head is null then make the current node the head and make the tail null
+    {
+        head = curNode;
+        tail = NULL;
+    }
+    else
+    {
+        tail->nodePtr = curNode; //If the head is not null, then add the new pointer to the tail with the afore mentioned null pointer
+        tail = curNode; //then give the tail the data from the current node
+    }
 
 }
 
