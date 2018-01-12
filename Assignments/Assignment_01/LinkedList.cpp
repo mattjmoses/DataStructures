@@ -70,23 +70,33 @@ void LinkedList::DeleteNode(int num)
 //Creates new node at a specified position.
 void LinkedList::InsertNodeAtPosition(int position, string text)
 {
+    //This is just the read code but it's being used to count the list
+    Node *checkNode;
+    checkNode = head;
+    int index = -1;
+
+    while(checkNode != nullptr)
+    {
+        index++;
+        checkNode = checkNode->nodePtr;
+    }
+
+    //If the position is out of range the insert will not work.
+    if(position > index + 1 || position < 0)
+    {
+        cout<<"Out of range! Please input a valid row number."<< endl;
+        return;
+    }
+
     Node *prevNode = new Node; //We need to keep track of the previous node
     Node *curNode = new Node; //and the current node to stitch the pointers back together
     Node *newNode = new Node; //This is the node to be inserted
     curNode = head; //Sets the current node to the head of the list
-    //First we need to count the number of nodes in the list. OTHERWISE it buggers up.
-//    if(curNode->nodePtr == nullptr)
-//    {
-//        cout<<"Out of range!"<< endl;
-//        return;
-//    }
+
     for(int i = 0; i<position; i++) //Getting out index starting at zero
     {
-
-
         prevNode = curNode;
         curNode = curNode->nodePtr;
-
     }
 
     newNode->nodeData = text;
