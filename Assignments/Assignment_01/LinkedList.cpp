@@ -66,6 +66,15 @@ void LinkedList::DeleteNode(int position)
 {
     //Node counter method.
     int index = CountNodes();
+
+    //First we check if the position is valid
+    if(position < 0 || position > index + 1)
+    {
+        cout<< "Row number out of range. Delete failed :C" << endl;
+        return;
+    }
+
+    //If valid the delete moves forward.
     Node *delNode;
 
     if(position == 0)
@@ -74,11 +83,7 @@ void LinkedList::DeleteNode(int position)
         head = head->nodePtr;
         delete  delNode;
     }
-    else if(position < 0 || position > index + 1)
-    {
-        cout<< "Row number out of range. Delete failed :C" << endl;
-        return;
-    }
+
 
 
 
@@ -88,20 +93,18 @@ void LinkedList::DeleteNode(int position)
 void LinkedList::InsertNodeAtPosition(int position, string text)
 {
     int index = CountNodes();
-
-    //Checking to see if the position is zero or out of range
-    //At zero a new node will be inserted if it's out of range the process ends
-    if(position == 0)
+    //Start by checking if the position is valid.
+    if(position > index + 1 || position < 0)
+    {
+        cout<<"Out of range! Please input a valid row number."<< endl;
+        return;
+    }
+    else if(position == 0)
     {
         Node *startNode = new Node;
         startNode->nodeData = text;
         startNode->nodePtr = head;
         head = startNode;
-        return;
-    }
-    else if(position > index + 1 || position < 0)
-    {
-        cout<<"Out of range! Please input a valid row number."<< endl;
         return;
     }
 
