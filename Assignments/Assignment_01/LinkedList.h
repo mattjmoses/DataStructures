@@ -16,8 +16,9 @@ class LinkedList {
     //Class functions. The num refers to the node number, or row number when viewing the text
     void CreateNode(string text);
     void ReadNodes();
-    void UpdateNode(int num, string newText);
-    void DeleteNode(int num);
+    void UpdateNode(int position, string newText);
+    void DeleteNode(int position);
+    void InsertNodeAtPosition(int position, string text);
 
 
     private:
