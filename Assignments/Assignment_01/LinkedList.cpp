@@ -62,28 +62,32 @@ void LinkedList::UpdateNode(int num, string newText)
 }
 
 //Deletes a node on the list
-void LinkedList::DeleteNode(int num)
+void LinkedList::DeleteNode(int position)
 {
-    Node *delNode = new Node;
-    delNode = head;
-    head = head->nodePtr;
-    delete  delNode;
+    //Node counter method.
+    int index = CountNodes();
+    Node *delNode;
+
+    if(position == 0)
+    {
+        delNode = head;
+        head = head->nodePtr;
+        delete  delNode;
+    }
+    else if(position < 0 || position > index + 1)
+    {
+        cout<< "Row number out of range. Delete failed :C" << endl;
+        return;
+    }
+
+
 
 }
 
 //Creates new node at a specified position.
 void LinkedList::InsertNodeAtPosition(int position, string text)
 {
-    //This is just the read code but it's being used to count the list
-    Node *checkNode;
-    checkNode = head;
-    int index = -1;
-
-    while(checkNode != nullptr)
-    {
-        index++;
-        checkNode = checkNode->nodePtr;
-    }
+    int index = CountNodes();
 
     //Checking to see if the position is zero or out of range
     //At zero a new node will be inserted if it's out of range the process ends
@@ -116,6 +120,22 @@ void LinkedList::InsertNodeAtPosition(int position, string text)
     prevNode->nodePtr = newNode;
     newNode->nodePtr = curNode;
 }
+
+int LinkedList::CountNodes() {
+    //This keeps track of the nodes for use in the class functions
+    Node *checkNode;
+    checkNode = head;
+    int index = -1;
+
+    while(checkNode != nullptr)
+    {
+        index++;
+        checkNode = checkNode->nodePtr;
+    }
+
+    return index;
+}
+
 
 
 

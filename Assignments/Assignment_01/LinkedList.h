@@ -22,6 +22,7 @@ class LinkedList {
 
 
     private:
+    int CountNodes();//Used to count the number of nodes in the list. For internal use only.
     Node *head; //Node for the start of the list
     Node *tail; //Node for the end of the list
 
