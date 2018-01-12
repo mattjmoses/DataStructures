@@ -4,16 +4,17 @@
 
 #ifndef ASSIGNMENT_01_LINKEDLIST_H
 #define ASSIGNMENT_01_LINKEDLIST_H
+#include<string>
 #include "Node.h"
 
 
 class LinkedList {
     public:
-    LinkedList(); //Constructor
+    LinkedList();//Constructor
     virtual ~LinkedList(); //The ol destructor
 
     //Class functions. The num refers to the node number, or row number when viewing the text
-    void CreateNode(string text);
+    void CreateNode();
     void ReadNodes();
     void UpdateNode(int num, string newText);
     void DeleteNode(int num);
