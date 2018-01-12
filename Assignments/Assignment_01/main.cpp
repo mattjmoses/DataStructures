@@ -22,6 +22,7 @@ int main() {
 
 //    newList.ReadNodes();
 
+    newList.DeleteNode(4);
     newList.DeleteNode(0);
 
     newList.ReadNodes();

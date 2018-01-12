@@ -83,6 +83,18 @@ void LinkedList::DeleteNode(int position)
         head = head->nodePtr;
         delete  delNode;
     }
+    else
+    {
+        Node *curNode = new Node;
+        Node *prevNode = new Node;
+        curNode = head;
+        for(int i = 0; i<position; i++)
+        {
+            prevNode = curNode;
+            curNode = curNode->nodePtr;
+        }
+        prevNode->nodePtr = curNode->nodePtr;
+    }
 
 
 
