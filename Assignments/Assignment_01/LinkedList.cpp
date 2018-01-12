@@ -74,11 +74,19 @@ void LinkedList::InsertNodeAtPosition(int position, string text)
     Node *curNode = new Node; //and the current node to stitch the pointers back together
     Node *newNode = new Node; //This is the node to be inserted
     curNode = head; //Sets the current node to the head of the list
-
+    //First we need to count the number of nodes in the list. OTHERWISE it buggers up.
+//    if(curNode->nodePtr == nullptr)
+//    {
+//        cout<<"Out of range!"<< endl;
+//        return;
+//    }
     for(int i = 0; i<position; i++) //Getting out index starting at zero
     {
+
+
         prevNode = curNode;
         curNode = curNode->nodePtr;
+
     }
 
     newNode->nodeData = text;
