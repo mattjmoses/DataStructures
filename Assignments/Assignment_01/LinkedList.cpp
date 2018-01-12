@@ -3,7 +3,9 @@
 //
 
 #include "LinkedList.h"
-#include<string>
+
+
+using namespace std;
 
 LinkedList::LinkedList()
 {
@@ -13,23 +15,43 @@ LinkedList::LinkedList()
 
 }
 
-
-
-void LinkedList::ReadNodes() {
-
-}
-
-void LinkedList::UpdateNode(int num, string newText) {
-
-}
-
-void LinkedList::DeleteNode(int num) {
+//Creates a new node, attaches a text string.
+void LinkedList::CreateNode(string text)
+{
+    //Our new node.
+    Node *curNode = new Node;
+    curNode->nodeData = text; //Assigns the text value to the node
 
 }
 
-void LinkedList::CreateNode() {
+//Lists out all the nodes in the list
+void LinkedList::ReadNodes()
+{
 
 }
+
+//Updates an indiviual node on the list. Takes the node number and the updated text
+void LinkedList::UpdateNode(int num, string newText)
+{
+
+}
+//Deletes a node on the list
+void LinkedList::DeleteNode(int num)
+{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

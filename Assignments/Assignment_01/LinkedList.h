@@ -14,10 +14,11 @@ class LinkedList {
     virtual ~LinkedList(); //The ol destructor
 
     //Class functions. The num refers to the node number, or row number when viewing the text
-    void CreateNode();
+    void CreateNode(string text);
     void ReadNodes();
     void UpdateNode(int num, string newText);
     void DeleteNode(int num);
+
 
     private:
     Node *head; //Node for the start of the list
