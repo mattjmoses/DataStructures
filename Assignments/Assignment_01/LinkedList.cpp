@@ -64,6 +64,10 @@ void LinkedList::UpdateNode(int num, string newText)
 //Deletes a node on the list
 void LinkedList::DeleteNode(int num)
 {
+    Node *delNode = new Node;
+    delNode = head;
+    head = head->nodePtr;
+    delete  delNode;
 
 }
 
@@ -96,7 +100,6 @@ void LinkedList::InsertNodeAtPosition(int position, string text)
         cout<<"Out of range! Please input a valid row number."<< endl;
         return;
     }
-
 
     Node *prevNode = new Node; //We need to keep track of the previous node
     Node *curNode = new Node; //and the current node to stitch the pointers back together
