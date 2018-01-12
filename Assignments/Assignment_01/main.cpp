@@ -16,7 +16,8 @@ int main() {
     newList.ReadNodes();
     cout<<"++++++++++++++++"<<endl;
     newList.InsertNodeAtPosition(5,"I've inserted a new node");
-    newList.InsertNodeAtPosition(-4,"One more at the end");
+    newList.InsertNodeAtPosition(6,"One more at the end");
+    newList.InsertNodeAtPosition(0,"And a last one at the start");
 
     newList.ReadNodes();
 

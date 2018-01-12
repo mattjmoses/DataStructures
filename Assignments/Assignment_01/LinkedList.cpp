@@ -81,12 +81,22 @@ void LinkedList::InsertNodeAtPosition(int position, string text)
         checkNode = checkNode->nodePtr;
     }
 
-    //If the position is out of range the insert will not work.
-    if(position > index + 1 || position < 0)
+    //Checking to see if the position is zero or out of range
+    //At zero a new node will be inserted if it's out of range the process ends
+    if(position == 0)
+    {
+        Node *startNode = new Node;
+        startNode->nodeData = text;
+        startNode->nodePtr = head;
+        head = startNode;
+        return;
+    }
+    else if(position > index + 1 || position < 0)
     {
         cout<<"Out of range! Please input a valid row number."<< endl;
         return;
     }
+
 
     Node *prevNode = new Node; //We need to keep track of the previous node
     Node *curNode = new Node; //and the current node to stitch the pointers back together
