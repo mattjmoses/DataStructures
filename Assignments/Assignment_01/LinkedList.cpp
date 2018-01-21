@@ -56,8 +56,25 @@ void LinkedList::ReadNodes()
 }
 
 //Updates an indiviual node on the list. Takes the node number and the updated text
-void LinkedList::UpdateNode(int num, string newText)
+void LinkedList::UpdateNode(int position, string newText)
 {
+    Node *readNode;
+    readNode = head; //Here we set the read node to the front of the list
+    int index = -1;
+    while(readNode != nullptr)
+    {
+        index++;
+            if(index == position)
+            {
+                //cout<< index << endl;
+                cout<< "Position: ";
+                cout<< readNode->nodeData << endl; //While the read node isn't null we loop through
+            }
+
+
+            readNode = readNode->nodePtr; //at the end we update the node's pointer to the next one
+
+    }
 
 }
 

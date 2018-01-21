@@ -22,7 +22,7 @@ int main() {
 
 //    newList.ReadNodes();
     //newList.DeleteNode(5);
-    newList.DeleteRange(2,3);
+    newList.UpdateNode(0,"Penisman");
 
 
     //newList.DeleteRange(2,4);
