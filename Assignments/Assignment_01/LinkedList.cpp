@@ -58,6 +58,11 @@ void LinkedList::ReadNodes()
 //Updates an indiviual node on the list. Takes the node number and the updated text
 void LinkedList::UpdateNode(int position, string newText)
 {
+    if(position> CountNodes())
+    {
+        cout << "Out of range "<< endl;
+        return;
+    }
     Node *readNode;
     readNode = head; //Here we set the read node to the front of the list
     int index = -1;
@@ -67,7 +72,8 @@ void LinkedList::UpdateNode(int position, string newText)
             if(index == position)
             {
                 //cout<< index << endl;
-                cout<< "Position: ";
+                cout<< "Updated line: ";
+                cout<< index << endl;
                 readNode->nodeData = newText;
                 cout<< readNode->nodeData << endl; //While the read node isn't null we loop through
             }
