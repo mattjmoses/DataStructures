@@ -68,6 +68,7 @@ void LinkedList::UpdateNode(int position, string newText)
             {
                 //cout<< index << endl;
                 cout<< "Position: ";
+                readNode->nodeData = newText;
                 cout<< readNode->nodeData << endl; //While the read node isn't null we loop through
             }
 
