@@ -100,12 +100,15 @@ void LinkedList::DeleteNode(int position)
 //Deletes a range of nodes. Runs a loop on the delete function
 void LinkedList::DeleteRange(int start, int end)
 {
-
-    for(int i = start; i <= end; i++)
+    //We have to determine how many nodes to delete so we find how many are in the range
+    int range = (end - start);
+    int count = -1;
+    //Then we delete from the range
+    while(count < range)
     {
-        DeleteNode(i);
-       cout<<"Node number: ";
-        cout<< i << endl;
+        count ++;
+        DeleteNode(start);
+
     }
 
 }
