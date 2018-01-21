@@ -19,6 +19,7 @@ class LinkedList {
     void UpdateNode(int position, string newText);
     void DeleteNode(int position);
     void InsertNodeAtPosition(int position, string text);
+    void DeleteRange(int,int);
 
 
     private:

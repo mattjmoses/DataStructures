@@ -95,9 +95,18 @@ void LinkedList::DeleteNode(int position)
         }
         prevNode->nodePtr = curNode->nodePtr;
     }
+}
 
+//Deletes a range of nodes. Runs a loop on the delete function
+void LinkedList::DeleteRange(int start, int end)
+{
 
-
+    for(int i = start; i <= end; i++)
+    {
+        DeleteNode(i);
+       cout<<"Node number: ";
+        cout<< i << endl;
+    }
 
 }
 
