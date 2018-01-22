@@ -1,8 +1,14 @@
 #include <iostream>
+#include <fstream>
+using namespace std;
 
 #include "LinkedList.h"
 
-int main() {
+int main(int argc,char* argv[]) {
+
+    ofstream out(argv[1]);
+    out<<argv[1];
+    cin;
 
 
     LinkedList newList;
