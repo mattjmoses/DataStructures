@@ -15,7 +15,7 @@ class TextToListParser {
 
     //Takes in a text file then parses it into a linked list
     //then returns the linked list object
-    LinkedList parseNewList(ifstream *);
+    LinkedList parseNewList(string);
 };
 
 

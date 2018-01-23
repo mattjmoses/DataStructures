@@ -10,12 +10,13 @@ int main(int argc,char* argv[]) {
     //Linked list object
     LinkedList linkedList;
     TextToListParser textToList;
-    const char *inFile("test.txt");
+    string inFileName = "test.txt";
+    string outFilename = "NOTHING YET!";
 
     //Hitch. Passing text file into a goddamn method. HUH!
     //Oh wait. Let's just pass the fucking file name in and let the method open it.
     //DUUUUUHHHHHHHHHH :I
-    textToList.parseNewList(inFile);
+    textToList.parseNewList(inFileName);
 
 
 

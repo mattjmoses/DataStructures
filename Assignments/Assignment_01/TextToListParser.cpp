@@ -11,16 +11,18 @@ TextToListParser::~TextToListParser() {}
 
 
 
-LinkedList TextToListParser::parseNewList(ifstream *inFile)
+LinkedList TextToListParser::parseNewList(string fileName)
 {
+    //Taking in the file name. Everybody's happy
+    ifstream readFile(fileName);
 
     LinkedList linkedList;
     //storing text in a variable
     string textLine;
     //Testing out our text inFile
-    if(inFile.is_open())
+    if(readFile.is_open())
     {
-        while(getline(inFile,textLine))
+        while(getline(readFile,textLine))
         {
             linkedList.CreateNode(textLine);
         }
