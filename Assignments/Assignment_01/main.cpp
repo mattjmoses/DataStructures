@@ -16,9 +16,10 @@ int main(int argc,char* argv[]) {
     {
         while(getline(file,textLine))
         {
-            cout << textLine << endl;
+            linkedList.CreateNode(textLine);
         }
     }
+    linkedList.ReadNodes();
 
 
 
