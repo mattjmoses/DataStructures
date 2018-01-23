@@ -14,10 +14,8 @@ LinkedList::LinkedList()
     tail = nullptr;
 }
 
-LinkedList::~LinkedList()
-{
+LinkedList::~LinkedList() = default;
 
-}
 
 //Creates a new node, attaches a text string.
 void LinkedList::CreateNode(string text)

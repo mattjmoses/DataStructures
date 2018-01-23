@@ -5,9 +5,9 @@
 #include <fstream>
 #include "TextToListParser.h"
 
-TextToListParser::TextToListParser() {}
+TextToListParser::TextToListParser() = default;
 
-TextToListParser::~TextToListParser() {}
+TextToListParser::~TextToListParser() = default;
 
 
 
