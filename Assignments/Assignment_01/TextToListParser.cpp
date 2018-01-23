@@ -19,7 +19,8 @@ LinkedList TextToListParser::parseNewList(string fileName)
     LinkedList linkedList;
     //storing text in a variable
     string textLine;
-    //Testing out our text inFile
+
+    //Reads the text file and adds every line to the linked list
     if(readFile.is_open())
     {
         while(getline(readFile,textLine))
@@ -27,8 +28,8 @@ LinkedList TextToListParser::parseNewList(string fileName)
             linkedList.CreateNode(textLine);
         }
     }
-    linkedList.ReadNodes();
-    return LinkedList();
+    //returns the linked list
+    return linkedList;
 }
 
 

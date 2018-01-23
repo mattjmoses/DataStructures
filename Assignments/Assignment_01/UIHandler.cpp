@@ -9,3 +9,7 @@ UIHandler::UIHandler() = default;
 UIHandler::~UIHandler() = default;
 
 
+void UIHandler::editText(LinkedList &list)
+{
+    list.ReadNodes();
+}
