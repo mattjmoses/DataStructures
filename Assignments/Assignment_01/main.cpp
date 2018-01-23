@@ -3,22 +3,22 @@
 using namespace std;
 
 #include "LinkedList.h"
+#include "TextToListParser.h";
 
 int main(int argc,char* argv[]) {
 
     //Linked list object
     LinkedList linkedList;
-    //storing text in a variable
-    string textLine;
-    //Testing out our text file
-    ifstream file("test.txt");
-    if(file.is_open())
-    {
-        while(getline(file,textLine))
-        {
-            linkedList.CreateNode(textLine);
-        }
-    }
+    TextToListParser textToList;
+    const char *inFile("test.txt");
+
+    //Hitch. Passing text file into a goddamn method. HUH!
+    //Oh wait. Let's just pass the fucking file name in and let the method open it.
+    //DUUUUUHHHHHHHHHH :I
+    textToList.parseNewList(inFile);
+
+
+
     linkedList.ReadNodes();
     cout << "=========================================================================" << endl;
     cout << "Please choose a command"<< endl;
