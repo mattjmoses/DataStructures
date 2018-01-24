@@ -102,7 +102,8 @@ void UIHandler::editText(LinkedList &list,string outFile)
         }
         else if(key == "e" || key == "E")
         {
-            cout << "E key pressed"<< endl;
+            inList.outputNodes(outFile);
+            break;
         }
         else if(key == "q" || key == "Q")
         {

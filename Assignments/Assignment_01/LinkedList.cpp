@@ -2,6 +2,7 @@
 // Created by Matt on 2018-01-11.
 //
 #include <iostream>
+#include <fstream>
 #include "LinkedList.h"
 
 
@@ -225,6 +226,24 @@ void LinkedList::DisplayBuffer()
     cout << curNode->nodeData << endl;
     cout << "I wish for world peace :)"<< endl;
 }
+
+void LinkedList::outputNodes(string outFile)
+{
+    ofstream writeOut(outFile);
+
+    Node *readNode;
+    readNode = head; //Here we set the read node to the front of the list
+    int index = -1;
+    while(readNode != nullptr)
+    {
+        index++;
+        writeOut << readNode->nodeData << "\b";
+        //While the read node isn't null we loop through
+        readNode = readNode->nodePtr; //at the end we update the node's pointer to the next one
+    }
+
+}
+
 
 
 
