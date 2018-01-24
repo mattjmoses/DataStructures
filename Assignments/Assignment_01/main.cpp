@@ -18,11 +18,10 @@ int main(int argc,char* argv[]) {
     UIHandler mainUI;
 
     string inFileName = "test.txt";
-    string outFilename = "NOTHING YET!";
+    string outFileName = "bwop.txt";
 
-    //Hitch. Passing text file into a goddamn method. HUH!
-    //Oh wait. Let's just pass the fucking file name in and let the method open it.
-    //DUUUUUHHHHHHHHHH :I
+
+
     linkedList = textToList.parseNewList(inFileName);
     mainUI.editText(linkedList);
 

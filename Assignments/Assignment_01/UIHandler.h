@@ -15,7 +15,7 @@ class UIHandler {
     ~UIHandler();
 
     //Handles the editing functionality of the linked list
-    void editText(LinkedList&);
+    void editText(LinkedList&,string);
 
     //Takes in text commands and ensures they're valid
     void validateCommands(string);

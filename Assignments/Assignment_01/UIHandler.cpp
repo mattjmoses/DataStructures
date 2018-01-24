@@ -12,8 +12,9 @@ UIHandler::UIHandler() = default;
 UIHandler::~UIHandler() = default;
 
 
-void UIHandler::editText(LinkedList &list)
+void UIHandler::editText(LinkedList &list,string outFile)
 {
+
     //Listing out the text file initially
     list.ReadNodes();
 
