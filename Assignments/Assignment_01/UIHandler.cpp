@@ -28,6 +28,7 @@ void UIHandler::editText(LinkedList &list,string outFile)
     {
         string key;
         //Takes in the command
+        cin.ignore();
         cout << "Input Command: ";
         cin >> key;
 
@@ -35,7 +36,8 @@ void UIHandler::editText(LinkedList &list,string outFile)
         if(key == "i" || key == "I")
         {
             string newText;
-            int position = 0;
+            string input;
+            int position = validateNumber(input);
             cin.ignore();
             cout<< "Input line position: ";
             cin >> position;
@@ -50,15 +52,17 @@ void UIHandler::editText(LinkedList &list,string outFile)
         }
         else if(key == "d" || key == "D")
         {
-            int start;
-            int end;
+            string first;
+            string last;
             cin.ignore();
             cout << "-Please choose range to delete-"<< endl;
             cout << "First number: ";
-            cin >> start;
+            cin >> first;
+            int start = validateNumber(first);
             cin.ignore();
             cout << "Second number: ";
-            cin >> end;
+            cin >> last;
+            int end = validateNumber(last);
             inList.DeleteRange(start,end);
             inList.ReadNodes();
             displayCommands();
@@ -67,35 +71,39 @@ void UIHandler::editText(LinkedList &list,string outFile)
         {
             inList.ReadNodes();
             displayCommands();
+            cin.ignore();
         }
         else if(key == "g" || key == "G")
         {
-            int position = 0;
+            string position;
             cin.ignore();
             cout << "Please select a line to read:";
             cin >> position;
-            inList.ReadSpecificNode(position);
+            int line =validateNumber(position);
+            inList.ReadSpecificNode(line);
             cout << endl;
             displayCommands();
         }
         else if(key == "l" || key == "L")
         {
+            cin.ignore();
             inList.DisplayBuffer();
 
 
         }
         else if(key == "s" || key == "S")
         {
-            int position;
+            string position;
             string newText;
             cin.ignore();
             cout << "Please select a line to edit: ";
             cin >> position;
+            int line = validateNumber(position);
             cin.ignore();
             cout << "Please enter new text: ";
             getline(cin,newText);
             cout << endl;
-            inList.UpdateNode(position,newText);
+            inList.UpdateNode(line,newText);
             cout << endl;
             displayCommands();
 
@@ -132,6 +140,9 @@ int UIHandler::validateNumber(string command)
             if(!regex_match(command,patturn))
             {
                 cout << "Invalid line number please reference the text and try again" << endl;
+                cin.ignore();
+                cout << "Insert line number: ";
+                cin >> command;
 
             }
             else
@@ -139,9 +150,7 @@ int UIHandler::validateNumber(string command)
                 break;
 
             }
-            cin.ignore();
-            cout << "Insert line number: ";
-            cin >> command;
+
 
         }
         //if everything's good and valid we convert the string over to an int and send it on it's way
@@ -166,5 +175,6 @@ void UIHandler::displayCommands()
     cout << "(S) -Substitutes a new line. Enter line number and input new text" << endl;
     cout << "(E) -Exits the program and writes any changes to the specified text file" << endl;
     cout << "(Q) -Quits the program without saving" << endl;
+    cout << "--Hit enter to continue--" << endl;
     cout << endl;
 }
