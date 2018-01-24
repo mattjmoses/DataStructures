@@ -14,24 +14,55 @@ UIHandler::~UIHandler() = default;
 
 void UIHandler::editText(LinkedList &list)
 {
-    //Not using regex apparently!
+    //Listing out the text file initially
+    list.ReadNodes();
+
+    //storing the keys
     string key;
 
+    //Displays the input commands
     displayCommands();
+
+    //Takes in the command
     cout << "Input Command: ";
     cin >> key;
 
+    //Then the ol if else block to figure out which command were hit
     if(key == "i" || key == "I")
     {
         cout << "I key pressed!"<< endl;
     }
+    else if(key == "v" || key == "V")
+    {
+        cout << "V key pressed"<< endl;
+    }
+    else if(key == "g" || key == "G")
+    {
+        cout << "G key pressed"<< endl;
+    }
+    else if(key == "l" || key == "L")
+    {
+        cout << "L key pressed"<< endl;
+    }
+    else if(key == "s" || key == "S")
+    {
+        cout << "S key pressed"<< endl;
+    }
+    else if(key == "e" || key == "E")
+    {
+        cout << "E key pressed"<< endl;
+    }
+    else if(key == "q" || key == "Q")
+    {
+        cout << "Q key pressed"<< endl;
+    }
     else
     {
-        cout << "Wrong key!"<< endl;
+        cout << "Invalid input!" << endl;
     }
 
 
-    list.ReadNodes();
+
 }
 
 void UIHandler::validateCommands(string command)
