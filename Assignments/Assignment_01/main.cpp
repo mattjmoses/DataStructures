@@ -17,12 +17,14 @@ int main(int argc,char* argv[]) {
     TextToListParser textToList;
     UIHandler mainUI;
 
+
     string inFileName = "test.txt";
     string outFileName = "bwop.txt";
 
 
 
     linkedList = textToList.parseNewList(inFileName);
+
     mainUI.editText(linkedList,outFileName);
 
 

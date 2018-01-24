@@ -20,6 +20,7 @@ class LinkedList {
     void DeleteNode(int position);
     void InsertNodeAtPosition(int position, string text);
     void DeleteRange(int,int);
+    void ReadSpecificNode(int);
 
 
     private:

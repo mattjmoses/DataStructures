@@ -52,7 +52,13 @@ void UIHandler::editText(LinkedList &list,string outFile)
     }
     else if(key == "g" || key == "G")
     {
-        cout << "G key pressed"<< endl;
+        int position;
+        cin.ignore();
+        cout << "Please select a line to read:";
+        cin >> position;
+        inList.ReadSpecificNode(position);
+        cout << endl;
+        displayCommands();
     }
     else if(key == "l" || key == "L")
     {
