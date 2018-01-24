@@ -92,7 +92,12 @@ void UIHandler::editText(LinkedList &list,string outFile)
             cin.ignore();
             cout << "Please enter new text: ";
             getline(cin,newText);
+            cout << endl;
             inList.UpdateNode(position,newText);
+            cout << endl;
+            displayCommands();
+
+
 
         }
         else if(key == "e" || key == "E")
