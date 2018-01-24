@@ -47,7 +47,8 @@ void UIHandler::editText(LinkedList &list,string outFile)
     }
     else if(key == "v" || key == "V")
     {
-        cout << "V key pressed"<< endl;
+        displayCommands();
+        inList.ReadNodes();
     }
     else if(key == "g" || key == "G")
     {
