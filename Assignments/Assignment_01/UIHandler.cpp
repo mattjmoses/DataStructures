@@ -28,7 +28,7 @@ void UIHandler::editText(LinkedList &list,string outFile)
     {
         string key;
         //Takes in the command
-        cin.ignore();
+
         cout << "Input Command: ";
         cin >> key;
 
@@ -87,7 +87,8 @@ void UIHandler::editText(LinkedList &list,string outFile)
         else if(key == "l" || key == "L")
         {
             cin.ignore();
-            inList.DisplayBuffer();
+//            inList.DisplayBuffer();
+            cout << inList << endl;
 
 
         }

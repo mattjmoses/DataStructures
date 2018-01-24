@@ -235,6 +235,20 @@ void LinkedList::DisplayBuffer()
     cout << curNode->nodeData << endl;
     cout << "I wish for world peace :)"<< endl;
 }
+//Reads lines from the buffer
+ostream& operator<<(ostream& output, LinkedList& list)
+{
+    Node *curNode = list.head;
+
+    while (curNode != nullptr)
+    {
+        output << "data = " << curNode->nodeData << endl;
+
+        curNode = curNode->nodePtr;
+    }
+
+    return output;
+}
 
 void LinkedList::outputNodes(string outFile)
 {
