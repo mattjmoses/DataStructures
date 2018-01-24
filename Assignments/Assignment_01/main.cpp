@@ -3,9 +3,9 @@
 using namespace std;
 
 #include "LinkedList.h"
-#include "TextToListParser.h";
-#include "UIHandler.h";
-#include "TitleDisplay.h";
+#include "TextToListParser.h"
+#include "UIHandler.h"
+#include "TitleDisplay.h"
 
 int main(int argc,char* argv[]) {
 
@@ -19,24 +19,37 @@ int main(int argc,char* argv[]) {
     string editArgument = string(argv[1]);
     string inFileName = string(argv[2]);
     string outFileName = string(argv[3]);
-    //If edit argument is inputted then enter edit mode.
-    if(editArgument == "EDIT" )
+
+    //Checking to see if the input file is valid
+    ifstream checkFile(inFileName);
+    if(checkFile)
     {
-        //Displays a cool title
-        graphics.displayTitle();
+        //If edit argument is inputted then enter edit mode.
+        if(editArgument == "EDIT" )
+        {
 
-        //Converts the input text to a linked list
-        linkedList = textToList.parseNewList(inFileName);
+            //Displays a cool title
+            graphics.displayTitle();
 
-        //Passes the linked list to the UI for editing
-        mainUI.editText(linkedList,outFileName);
+            //Converts the input text to a linked list
+            linkedList = textToList.parseNewList(inFileName);
+
+            //Passes the linked list to the UI for editing
+            mainUI.editText(linkedList,outFileName);
+        }
+        else
+        {
+            //If no arguments are given it just reads the test out
+            graphics.displayTitle();
+            linkedList.ReadNodes();
+        }
     }
     else
     {
-        //If no arguments are given it just reads the test out
-        graphics.displayTitle();
-        linkedList.ReadNodes();
+        cout << "Invalid input file. Please check your file name and try again" << endl;
     }
+
+
 
 
     return 0;
