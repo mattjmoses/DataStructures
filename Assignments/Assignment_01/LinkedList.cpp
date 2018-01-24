@@ -60,7 +60,9 @@ void LinkedList::UpdateNode(int position, string newText)
 {
     if(position> CountNodes())
     {
+        cout <<"======================"<<endl;
         cout << "Out of range "<< endl;
+        cout <<"======================"<<endl;
         return;
     }
     Node *readNode;
@@ -94,7 +96,9 @@ void LinkedList::DeleteNode(int position)
     //First we check if the position is valid
     if(position < 0 || position > index + 1)
     {
+        cout <<"==========================================="<<endl;
         cout<< "Row number out of range. Delete failed :C" << endl;
+        cout <<"==========================================="<<endl;
         return;
     }
 
@@ -127,7 +131,9 @@ void LinkedList::DeleteRange(int start, int end)
     //First we check if there are enough nodes to delete
     if(end > CountNodes())
     {
+        cout <<"================================="<<endl;
         cout << "Selected nodes are out of range"<< endl;
+        cout <<"================================="<<endl;
         return;
     }
     //If ther are enough nodes we modify the parameters to represent populated nodes
@@ -155,7 +161,9 @@ void LinkedList::InsertNodeAtPosition(int position, string text)
     //Start by checking if the position is valid.
     if(position > index + 1 || position < 0)
     {
+        cout <<"============================================="<<endl;
         cout<<"Out of range! Please input a valid row number."<< endl;
+        cout <<"============================================="<<endl;
         return;
     }
     else if(position == 0)
