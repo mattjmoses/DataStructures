@@ -5,7 +5,7 @@ using namespace std;
 #include "LinkedList.h"
 #include "TextToListParser.h";
 #include "UIHandler.h";
-#include "ProgramGraphics.h";
+#include "TitleDisplay.h";
 
 int main(int argc,char* argv[]) {
 

@@ -2,7 +2,7 @@
 // Created by mattjmoses on 23/01/18.
 //
 
-#include "ProgramGraphics.h"
+#include "TitleDisplay.h"
 #include <iostream>
 #include <fstream>
 using namespace std;
