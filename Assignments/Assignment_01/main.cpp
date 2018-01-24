@@ -9,23 +9,33 @@ using namespace std;
 
 int main(int argc,char* argv[]) {
 
-    ProgramGraphics graphics;
-    graphics.displayTitle();
+    int count;
 
-    //Linked list object
-    LinkedList linkedList;
-    TextToListParser textToList;
-    UIHandler mainUI;
+    cout << argv[1] << endl;
+    cout<< argv[2] << endl;
+//    // Display each command-line argument.
+//    cout << "\nCommand-line arguments:\n";
+//    for( count = 0; count < argc; count++ )
+//        cout << "  argv[" << count << "]   "
+//             << argv[count] << "\n";
 
-
-    string inFileName = "test.txt";
-    string outFileName = "bwop.txt";
-
-
-
-    linkedList = textToList.parseNewList(inFileName);
-
-    mainUI.editText(linkedList,outFileName);
+//    ProgramGraphics graphics;
+//    graphics.displayTitle();
+//
+//    //Linked list object
+//    LinkedList linkedList;
+//    TextToListParser textToList;
+//    UIHandler mainUI;
+//
+//
+//    string inFileName = "test.txt";
+//    string outFileName = "bwop.txt";
+//
+//
+//
+//    linkedList = textToList.parseNewList(inFileName);
+//
+//    mainUI.editText(linkedList,outFileName);
 
 
 

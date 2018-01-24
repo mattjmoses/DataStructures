@@ -237,7 +237,7 @@ void LinkedList::outputNodes(string outFile)
     while(readNode != nullptr)
     {
         index++;
-        writeOut << readNode->nodeData << "\b";
+        writeOut << readNode->nodeData << "\n";
         //While the read node isn't null we loop through
         readNode = readNode->nodePtr; //at the end we update the node's pointer to the next one
     }
