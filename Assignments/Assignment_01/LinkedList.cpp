@@ -8,6 +8,7 @@
 
 using namespace std;
 
+//Code referenced from www.codementor.io
 LinkedList::LinkedList()
 {
     //Declaring the head and tail of the list as null to start.
