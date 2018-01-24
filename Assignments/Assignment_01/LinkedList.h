@@ -21,6 +21,8 @@ class LinkedList {
     void InsertNodeAtPosition(int position, string text);
     void DeleteRange(int,int);
     void ReadSpecificNode(int);
+    void DisplayBuffer();
+    void outputNodes(string);
 
 
     private:

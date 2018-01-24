@@ -217,6 +217,14 @@ void LinkedList::ReadSpecificNode(int position)
     }
 
 }
+//Displays the nodes in the buffer
+void LinkedList::DisplayBuffer()
+{
+    //This may not be working correctly.
+    Node *curNode;
+    cout << curNode->nodeData << endl;
+    cout << "I wish for world peace :)"<< endl;
+}
 
 
 

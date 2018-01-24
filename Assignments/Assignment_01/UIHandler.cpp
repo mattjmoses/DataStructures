@@ -74,14 +74,15 @@ void UIHandler::editText(LinkedList &list,string outFile)
             cin.ignore();
             cout << "Please select a line to read:";
             cin >> position;
-
             inList.ReadSpecificNode(position);
             cout << endl;
             displayCommands();
         }
         else if(key == "l" || key == "L")
         {
-            cout << "L key pressed"<< endl;
+            inList.DisplayBuffer();
+
+
         }
         else if(key == "s" || key == "S")
         {
@@ -97,8 +98,6 @@ void UIHandler::editText(LinkedList &list,string outFile)
             inList.UpdateNode(position,newText);
             cout << endl;
             displayCommands();
-
-
 
         }
         else if(key == "e" || key == "E")
