@@ -160,7 +160,7 @@ void LinkedList::InsertNodeAtPosition(int position, string text)
 {
     int index = CountNodes();
     //Start by checking if the position is valid.
-    if(position > index + 1 || position < 0)
+    if(position > index + 1 || position <= 0)
     {
         cout <<"============================================="<<endl;
         cout<<"Out of range! Please input a valid row number."<< endl;
