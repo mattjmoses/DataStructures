@@ -9,55 +9,34 @@ using namespace std;
 
 int main(int argc,char* argv[]) {
 
-    int count;
+    //Declaring our initial objects
+    LinkedList linkedList;
+    TextToListParser textToList;
+    UIHandler mainUI;
+    ProgramGraphics graphics;
 
-    cout << argv[1] << endl;
-    cout<< argv[2] << endl;
-//    // Display each command-line argument.
-//    cout << "\nCommand-line arguments:\n";
-//    for( count = 0; count < argc; count++ )
-//        cout << "  argv[" << count << "]   "
-//             << argv[count] << "\n";
+    //Converting the command line arguments to strings
+    string editArgument = string(argv[1]);
+    string inFileName = string(argv[2]);
+    string outFileName = string(argv[3]);
+    //If edit argument is inputted then enter edit mode.
+    if(editArgument == "EDIT" )
+    {
+        //Displays a cool title
+        graphics.displayTitle();
 
-//    ProgramGraphics graphics;
-//    graphics.displayTitle();
-//
-//    //Linked list object
-//    LinkedList linkedList;
-//    TextToListParser textToList;
-//    UIHandler mainUI;
-//
-//
-//    string inFileName = "test.txt";
-//    string outFileName = "bwop.txt";
-//
-//
-//
-//    linkedList = textToList.parseNewList(inFileName);
-//
-//    mainUI.editText(linkedList,outFileName);
+        //Converts the input text to a linked list
+        linkedList = textToList.parseNewList(inFileName);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        //Passes the linked list to the UI for editing
+        mainUI.editText(linkedList,outFileName);
+    }
+    else
+    {
+        //If no arguments are given it just reads the test out
+        graphics.displayTitle();
+        linkedList.ReadNodes();
+    }
 
 
     return 0;
