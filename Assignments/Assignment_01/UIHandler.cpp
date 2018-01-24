@@ -15,7 +15,7 @@ UIHandler::~UIHandler() = default;
 void UIHandler::editText(LinkedList &list,string outFile)
 {
     LinkedList inList = list;
-
+    regex numReg("^(0|[1-9][0-9]*)$");
     //Listing out the text file initially
     list.ReadNodes();
 
@@ -70,10 +70,11 @@ void UIHandler::editText(LinkedList &list,string outFile)
         }
         else if(key == "g" || key == "G")
         {
-            int position;
+            int position = 0;
             cin.ignore();
             cout << "Please select a line to read:";
             cin >> position;
+
             inList.ReadSpecificNode(position);
             cout << endl;
             displayCommands();
@@ -111,6 +112,7 @@ void UIHandler::editText(LinkedList &list,string outFile)
         }
         else
         {
+            cin.ignore();
             cout << "Invalid input!" << endl;
         }
     }
@@ -120,8 +122,34 @@ void UIHandler::editText(LinkedList &list,string outFile)
 
 }
 
-void UIHandler::validateCommands(string command)
+int UIHandler::validateNumber(string command)
 {
+    regex patturn ("^(0|[1-9][0-9]*)$");
+
+        //loops until a valid input is given
+        while(true)
+        {
+            if(!regex_match(command,patturn))
+            {
+                cout << "Invalid line number please reference the text and try again" << endl;
+
+            }
+            else
+            {
+                break;
+
+            }
+            cin.ignore();
+            cout << "Insert line number: ";
+            cin >> command;
+
+        }
+        //if everything's good and valid we convert the string over to an int and send it on it's way
+        cin.ignore();
+        int position;
+        stringstream streamIt(command);
+        streamIt >> position;
+        return position;
 
 }
 

@@ -18,7 +18,7 @@ class UIHandler {
     void editText(LinkedList&,string);
 
     //Takes in text commands and ensures they're valid
-    void validateCommands(string);
+    int validateNumber(string);
 
     //Just displays commands for user input
     void displayCommands();
