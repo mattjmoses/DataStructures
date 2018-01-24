@@ -20,82 +20,96 @@ void UIHandler::editText(LinkedList &list,string outFile)
     list.ReadNodes();
 
     //storing the keys
-    string key;
+
 
     //Displays the input commands
     displayCommands();
+    while(true)
+    {
+        string key;
+        //Takes in the command
+        cout << "Input Command: ";
+        cin >> key;
 
-    //Takes in the command
-    cout << "Input Command: ";
-    cin >> key;
+        //Then the ol if else block to figure out which command were hit
+        if(key == "i" || key == "I")
+        {
+            string newText;
+            int position = 0;
+            cin.ignore();
+            cout<< "Input line position: ";
+            cin >> position;
+            cin.ignore();
+            cout<< "Input text to insert: ";
+            getline(cin, newText);
+            cout << endl;
+            inList.InsertNodeAtPosition(position, newText);
+            inList.ReadNodes();
+            displayCommands();
 
-    //Then the ol if else block to figure out which command were hit
-    if(key == "i" || key == "I")
-    {
-        string newText;
-        int position = 0;
-        cin.ignore();
-        cout<< "Input line position: ";
-        cin >> position;
-        cin.ignore();
-        cout<< "Input text to insert: ";
-        getline(cin, newText);
-        cout << endl;
-        inList.InsertNodeAtPosition(position, newText);
-        inList.ReadNodes();
-        displayCommands();
+        }
+        else if(key == "d" || key == "D")
+        {
+            int start;
+            int end;
+            cin.ignore();
+            cout << "-Please choose range to delete-"<< endl;
+            cout << "First number: ";
+            cin >> start;
+            cin.ignore();
+            cout << "Second number: ";
+            cin >> end;
+            inList.DeleteRange(start,end);
+            inList.ReadNodes();
+            displayCommands();
+        }
+        else if(key == "v" || key == "V")
+        {
+            inList.ReadNodes();
+            displayCommands();
+        }
+        else if(key == "g" || key == "G")
+        {
+            int position;
+            cin.ignore();
+            cout << "Please select a line to read:";
+            cin >> position;
+            inList.ReadSpecificNode(position);
+            cout << endl;
+            displayCommands();
+        }
+        else if(key == "l" || key == "L")
+        {
+            cout << "L key pressed"<< endl;
+        }
+        else if(key == "s" || key == "S")
+        {
+            int position;
+            string newText;
+            cin.ignore();
+            cout << "Please select a line to edit: ";
+            cin >> position;
+            cin.ignore();
+            cout << "Please enter new text: ";
+            getline(cin,newText);
+            inList.UpdateNode(position,newText);
 
+        }
+        else if(key == "e" || key == "E")
+        {
+            cout << "E key pressed"<< endl;
+        }
+        else if(key == "q" || key == "Q")
+        {
+            cout << "Have a nice day :)";
+            break;
+        }
+        else
+        {
+            cout << "Invalid input!" << endl;
+        }
     }
-    else if(key == "d" || key == "D")
-    {
-        int start;
-        int end;
-        cin.ignore();
-        cout << "-Please choose range to delete-"<< endl;
-        cout << "First number: ";
-        cin >> start;
-        cin.ignore();
-        cout << "Second number: ";
-        cin >> end;
-        inList.DeleteRange(start,end);
-        inList.ReadNodes();
-        displayCommands();
-    }
-    else if(key == "v" || key == "V")
-    {
-        inList.ReadNodes();
-        displayCommands();
-    }
-    else if(key == "g" || key == "G")
-    {
-        int position;
-        cin.ignore();
-        cout << "Please select a line to read:";
-        cin >> position;
-        inList.ReadSpecificNode(position);
-        cout << endl;
-        displayCommands();
-    }
-    else if(key == "l" || key == "L")
-    {
-        cout << "L key pressed"<< endl;
-    }
-    else if(key == "s" || key == "S")
-    {
-        cout << "S key pressed"<< endl;
-    }
-    else if(key == "e" || key == "E")
-    {
-        cout << "E key pressed"<< endl;
-    }
-    else if(key == "q" || key == "Q")
-    {
-        cout << "Q key pressed"<< endl;
-    }
-    else
-    {
-        cout << "Invalid input!" << endl;
-    }
+
 
 
 
