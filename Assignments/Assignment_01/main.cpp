@@ -23,7 +23,7 @@ int main(int argc,char* argv[]) {
 
 
     linkedList = textToList.parseNewList(inFileName);
-    mainUI.editText(linkedList);
+    mainUI.editText(linkedList,outFileName);
 
 
 

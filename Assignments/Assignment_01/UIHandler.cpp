@@ -14,6 +14,7 @@ UIHandler::~UIHandler() = default;
 
 void UIHandler::editText(LinkedList &list,string outFile)
 {
+    LinkedList inList = list;
 
     //Listing out the text file initially
     list.ReadNodes();
@@ -31,7 +32,18 @@ void UIHandler::editText(LinkedList &list,string outFile)
     //Then the ol if else block to figure out which command were hit
     if(key == "i" || key == "I")
     {
-        cout << "I key pressed!"<< endl;
+        string newText;
+        int position = 0;
+        cin.ignore();
+        cout<< "Input line position: ";
+        cin >> position;
+        cin.ignore();
+        cout<< "Input text to insert: ";
+        getline(cin, newText);
+        cout << endl;
+        inList.InsertNodeAtPosition(position, newText);
+        inList.ReadNodes();
+
     }
     else if(key == "v" || key == "V")
     {
