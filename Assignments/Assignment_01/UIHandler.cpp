@@ -43,12 +43,28 @@ void UIHandler::editText(LinkedList &list,string outFile)
         cout << endl;
         inList.InsertNodeAtPosition(position, newText);
         inList.ReadNodes();
+        displayCommands();
 
+    }
+    else if(key == "d" || key == "D")
+    {
+        int start;
+        int end;
+        cin.ignore();
+        cout << "-Please choose range to delete-"<< endl;
+        cout << "First number: ";
+        cin >> start;
+        cin.ignore();
+        cout << "Second number: ";
+        cin >> end;
+        inList.DeleteRange(start,end);
+        inList.ReadNodes();
+        displayCommands();
     }
     else if(key == "v" || key == "V")
     {
-        displayCommands();
         inList.ReadNodes();
+        displayCommands();
     }
     else if(key == "g" || key == "G")
     {
