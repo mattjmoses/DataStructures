@@ -50,13 +50,21 @@ int main() {
         while(getline(mazeFile,mazeText))
         {
             row ++;
-
+            //SO. If the text line is the same length as the col count then append to the maze
+            //HOWEVER...
             if(mazeText.length() == colCount)
             {
                 for(int j = 0; j < colCount; j++)
                 {
                     mazeArray[row][j] = mazeText[j];
                 }
+            }
+            else
+            {
+                int diff = colCount - mazeText.length();
+                cout << "DIFFERENCE at row: "<< row << " of "<< diff << endl;
+                cout << "maze text col = " << mazeText.length() << endl;
+                cout << "Colsize =" << colCount << endl;
             }
 
         }
