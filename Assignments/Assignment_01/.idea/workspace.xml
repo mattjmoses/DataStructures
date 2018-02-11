@@ -12,7 +12,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f61b541c-5a92-4f74-a0eb-68a00bbe94fc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/../Assignment_02/main.cpp" afterPath="$PROJECT_DIR$/../Assignment_02/main.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -123,12 +122,12 @@
       <option name="presentableId" value="Default" />
       <updated>1518319571490</updated>
       <workItem from="1518319572824" duration="796000" />
-      <workItem from="1518383518236" duration="527000" />
+      <workItem from="1518383518236" duration="634000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1323000" />
+    <option name="totallyTimeSpent" value="1430000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="424" y="167" width="1400" height="1042" extended-state="0" />
