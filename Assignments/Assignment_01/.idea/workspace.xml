@@ -12,6 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f61b541c-5a92-4f74-a0eb-68a00bbe94fc" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/../Assignment_02/main.cpp" afterPath="$PROJECT_DIR$/../Assignment_02/main.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -123,11 +124,12 @@
       <updated>1518319571490</updated>
       <workItem from="1518319572824" duration="796000" />
       <workItem from="1518383518236" duration="634000" />
+      <workItem from="1518392106247" duration="21000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1430000" />
+    <option name="totallyTimeSpent" value="1451000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="424" y="167" width="1400" height="1042" extended-state="0" />
@@ -163,6 +165,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/TextToListParser.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TextToListParser.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">

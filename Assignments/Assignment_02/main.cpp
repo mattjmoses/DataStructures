@@ -50,35 +50,47 @@ int main() {
         while(getline(mazeFile,mazeText))
         {
             row ++;
-            cout << mazeText << endl;
 
-            for(int j = 0; j < colCount; j++)
+            if(mazeText.length() == colCount)
             {
-                mazeArray[row][j] = mazeText[j];
+                for(int j = 0; j < colCount; j++)
+                {
+                    mazeArray[row][j] = mazeText[j];
+                }
             }
+
         }
     }
+   string bill = "Zoot";
+    while(bill.length() < 20)
+    {
+        bill +='J';
+    }
+    cout << bill << endl;
+    for(int i = 0; i < rowcount; i++)
+    {
 
-//    //Setting the values for the  2D array.
-//    string text;
-//    for(int i = 0; i < rowcount; i++)
-//    {
-//
-//        for(int j = 0; j < colCount; j++)
-//        {
-//            mazeArray[i][j] = textLine[j];
-//        }
-//    }
+        for(int j = 0; j < colCount; j++)
+        {
+            if(mazeArray[i][j] == ' ')
+            {
+                mazeArray[i][j] = 'X';
+            }
+            cout << mazeArray[i][j];
+        }
+
+        cout << endl;
+    }
 
 
 
 
     //We don't even need to goddamn convert the string to a char array. It plays just fine! HUH
-    string bob = "Bob Dole";
-    char dole;
-    dole = bob[5];
-    cout << bob[0] << endl;
-    cout << dole << endl;
+//    string bob = "Bob Dole";
+//    char dole;
+//    dole = bob[5];
+//    cout << bob[0] << endl;
+//    cout << dole << endl;
 
     return 0;
 }
