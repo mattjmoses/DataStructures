@@ -75,49 +75,62 @@ int main() {
 
     //Okay. Taking a knee on the goddamn last line for now.
     int wallCount;
-    for(int i = 0; i < rowcount; i++)
-    {
+    bool deadEnds = true;
+//   while(deadEnds)
+//   {
+       //deadEnds = false;
+       for(int i = 0; i < rowcount; i++)
+       {
 
 
-        for(int j = 0; j < colCount; j++)
-        {
-            wallCount = 0;
-            //Check all white space for dead ends
-            //Don't check the first point.
-            if((mazeArray[i][j] == ' ') &&  (i !=0 && j !=0))
-            {
-                //Check North
-                if(mazeArray[i-1][j] != ' ')
-                {
-                    wallCount ++;
-                }
-                //Check South
-                if(mazeArray[i+1][j] != ' ')
-                {
-                    wallCount ++;
-                }
-                //Check East
-                if(mazeArray[i][j+1] != ' ')
-                {
-                    wallCount ++;
-                }
-                //Check West
-                if(mazeArray[i][j-1] != ' ')
-                {
-                    wallCount ++;
-                }
-                //If the white space is surrounded by three walls that means it's a dead end
-                //Mark it with X to
-                if(wallCount == 3)
-                {
-                    mazeArray[i][j] = 'X';
-                }
-            }
-            cout << mazeArray[i][j];
-        }
+           for(int j = 0; j < colCount; j++)
+           {
+               wallCount = 0;
+               //Check all white space for dead ends
+               //Don't check the first point.
+               if((mazeArray[i][j] == ' ') &&  (i !=0 && j !=0))
+               {
+                    if(i == 49 && j == 50)
+                   {
+                       continue;
+                   }
+                       //Check North
+                       if(mazeArray[i-1][j] != ' ')
+                       {
+                           wallCount ++;
+                       }
+                       //Check South
+                       if(mazeArray[i+1][j] != ' ')
+                       {
+                           wallCount ++;
+                       }
+                       //Check East
+                       if(mazeArray[i][j+1] != ' ')
+                       {
+                           wallCount ++;
+                       }
+                       //Check West
+                       if(mazeArray[i][j-1] != ' ')
+                       {
+                           wallCount ++;
+                       }
+                       //If the white space is surrounded by three walls that means it's a dead end
+                       //Mark it with X to
+                       if(wallCount == 3)
+                       {
+                           mazeArray[i][j] = 'X';
+                           //deadEnds = true;
+                       }
 
-        cout << endl;
-    }
+
+               }
+               cout << mazeArray[i][j];
+           }
+
+           cout << endl;
+       }
+        //cout << "Exit ="<< mazeArray[49][50] << endl;
+  // }
 
 
 
