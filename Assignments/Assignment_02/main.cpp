@@ -43,12 +43,14 @@ int main() {
 
     ifstream mazeFile("maze.txt");
     string mazeText;
+    string appendMazeLine;
     int row = -1;
     //I think this works...
     if(mazeFile.is_open())
     {
         while(getline(mazeFile,mazeText))
         {
+
             row ++;
             //SO. If the text line is the same length as the col count then append to the maze
             //HOWEVER...
@@ -58,31 +60,19 @@ int main() {
                 {
                     mazeArray[row][j] = mazeText[j];
                 }
-            }
-            else
-            {
-                int diff = colCount - mazeText.length();
-                cout << "DIFFERENCE at row: "<< row << " of "<< diff << endl;
-                cout << "maze text col = " << mazeText.length() << endl;
-                cout << "Colsize =" << colCount << endl;
-            }
 
+            }
         }
     }
-   string bill = "Zoot";
-    while(bill.length() < 20)
-    {
-        bill +='J';
-    }
-    cout << bill << endl;
+
+
     for(int i = 0; i < rowcount; i++)
     {
-
         for(int j = 0; j < colCount; j++)
         {
             if(mazeArray[i][j] == ' ')
             {
-                mazeArray[i][j] = 'X';
+                mazeArray[i][j] = 'B';
             }
             cout << mazeArray[i][j];
         }
@@ -92,13 +82,6 @@ int main() {
 
 
 
-
-    //We don't even need to goddamn convert the string to a char array. It plays just fine! HUH
-//    string bob = "Bob Dole";
-//    char dole;
-//    dole = bob[5];
-//    cout << bob[0] << endl;
-//    cout << dole << endl;
 
     return 0;
 }
