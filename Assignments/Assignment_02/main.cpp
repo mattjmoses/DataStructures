@@ -131,6 +131,27 @@ int main() {
        }
         //cout << "Exit ="<< mazeArray[49][50] << endl;
    }
+    for(int i = 0; i < rowcount; i++)
+    {
+        for(int j = 0; j < colCount; j++)
+        {
+            if(mazeArray[i][j] == ' ')
+            {
+                mazeArray[i][j] = '@';
+                cout << mazeArray[i][j];
+            }
+            else if(mazeArray[i][j] == 'X')
+            {
+                mazeArray[i][j] = ' ';
+                cout << mazeArray[i][j];
+            }
+            else
+            {
+                cout << mazeArray[i][j];
+            }
+        }
+        cout << endl;
+    }
 
 
 
