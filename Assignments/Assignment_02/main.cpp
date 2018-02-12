@@ -7,18 +7,21 @@ using namespace std;
 
 int main() {
     //Text file for maze
-    ifstream readFile("maze.txt");
+    ifstream readFile;
+    ofstream writeOut("fixedMaze.txt");
+    readFile.open("maze.txt");
     string textLine;
     //Counting the rows
     int rowcount = -1;
     //Counting the columns
     int colCount = 0;
+
     //We get the dimensions of the maze by scanning the text file.
     if(readFile.is_open())
     {
         while(getline(readFile,textLine))
         {
-
+            writeOut << textLine;
             //counting the rows
             rowcount ++;
             //getting the max num of columns
@@ -27,8 +30,12 @@ int main() {
                 colCount = textLine.length();
             }
         }
+        writeOut << "Maze Solved Using AwsumSolve" << endl;
+        writeOut.close();
     }
+
     readFile.close();
+
     cout << "Row count: " << rowcount << endl;
     cout << "Columns: " << colCount << endl;
 
@@ -52,6 +59,10 @@ int main() {
         {
 
             row ++;
+            if(row == rowcount)
+            {
+                break;
+            }
             //SO. If the text line is the same length as the col count then append to the maze
             //HOWEVER...
             if(mazeText.length() == colCount)
