@@ -77,14 +77,38 @@ int main() {
     int wallCount;
     for(int i = 0; i < rowcount; i++)
     {
-        //Checking for dead ends..
-        wallCount = 0;
+
+
         for(int j = 0; j < colCount; j++)
         {
+            wallCount = 0;
             //Check all white space for dead ends
+            //Don't check the first point.
             if((mazeArray[i][j] == ' ') &&  (i !=0 && j !=0))
             {
-                if(mazeArray[i][j-1] == '|')
+                //Check North
+                if(mazeArray[i-1][j] != ' ')
+                {
+                    wallCount ++;
+                }
+                //Check South
+                if(mazeArray[i+1][j] != ' ')
+                {
+                    wallCount ++;
+                }
+                //Check East
+                if(mazeArray[i][j+1] != ' ')
+                {
+                    wallCount ++;
+                }
+                //Check West
+                if(mazeArray[i][j-1] != ' ')
+                {
+                    wallCount ++;
+                }
+                //If the white space is surrounded by three walls that means it's a dead end
+                //Mark it with X to
+                if(wallCount == 3)
                 {
                     mazeArray[i][j] = 'X';
                 }
