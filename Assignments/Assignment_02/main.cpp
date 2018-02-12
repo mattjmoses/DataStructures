@@ -10,7 +10,7 @@ int main()
 
     mazeSolver newMaze = mazeSolver();
 
-    newMaze.solveMaze("maze.txt");
+    newMaze.solveMaze("mazex.txt");
 //    //Text file for maze
 //    ifstream readFile;
 //    readFile.open("maze.txt");
