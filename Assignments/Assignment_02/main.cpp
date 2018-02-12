@@ -76,9 +76,9 @@ int main() {
     //Okay. Taking a knee on the goddamn last line for now.
     int wallCount;
     bool deadEnds = true;
-//   while(deadEnds)
-//   {
-       //deadEnds = false;
+   while(deadEnds)
+   {
+       deadEnds = false;
        for(int i = 0; i < rowcount; i++)
        {
 
@@ -119,7 +119,7 @@ int main() {
                        if(wallCount == 3)
                        {
                            mazeArray[i][j] = 'X';
-                           //deadEnds = true;
+                           deadEnds = true;
                        }
 
 
@@ -130,7 +130,7 @@ int main() {
            cout << endl;
        }
         //cout << "Exit ="<< mazeArray[49][50] << endl;
-  // }
+   }
 
 
 
