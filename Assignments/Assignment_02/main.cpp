@@ -59,16 +59,13 @@ int main() {
         {
 
             row ++;
-            if(row == rowcount)
-            {
-                break;
-            }
             //SO. If the text line is the same length as the col count then append to the maze
             //HOWEVER...
             if(mazeText.length() == colCount)
             {
                 for(int j = 0; j < colCount; j++)
                 {
+
                     mazeArray[row][j] = mazeText[j];
                 }
 
@@ -76,14 +73,21 @@ int main() {
         }
     }
 
-
+    //Okay. Taking a knee on the goddamn last line for now.
+    int wallCount;
     for(int i = 0; i < rowcount; i++)
     {
+        //Checking for dead ends..
+        wallCount = 0;
         for(int j = 0; j < colCount; j++)
         {
-            if(mazeArray[i][j] == ' ')
+            //Check all white space for dead ends
+            if((mazeArray[i][j] == ' ') &&  (i !=0 && j !=0))
             {
-                mazeArray[i][j] = 'B';
+                if(mazeArray[i][j-1] == '|')
+                {
+                    mazeArray[i][j] = 'X';
+                }
             }
             cout << mazeArray[i][j];
         }
