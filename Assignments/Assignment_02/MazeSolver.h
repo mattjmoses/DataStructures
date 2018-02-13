@@ -19,10 +19,10 @@ class mazeSolver
 
     //Creates a 2D array for the maze based on a text file
     char** createMazeArray(string);
-    void fillDeadEnds(); //Performs a dead end fill to speed up the stack track
-    void displayMaze(); //Shows the maze in the console
-    void stackTracker(); //Finds the solution to the maze using a STACK
-    void outputMazeToText(); //Writes the maze to a text file
+    char** fillDeadEnds(char**); //Performs a dead end fill to speed up the stack track
+    void displayMaze(char**); //Shows the maze in the console
+    char** stackTracker(char**); //Finds the solution to the maze using a STACK
+    void outputMazeToText(char**); //Writes the maze to a text file
 
     private:
     //Array what holds the maze
@@ -31,6 +31,7 @@ class mazeSolver
     int rowCount;
     int colCount;
 
+    //void fillDeadEnds(char **mazeArray);
 };
 
 

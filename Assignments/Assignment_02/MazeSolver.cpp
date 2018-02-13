@@ -90,7 +90,7 @@ char** mazeSolver::createMazeArray(string textFile)
     return mazeArray;
 }
 //Performs a dead end fill on the maze
-void mazeSolver::fillDeadEnds()
+char** mazeSolver::fillDeadEnds(char** mazeArray)
 {
     //Stores wall count. If a point on the maze has three walls it's a dead end
     int wallCount;
@@ -155,15 +155,15 @@ void mazeSolver::fillDeadEnds()
         }
 
     }
-
+    return mazeArray;
 }
 //Uses a stack to solve the maze
-void mazeSolver::stackTracker()
+char** mazeSolver::stackTracker(char** mazeArray)
 {
-
+    return mazeArray;
 }
 //Displays the maze in the console
-void mazeSolver::displayMaze()
+void mazeSolver::displayMaze(char** mazeArray)
 {
     //Looping through the maze, replacing all X's with whitespace and path points with O's
     for(int i = 0; i < rowCount; i++)
@@ -189,7 +189,7 @@ void mazeSolver::displayMaze()
     }
 }
 //Saves the maze to a text file
-void mazeSolver::outputMazeToText()
+void mazeSolver::outputMazeToText(char** mazeArray)
 {
 
 }

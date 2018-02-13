@@ -22,9 +22,8 @@ int main()
 //    myFirstStack->display();
     mazeSolver newMaze = mazeSolver();
 
-    newMaze.createMazeArray("maze2.txt");
-    newMaze.fillDeadEnds();
-    newMaze.displayMaze();
+
+    newMaze.displayMaze(newMaze.fillDeadEnds(newMaze.createMazeArray("maze4.txt")));
 
 
 
