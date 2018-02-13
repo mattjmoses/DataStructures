@@ -47,7 +47,7 @@ void mazeSolver::solveMaze(string mazeFile)
     //New empty dynamic array.
     char **mazeArray;
     mazeArray = new char *[rowcount];
-    //Creating all the columns from the maze data
+    //Creating all the columns from the maze coords
     for (int i = 0; i < rowcount; i++)
     {
         mazeArray[i] = new char[colCount];

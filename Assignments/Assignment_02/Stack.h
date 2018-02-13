@@ -8,16 +8,21 @@
 
 class Stack {
 
-    public:
-        Stack();//The ol constructor
-        ~Stack();//The ol default constructor
-        void push(int, int); //Stack push method takes in x and y coordinates
-        void pop(); //Stack pop method
-        void display(); //Stack display method
+    struct Node
+    {
+        int coords[1];
+        Node *nodePtr;
+    };
 
-    private:
-    //Top node on the stack
-    Node *top;
+
+        Node *top;
+    public :
+        Stack(){ top= nullptr;}
+        void push(int,int);
+        void pop();
+        void display();
+        ~Stack();
+
 
 
 };

@@ -7,10 +7,9 @@
 using namespace std;
 //Referencing code from http://www.cppforschool.com
 //The ol constuctor
-Stack::Stack()
-{
-    top = nullptr;
-}
+
+
+
 
 Stack::~Stack()
 {
@@ -55,7 +54,10 @@ void Stack::display()
     Node *temp = top;
     while(temp!= nullptr)
     {
-        cout<<"X coordinate: "temp->coords[0]<<" Y coordinate: " <<temp->coords[1] << endl;
+        cout<< "X coordinate: " << temp->coords[0]<<" Y coordinate: " <<temp->coords[1] << endl;
         temp=temp->nodePtr;
     }
 }
+
+
+

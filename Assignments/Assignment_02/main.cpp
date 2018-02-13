@@ -3,14 +3,22 @@
 #include <fstream>
 #include <cstring>
 #include "MazeSolver.h"
+#include "Stack.h"
+#include "Node.h"
 using namespace std;
 
 int main()
 {
 
+    Stack *myFirstStack = new Stack();
+
+    myFirstStack->push(1,1);
+    myFirstStack->push(5,5);
+    myFirstStack->push(19,19);
+    myFirstStack->display();
     mazeSolver newMaze = mazeSolver();
 
-    newMaze.solveMaze("maze3.txt");
+//    newMaze.solveMaze("maze3.txt");
 //    //Text file for maze
 //    ifstream readFile;
 //    readFile.open("maze.txt");
@@ -45,7 +53,7 @@ int main()
 //    //New empty dynamic array.
 //    char **mazeArray;
 //    mazeArray = new char *[rowcount];
-//    //Creating all the columns from the maze data
+//    //Creating all the columns from the maze coords
 //    for (int i = 0; i < rowcount; i++)
 //    {
 //        mazeArray[i] = new char[colCount];
