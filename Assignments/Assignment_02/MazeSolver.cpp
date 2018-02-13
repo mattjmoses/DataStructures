@@ -5,7 +5,10 @@
 #include "MazeSolver.h"
 
 //Setting up the default rowcounts and the like.
-mazeSolver::mazeSolver() = default;
+mazeSolver::mazeSolver()
+{
+
+}
 
 
 
@@ -14,7 +17,7 @@ mazeSolver::mazeSolver() = default;
 mazeSolver::~mazeSolver() = default;
 
 
-void mazeSolver::createMazeArray(string textFile)
+char** mazeSolver::createMazeArray(string textFile)
 {
     //Text file for maze
     ifstream readFile;
@@ -83,29 +86,8 @@ void mazeSolver::createMazeArray(string textFile)
         }
     }
 
-   //Display the maze.
-    for(int i = 0; i < rowCount; i++)
-    {
-        for(int j = 0; j < colCount; j++)
-        {
-            if(mazeArray[i][j] == ' ')
-            {
-                mazeArray[i][j] = 'O';
-                cout << mazeArray[i][j];
-            }
-            else if(mazeArray[i][j] == 'X')
-            {
-                mazeArray[i][j] = ' ';
-                cout << mazeArray[i][j];
-            }
-            else
-            {
-                cout << mazeArray[i][j];
-            }
-        }
-        cout << endl;
-    }
-
+    //returns the newly made maze
+    return mazeArray;
 }
 //Performs a dead end fill on the maze
 void mazeSolver::fillDeadEnds()
@@ -183,7 +165,28 @@ void mazeSolver::stackTracker()
 //Displays the maze in the console
 void mazeSolver::displayMaze()
 {
-
+    //Looping through the maze, replacing all X's with whitespace and path points with O's
+    for(int i = 0; i < rowCount; i++)
+    {
+        for(int j = 0; j < colCount; j++)
+        {
+            if(mazeArray[i][j] == ' ')
+            {
+                mazeArray[i][j] = 'O';
+                cout << mazeArray[i][j];
+            }
+            else if(mazeArray[i][j] == 'X')
+            {
+                mazeArray[i][j] = ' ';
+                cout << mazeArray[i][j];
+            }
+            else
+            {
+                cout << mazeArray[i][j];
+            }
+        }
+        cout << endl;
+    }
 }
 //Saves the maze to a text file
 void mazeSolver::outputMazeToText()
