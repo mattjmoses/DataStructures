@@ -38,7 +38,7 @@ void mazeSolver::solveMaze(string mazeFile)
         }
 
     }
-
+    //Closing up the read file.
     readFile.close();
 
     cout << "Row count: " << rowcount << endl;
@@ -57,7 +57,7 @@ void mazeSolver::solveMaze(string mazeFile)
     string mazeText;
     string appendMazeLine;
     int row = -1;
-    //I think this works...
+
     if(arrMazeFile.is_open())
     {
         while(getline(arrMazeFile,mazeText))
@@ -66,6 +66,10 @@ void mazeSolver::solveMaze(string mazeFile)
             row ++;
             //SO. If the text line is the same length as the col count then append to the maze
             //HOWEVER...
+            if(mazeText.length() < colCount)
+            {
+                mazeText += '\r';
+            }
             if(mazeText.length() == colCount)
             {
                 for(int j = 0; j < colCount; j++)
@@ -74,11 +78,12 @@ void mazeSolver::solveMaze(string mazeFile)
                     mazeArray[row][j] = mazeText[j];
                 }
 
+
             }
         }
     }
 
-    //Okay. Taking a knee on the goddamn last line for now.
+    //Performing a dead end fill on the maze
     int wallCount;
     bool deadEnds = true;
     while(deadEnds)
@@ -127,13 +132,18 @@ void mazeSolver::solveMaze(string mazeFile)
                         mazeArray[i][j] = 'X';
                         deadEnds = true;
                     }
+                    //Should clear up any stray points...
+                    if(wallCount == 4)
+                    {
+                        mazeArray[i][j] = 'X';
+                        deadEnds = true;
+                    }
                 }
-                //cout << mazeArray[i][j];
+
             }
 
-           // cout << endl;
         }
-        //cout << "Exit ="<< mazeArray[49][50] << endl;
+
     }
     for(int i = 0; i < rowcount; i++)
     {
@@ -141,7 +151,7 @@ void mazeSolver::solveMaze(string mazeFile)
         {
             if(mazeArray[i][j] == ' ')
             {
-                mazeArray[i][j] = '@';
+                mazeArray[i][j] = 'O';
                 cout << mazeArray[i][j];
             }
             else if(mazeArray[i][j] == 'X')
