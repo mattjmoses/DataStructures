@@ -26,7 +26,7 @@ char** mazeSolver::createMazeArray(string textFile)
     //Counting the rows
     rowCount = -1;
     //Counting the columns
-    int colCount = 0;
+    colCount = 0;
 
     //We get the dimensions of the maze by scanning the text file.
     if(readFile.is_open())
