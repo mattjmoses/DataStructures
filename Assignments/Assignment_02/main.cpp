@@ -12,7 +12,10 @@ int main()
 
     //Stack working.
     Stack *myFirstStack = new Stack();
+    Stack ho;
 
+    ho.push(1,1);
+    ho.display();
     myFirstStack->push(1,1);
     myFirstStack->push(5,5);
     myFirstStack->push(19,19);
