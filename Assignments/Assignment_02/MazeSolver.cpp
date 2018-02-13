@@ -11,11 +11,11 @@ mazeSolver::mazeSolver() =default;
 mazeSolver::~mazeSolver() = default;
 
 
-void mazeSolver::solveMaze(string mazeFile)
+void mazeSolver::solveMaze(string textFile)
 {
     //Text file for maze
     ifstream readFile;
-    readFile.open(mazeFile);
+    readFile.open(textFile);
     string textLine;
     //Counting the rows
     int rowcount = -1;
@@ -53,7 +53,7 @@ void mazeSolver::solveMaze(string mazeFile)
         mazeArray[i] = new char[colCount];
     }
 
-    ifstream arrMazeFile(mazeFile);
+    ifstream arrMazeFile(textFile);
     string mazeText;
     string appendMazeLine;
     int row = -1;
