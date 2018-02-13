@@ -21,7 +21,7 @@ void mazeSolver::createMazeArray(string textFile)
     readFile.open(textFile);
     string textLine;
     //Counting the rows
-    int rowcount = -1;
+    rowCount = -1;
     //Counting the columns
     int colCount = 0;
 
@@ -31,7 +31,7 @@ void mazeSolver::createMazeArray(string textFile)
         while(getline(readFile,textLine))
         {
             //counting the rows
-            rowcount ++;
+            rowCount ++;
             //getting the max num of columns
             if(textLine.length() > colCount)
             {
@@ -42,14 +42,14 @@ void mazeSolver::createMazeArray(string textFile)
     }
     //Closing up the read file.
     readFile.close();
-    cout << "Row count: " << rowcount << endl;
+    cout << "Row count: " << rowCount << endl;
     cout << "Columns: " << colCount << endl;
 
 
     //Setting up the array based on the information from the text file.
-    mazeArray = new char *[rowcount];
+    mazeArray = new char *[rowCount];
     //Creating all the columns from the maze coords
-    for (int i = 0; i < rowcount; i++)
+    for (int i = 0; i < rowCount; i++)
     {
         mazeArray[i] = new char[colCount];
     }
@@ -83,15 +83,43 @@ void mazeSolver::createMazeArray(string textFile)
         }
     }
 
-    //Performing a dead end fill on the maze
+   //Display the maze.
+    for(int i = 0; i < rowCount; i++)
+    {
+        for(int j = 0; j < colCount; j++)
+        {
+            if(mazeArray[i][j] == ' ')
+            {
+                mazeArray[i][j] = 'O';
+                cout << mazeArray[i][j];
+            }
+            else if(mazeArray[i][j] == 'X')
+            {
+                mazeArray[i][j] = ' ';
+                cout << mazeArray[i][j];
+            }
+            else
+            {
+                cout << mazeArray[i][j];
+            }
+        }
+        cout << endl;
+    }
+
+}
+//Performs a dead end fill on the maze
+void mazeSolver::fillDeadEnds()
+{
+    //Stores wall count. If a point on the maze has three walls it's a dead end
     int wallCount;
+    //Condition for the while loop
     bool deadEnds = true;
+    //If dead ends remain in the maze then fill them
     while(deadEnds)
     {
         deadEnds = false;
-        for(int i = 0; i < rowcount; i++)
+        for(int i = 0; i < rowCount; i++)
         {
-
 
             for(int j = 0; j < colCount; j++)
             {
@@ -101,7 +129,7 @@ void mazeSolver::createMazeArray(string textFile)
                 if((mazeArray[i][j] == ' ') &&  (i !=0 && j !=0))
                 {
                     //if we hit the exit don't check it either.
-                    if(i == rowcount - 2 && j == colCount -2)
+                    if(i == rowCount - 2 && j == colCount -2)
                     {
                         continue;
                     }
@@ -132,7 +160,7 @@ void mazeSolver::createMazeArray(string textFile)
                         mazeArray[i][j] = 'X';
                         deadEnds = true;
                     }
-                    //Should clear up any stray points...
+                    //Handles the eventuality of stray whitespace in the maze
                     if(wallCount == 4)
                     {
                         mazeArray[i][j] = 'X';
@@ -145,26 +173,20 @@ void mazeSolver::createMazeArray(string textFile)
         }
 
     }
-    for(int i = 0; i < rowcount; i++)
-    {
-        for(int j = 0; j < colCount; j++)
-        {
-            if(mazeArray[i][j] == ' ')
-            {
-                mazeArray[i][j] = 'O';
-                cout << mazeArray[i][j];
-            }
-            else if(mazeArray[i][j] == 'X')
-            {
-                mazeArray[i][j] = ' ';
-                cout << mazeArray[i][j];
-            }
-            else
-            {
-                cout << mazeArray[i][j];
-            }
-        }
-        cout << endl;
-    }
+
+}
+//Uses a stack to solve the maze
+void mazeSolver::stackTracker()
+{
+
+}
+//Displays the maze in the console
+void mazeSolver::displayMaze()
+{
+
+}
+//Saves the maze to a text file
+void mazeSolver::outputMazeToText()
+{
 
 }
