@@ -5,13 +5,16 @@
 #include "MazeSolver.h"
 
 //Setting up the default rowcounts and the like.
-mazeSolver::mazeSolver() =default;
+mazeSolver::mazeSolver() = default;
+
+
+
 
 
 mazeSolver::~mazeSolver() = default;
 
 
-void mazeSolver::solveMaze(string textFile)
+void mazeSolver::createMazeArray(string textFile)
 {
     //Text file for maze
     ifstream readFile;
@@ -27,7 +30,6 @@ void mazeSolver::solveMaze(string textFile)
     {
         while(getline(readFile,textLine))
         {
-
             //counting the rows
             rowcount ++;
             //getting the max num of columns
@@ -40,35 +42,34 @@ void mazeSolver::solveMaze(string textFile)
     }
     //Closing up the read file.
     readFile.close();
-
     cout << "Row count: " << rowcount << endl;
     cout << "Columns: " << colCount << endl;
 
-    //New empty dynamic array.
-    char **mazeArray;
+
+    //Setting up the array based on the information from the text file.
     mazeArray = new char *[rowcount];
     //Creating all the columns from the maze coords
     for (int i = 0; i < rowcount; i++)
     {
         mazeArray[i] = new char[colCount];
     }
-
+    //Re-scanning the text file to input the maze info.
     ifstream arrMazeFile(textFile);
     string mazeText;
     string appendMazeLine;
     int row = -1;
 
+    //Adding the data to the 2D array
     if(arrMazeFile.is_open())
     {
         while(getline(arrMazeFile,mazeText))
         {
 
             row ++;
-            //SO. If the text line is the same length as the col count then append to the maze
-            //HOWEVER...
+
             if(mazeText.length() < colCount)
             {
-                mazeText += '\r';
+                mazeText.append("\r");
             }
             if(mazeText.length() == colCount)
             {
@@ -77,7 +78,6 @@ void mazeSolver::solveMaze(string textFile)
 
                     mazeArray[row][j] = mazeText[j];
                 }
-
 
             }
         }

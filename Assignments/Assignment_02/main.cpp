@@ -22,7 +22,7 @@ int main()
     myFirstStack->display();
     mazeSolver newMaze = mazeSolver();
 
-    newMaze.solveMaze("maze4.txt");
+    newMaze.createMazeArray("mazex.txt");
 
 
 
