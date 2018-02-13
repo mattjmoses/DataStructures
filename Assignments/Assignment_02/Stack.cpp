@@ -41,7 +41,7 @@ void Stack::pop()
     {
         Node *temp=top;
         top = top->nodePtr;
-        cout<< "Coordinates X: " << temp->coords[0]<<"Y: "<< temp->coords[1] << " removed from stack";
+        //cout<< "Coordinates X: " << temp->coords[0]<<"Y: "<< temp->coords[1] << " removed from stack";
         delete temp;
     }
     else

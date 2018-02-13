@@ -18,12 +18,18 @@ int main()
     ho.push(1,1);
     ho.push(19,19);
     ho.push(100,27);
+    ho.pop();
+
+
     //ho.display();
     barf[0] = ho.display()[0];
     barf[1] = ho.display()[1];
 
     cout << barf[0] << endl;
     cout << barf[1] << endl;
+
+
+
 
     mazeSolver newMaze = mazeSolver();
 
