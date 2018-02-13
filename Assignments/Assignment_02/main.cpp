@@ -12,18 +12,23 @@ int main()
 
     //Stack working.
 //    Stack *myFirstStack = new Stack();
-//    Stack ho;
+    Stack ho;
 //
-//    ho.push(1,1);
-//    ho.display();
-//    myFirstStack->push(1,1);
-//    myFirstStack->push(5,5);
-//    myFirstStack->push(19,19);
-//    myFirstStack->display();
+    int barf[1];
+    ho.push(1,1);
+    ho.push(19,19);
+    ho.push(100,27);
+    //ho.display();
+    barf[0] = ho.display()[0];
+    barf[1] = ho.display()[1];
+
+    cout << barf[0] << endl;
+    cout << barf[1] << endl;
+
     mazeSolver newMaze = mazeSolver();
 
 
-    newMaze.displayMaze(newMaze.fillDeadEnds(newMaze.createMazeArray("maze4.txt")));
+    //newMaze.displayMaze(newMaze.fillDeadEnds(newMaze.createMazeArray("maze4.txt")));
 
 
 

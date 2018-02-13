@@ -160,6 +160,17 @@ char** mazeSolver::fillDeadEnds(char** mazeArray)
 //Uses a stack to solve the maze
 char** mazeSolver::stackTracker(char** mazeArray)
 {
+    //Keeps track of the position in the maze
+    Stack cursor;
+    cursor.push(0,1);
+    cursor.display();
+    for(int i = 0; i < rowCount; i++)
+    {
+        for(int j = 0; j< colCount; i++)
+        {
+
+        }
+    }
     return mazeArray;
 }
 //Displays the maze in the console

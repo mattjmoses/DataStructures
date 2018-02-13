@@ -49,14 +49,26 @@ void Stack::pop()
 
 }
 //Display top element of the stack
-void Stack::display()
+int* Stack::display()
 {
+    int empty[1];
+    //Checks the top node of the stack. Basically useless unless we can see
     Node *temp = top;
-    while(temp!= nullptr)
+
+    if(temp!= nullptr)
     {
-        cout<< "X coordinate: " << temp->coords[0]<<" Y coordinate: " <<temp->coords[1] << endl;
-        temp=temp->nodePtr;
+
+
+        //cout << "X coordinate: " << temp->coords[0] << " Y coordinate: " << temp->coords[1] << endl;
+        //temp = temp->nodePtr;
+
+        return temp->coords;
     }
+    else
+    {
+        return empty;
+    }
+
 }
 
 
