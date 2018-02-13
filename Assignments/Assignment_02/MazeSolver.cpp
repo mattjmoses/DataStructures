@@ -161,13 +161,47 @@ char** mazeSolver::fillDeadEnds(char** mazeArray)
 char** mazeSolver::stackTracker(char** mazeArray)
 {
     //Keeps track of the position in the maze
+    int cursorCoords[1];
+
+    //The ol stack
     Stack cursor;
+    //Initializing the stack at the start of the maze
     cursor.push(0,1);
-    cursor.display();
+    cursorCoords[0] = cursor.display()[0];
+    cursorCoords[1] = cursor.display()[1];
     for(int i = 0; i < rowCount; i++)
     {
         for(int j = 0; j< colCount; i++)
         {
+            //Checking the loop is on the same position as the cursor
+            if(cursorCoords[0] == i && cursorCoords[1] == j)
+            {
+                //Check North
+                if(mazeArray[i-1][j] == ' ')
+                {
+                    //If the space has a viable neighbor mark the current space as visited and push the
+                    //location of the neighbor to the top of the stack. It will be checked on the next loop
+                    mazeArray[i][j] = 'O';
+                    cursor.push(i-1,j);
+                }//Check South
+                else if(mazeArray[i+1][j] == ' ')
+                {
+                    mazeArray[i+1][j] = 'O';
+                    cursor.push(i+1,j);
+                }//Check East
+                else if(mazeArray[i][j+1] == ' ')
+                {
+                    mazeArray[i][j+1] = 'O';
+                    cursor.push(i,j+1);
+                }//Check West
+                else if(mazeArray[i][j-1] == ' ')
+                {
+                    mazeArray[i][j-1] = 'O';
+                    cursor.push(i,j-1);
+                }
+            }
+            //SO. If the current grid space is white space
+
 
         }
     }
