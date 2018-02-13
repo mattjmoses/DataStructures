@@ -2,7 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
-#include "mazeSolver.h"
+#include "MazeSolver.h"
 using namespace std;
 
 int main()

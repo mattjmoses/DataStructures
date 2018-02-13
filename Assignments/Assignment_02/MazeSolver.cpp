@@ -2,7 +2,7 @@
 // Created by matt on 12/02/18.
 //
 
-#include "mazeSolver.h"
+#include "MazeSolver.h"
 
 //Setting up the default rowcounts and the like.
 mazeSolver::mazeSolver() =default;
