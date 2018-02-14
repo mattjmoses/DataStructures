@@ -259,7 +259,7 @@ void mazeSolver::displayMaze(char** mazeArray)
             }
             else if(mazeArray[i][j] == 'X')
             {
-                mazeArray[i][j] = 'X';
+                mazeArray[i][j] = ' ';
                 cout << mazeArray[i][j];
             }
             else
