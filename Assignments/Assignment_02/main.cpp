@@ -14,19 +14,20 @@ int main()
 //    Stack *myFirstStack = new Stack();
     Stack ho;
 //
-    int barf[1];
-    ho.push(1,1);
-    ho.push(19,19);
+   int x;
+    int y;
+
+
     ho.push(100,27);
     ho.pop();
+    ho.push(5,2);
 
-
+    x = ho.displayX();
+    y = ho.displayY();
     //ho.display();
-    barf[0] = ho.display()[0];
-    barf[1] = ho.display()[1];
 
-    cout << barf[0] << endl;
-    cout << barf[1] << endl;
+    cout << x << endl;
+    cout << y << endl;
 
 
 
@@ -34,7 +35,7 @@ int main()
     mazeSolver newMaze = mazeSolver();
 
 
-    //newMaze.displayMaze(newMaze.fillDeadEnds(newMaze.createMazeArray("maze4.txt")));
+    newMaze.displayMaze(newMaze.stackTracker(newMaze.fillDeadEnds(newMaze.createMazeArray("maze4.txt"))));
 
 
 

@@ -20,7 +20,8 @@ class Stack {
         Stack(){ top= nullptr;}
         void push(int,int);
         void pop();
-        int* display();
+        int displayX();
+        int displayY();
         ~Stack();
 
 

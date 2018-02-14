@@ -49,9 +49,9 @@ void Stack::pop()
 
 }
 //Display top element of the stack
-int* Stack::display()
+int Stack::displayX()
 {
-    int empty[1];
+
     //Checks the top node of the stack. Basically useless unless we can see
     Node *temp = top;
 
@@ -62,11 +62,33 @@ int* Stack::display()
         //cout << "X coordinate: " << temp->coords[0] << " Y coordinate: " << temp->coords[1] << endl;
         //temp = temp->nodePtr;
 
-        return temp->coords;
+        return temp->coords[0];
     }
     else
     {
-        return empty;
+        return 0;
+    }
+
+}
+//Display top element of the stack
+int Stack::displayY()
+{
+
+    //Checks the top node of the stack. Basically useless unless we can see
+    Node *temp = top;
+
+    if(temp!= nullptr)
+    {
+
+
+        //cout << "X coordinate: " << temp->coords[0] << " Y coordinate: " << temp->coords[1] << endl;
+        //temp = temp->nodePtr;
+
+        return temp->coords[1];
+    }
+    else
+    {
+        return 0;
     }
 
 }

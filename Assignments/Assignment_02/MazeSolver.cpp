@@ -161,50 +161,74 @@ char** mazeSolver::fillDeadEnds(char** mazeArray)
 char** mazeSolver::stackTracker(char** mazeArray)
 {
     //Keeps track of the position in the maze
-    int cursorCoords[1];
+    int cursorX;
+    int cursorY;
 
     //The ol stack
     Stack cursor;
     //Initializing the stack at the start of the maze
-    cursor.push(0,1);
-    cursorCoords[0] = cursor.display()[0];
-    cursorCoords[1] = cursor.display()[1];
-    for(int i = 0; i < rowCount; i++)
+    cursor.push(1,0);
+    bool whitespace = true;
+    while(whitespace)
     {
-        for(int j = 0; j< colCount; i++)
+        whitespace = false;
+        for(int i = 0; i < rowCount; i++)
         {
-            //Checking the loop is on the same position as the cursor
-            if(cursorCoords[0] == i && cursorCoords[1] == j)
+            cursorX = cursor.displayX();
+            cursorY = cursor.displayY();
+            for(int j = 0; j< colCount; j++)
             {
-                //Check North
-                if(mazeArray[i-1][j] == ' ')
+
+                //Checking the loop is on the same position as the cursor
+                if(cursorX == i && cursorY == j)
                 {
-                    //If the space has a viable neighbor mark the current space as visited and push the
-                    //location of the neighbor to the top of the stack. It will be checked on the next loop
-                    mazeArray[i][j] = 'O';
-                    cursor.push(i-1,j);
-                }//Check South
-                else if(mazeArray[i+1][j] == ' ')
-                {
-                    mazeArray[i+1][j] = 'O';
-                    cursor.push(i+1,j);
-                }//Check East
-                else if(mazeArray[i][j+1] == ' ')
-                {
-                    mazeArray[i][j+1] = 'O';
-                    cursor.push(i,j+1);
-                }//Check West
-                else if(mazeArray[i][j-1] == ' ')
-                {
-                    mazeArray[i][j-1] = 'O';
-                    cursor.push(i,j-1);
+
+                    //Check North
+                    if(mazeArray[i-1][j] == ' ')
+                    {
+                        //If the space has a viable neighbor mark the current space as visited and push the
+                        //location of the neighbor to the top of the stack. It will be checked on the next loop
+                        mazeArray[i][j] = 'O';
+                        cursor.push(i-1,j);
+                        //Adding the stack values to this here array so we can actually look at them.
+                        cursorX = cursor.displayX();
+                        cursorY = cursor.displayY();
+                        whitespace = true;
+                    }//Check South
+                    else if(mazeArray[i+1][j] == ' ')
+                    {
+                        mazeArray[i][j] = 'O';
+                        cursor.push(i+1,j);
+                        cursorX = cursor.displayX();
+                        cursorY = cursor.displayY();
+                        whitespace = true;
+                    }//Check East
+                    else if(mazeArray[i][j+1] == ' ')
+                    {
+                        mazeArray[i][j] = 'O';
+                        cursor.push(i,j+1);
+                        cursorX = cursor.displayX();
+                        cursorY = cursor.displayY();
+                        whitespace = true;
+                    }//Check West
+                    else if(mazeArray[i][j-1] == ' ')
+                    {
+                        mazeArray[i][j] = 'O';
+                        cursor.push(i,j-1);
+                        cursorX = cursor.displayX();
+                        cursorY = cursor.displayY();
+                        whitespace = true;
+                    }
+                    else
+                    {
+                        continue;
+                    }
+
                 }
             }
-            //SO. If the current grid space is white space
-
-
         }
     }
+
     return mazeArray;
 }
 //Displays the maze in the console
@@ -215,9 +239,9 @@ void mazeSolver::displayMaze(char** mazeArray)
     {
         for(int j = 0; j < colCount; j++)
         {
-            if(mazeArray[i][j] == ' ')
+            if(mazeArray[i][j] == 'O')
             {
-                mazeArray[i][j] = 'O';
+                mazeArray[i][j] = '@';
                 cout << mazeArray[i][j];
             }
             else if(mazeArray[i][j] == 'X')
