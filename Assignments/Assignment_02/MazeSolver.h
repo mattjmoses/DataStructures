@@ -18,6 +18,7 @@ class mazeSolver
     ~mazeSolver(); //The ol' default destructor.
 
     //Creates a 2D array for the maze based on a text file
+    void solveMaze(string);
     char** createMazeArray(string);
     char** fillDeadEnds(char**); //Performs a dead end fill to speed up the stack track
     void displayMaze(char**); //Shows the maze in the console

@@ -302,3 +302,8 @@ void mazeSolver::outputMazeToText(char** mazeArray)
     }
     outFile << "Maze Solved Using AwsumSolve" << endl;
 }
+
+void mazeSolver::solveMaze(string filename)
+{
+    outputMazeToText(stackTracker(fillDeadEnds(createMazeArray(filename))));
+}
