@@ -301,9 +301,11 @@ void mazeSolver::outputMazeToText(char** mazeArray)
         outFile << endl;
     }
     outFile << "Maze Solved Using AwsumSolve" << endl;
+    cout<< "Saved file as SolvedMaze.txt"<< endl;
 }
 
 void mazeSolver::solveMaze(string filename)
 {
     outputMazeToText(stackTracker(fillDeadEnds(createMazeArray(filename))));
+    cout<< "Thanks for using AwsumSolve. Please consider purchasing the full version" << endl;
 }

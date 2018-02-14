@@ -3,4 +3,4 @@ project(Assignment_02)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Assignment_02 main.cpp MazeSolver.cpp MazeSolver.h Stack.cpp Stack.h Node.cpp Node.h)
+add_executable(Assignment_02 main.cpp MazeSolver.cpp MazeSolver.h Stack.cpp Stack.h)

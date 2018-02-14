@@ -7,7 +7,7 @@
 
 
 class Stack {
-
+    //Struct for
     struct Node
     {
         int coords[1];
