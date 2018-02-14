@@ -176,9 +176,14 @@ char** mazeSolver::stackTracker(char** mazeArray)
         {
             cursorX = cursor.displayX();
             cursorY = cursor.displayY();
+            //Pathfinding through the maze
             for(int j = 0; j< colCount; j++)
             {
-
+                if(cursorX == rowCount -2 && cursorY == colCount -2)
+                {
+                    whitespace = false;
+                    break;
+                }
                 //Checking the loop is on the same position as the cursor
                 if(cursorX == i && cursorY == j)
                 {
@@ -219,12 +224,20 @@ char** mazeSolver::stackTracker(char** mazeArray)
                         cursorY = cursor.displayY();
                         whitespace = true;
                     }
+                        //Checking for bottlenecks
                     else
                     {
-                        continue;
+                        //Delete the last point on the stack
+                        cursor.pop();
+                        mazeArray[i][j] = 'X';
+                        cursorX = cursor.displayX();
+                        cursorY = cursor.displayY();
+                        whitespace = true;
                     }
+                    //cout<< mazeArray[i][j];
 
                 }
+                //cout << endl;
             }
         }
     }
@@ -246,7 +259,7 @@ void mazeSolver::displayMaze(char** mazeArray)
             }
             else if(mazeArray[i][j] == 'X')
             {
-                mazeArray[i][j] = ' ';
+                mazeArray[i][j] = 'X';
                 cout << mazeArray[i][j];
             }
             else
