@@ -14,7 +14,7 @@ mazeSolver::mazeSolver()
 
 
 
-mazeSolver::~mazeSolver() = default;
+mazeSolver::~mazeSolver() {}
 
 
 char** mazeSolver::createMazeArray(string textFile)
