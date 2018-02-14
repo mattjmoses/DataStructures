@@ -191,8 +191,16 @@ char** mazeSolver::stackTracker(char** mazeArray)
                 if(cursorX == i && cursorY == j)
                 {
 
-                    //Check North
-                    if(mazeArray[i-1][j] == ' ')
+                    //Check East
+                    if(mazeArray[i][j+1] == ' ')
+                    {
+                        mazeArray[i][j] = 'O';
+                        cursor.push(i,j+1);
+                        cursorX = cursor.displayX();
+                        cursorY = cursor.displayY();
+                        whitespace = true;
+                    }//Check North
+                    else if(mazeArray[i-1][j] == ' ')
                     {
                         //If the space has a viable neighbor mark the current space as visited and push the
                         //location of the neighbor to the top of the stack. It will be checked on the next loop
@@ -207,14 +215,6 @@ char** mazeSolver::stackTracker(char** mazeArray)
                     {
                         mazeArray[i][j] = 'O';
                         cursor.push(i+1,j);
-                        cursorX = cursor.displayX();
-                        cursorY = cursor.displayY();
-                        whitespace = true;
-                    }//Check East
-                    else if(mazeArray[i][j+1] == ' ')
-                    {
-                        mazeArray[i][j] = 'O';
-                        cursor.push(i,j+1);
                         cursorX = cursor.displayX();
                         cursorY = cursor.displayY();
                         whitespace = true;

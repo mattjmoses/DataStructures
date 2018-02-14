@@ -18,7 +18,7 @@ int main()
     mazeSolver newMaze = mazeSolver();
 
 
-    newMaze.outputMazeToText(newMaze.stackTracker(newMaze.fillDeadEnds(newMaze.createMazeArray("maze2.txt"))));
+    newMaze.outputMazeToText(newMaze.stackTracker(newMaze.fillDeadEnds(newMaze.createMazeArray("maze4.txt"))));
 
 
 
