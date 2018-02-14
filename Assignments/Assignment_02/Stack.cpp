@@ -6,11 +6,11 @@
 #include "iostream"
 using namespace std;
 //Referencing code from http://www.cppforschool.com
-//The ol constuctor
 
 
 
 
+//The ol stack destructor
 Stack::~Stack()
 {
     //Looping through and removing all the stack elements from memory
@@ -48,7 +48,7 @@ void Stack::pop()
         cout<<"Stack empty";
 
 }
-//Display top element of the stack
+//Displays the x value of the stack node
 int Stack::displayX()
 {
 
@@ -58,10 +58,6 @@ int Stack::displayX()
     if(temp!= nullptr)
     {
 
-
-        //cout << "X coordinate: " << temp->coords[0] << " Y coordinate: " << temp->coords[1] << endl;
-        //temp = temp->nodePtr;
-
         return temp->coords[0];
     }
     else
@@ -70,7 +66,7 @@ int Stack::displayX()
     }
 
 }
-//Display top element of the stack
+//Displays the Y value of the stack
 int Stack::displayY()
 {
 
@@ -79,10 +75,6 @@ int Stack::displayY()
 
     if(temp!= nullptr)
     {
-
-
-        //cout << "X coordinate: " << temp->coords[0] << " Y coordinate: " << temp->coords[1] << endl;
-        //temp = temp->nodePtr;
 
         return temp->coords[1];
     }

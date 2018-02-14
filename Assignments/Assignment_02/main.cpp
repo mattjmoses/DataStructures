@@ -35,7 +35,7 @@ int main()
     mazeSolver newMaze = mazeSolver();
 
 
-    newMaze.displayMaze(newMaze.stackTracker(newMaze.fillDeadEnds(newMaze.createMazeArray("maze4.txt"))));
+    newMaze.displayMaze(newMaze.stackTracker(newMaze.fillDeadEnds(newMaze.createMazeArray("mazex.txt"))));
 
 
 

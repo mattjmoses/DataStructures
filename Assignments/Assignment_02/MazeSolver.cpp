@@ -4,7 +4,7 @@
 
 #include "MazeSolver.h"
 
-//Setting up the default rowcounts and the like.
+//I figured this one out on my own. Read a wikipedia article on dead end fill though
 mazeSolver::mazeSolver()
 {
 
@@ -89,6 +89,7 @@ char** mazeSolver::createMazeArray(string textFile)
     //returns the newly made maze
     return mazeArray;
 }
+
 //Performs a dead end fill on the maze
 char** mazeSolver::fillDeadEnds(char** mazeArray)
 {
@@ -179,8 +180,10 @@ char** mazeSolver::stackTracker(char** mazeArray)
             //Pathfinding through the maze
             for(int j = 0; j< colCount; j++)
             {
+                //If the maze gets to the end mark the end point as visited and break the while loop.
                 if(cursorX == rowCount -2 && cursorY == colCount -2)
                 {
+                    mazeArray[i][j] = 'O';
                     whitespace = false;
                     break;
                 }
@@ -227,17 +230,19 @@ char** mazeSolver::stackTracker(char** mazeArray)
                         //Checking for bottlenecks
                     else
                     {
-                        //Delete the last point on the stack
+                        //If the point in the array has no viable neighbors mark the current position as X
+                        //then pop the top entry from the stack. This will effectively backtrack until
+                        //the loop hits a point with a viable neighbor
                         cursor.pop();
                         mazeArray[i][j] = 'X';
                         cursorX = cursor.displayX();
                         cursorY = cursor.displayY();
                         whitespace = true;
                     }
-                    //cout<< mazeArray[i][j];
+
 
                 }
-                //cout << endl;
+
             }
         }
     }
