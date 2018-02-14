@@ -10,24 +10,7 @@ using namespace std;
 int main()
 {
 
-    //Stack working.
-//    Stack *myFirstStack = new Stack();
-    Stack ho;
-//
-   int x;
-    int y;
-
-
-    ho.push(100,27);
-    ho.pop();
-    ho.push(5,2);
-
-    x = ho.displayX();
-    y = ho.displayY();
-    //ho.display();
-
-    cout << x << endl;
-    cout << y << endl;
+    cout<< "Please enter a filename" << endl;
 
 
 
@@ -35,7 +18,7 @@ int main()
     mazeSolver newMaze = mazeSolver();
 
 
-    newMaze.displayMaze(newMaze.stackTracker(newMaze.fillDeadEnds(newMaze.createMazeArray("mazex.txt"))));
+    newMaze.outputMazeToText(newMaze.stackTracker(newMaze.fillDeadEnds(newMaze.createMazeArray("maze2.txt"))));
 
 
 

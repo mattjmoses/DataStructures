@@ -278,5 +278,27 @@ void mazeSolver::displayMaze(char** mazeArray)
 //Saves the maze to a text file
 void mazeSolver::outputMazeToText(char** mazeArray)
 {
-
+    ofstream outFile("SolvedMaze.txt");
+    for(int i = 0; i < rowCount; i++)
+    {
+        for(int w = 0; w < colCount; w++)
+        {
+            if(mazeArray[i][w] == 'X')
+            {
+                mazeArray[i][w] = ' ';
+                outFile << mazeArray[i][w];
+            }
+            else if(mazeArray[i][w] == 'O')
+            {
+                mazeArray[i][w] = '@';
+                outFile << mazeArray[i][w];
+            }
+            else
+            {
+                outFile << mazeArray[i][w];
+            }
+        }
+        outFile << endl;
+    }
+    outFile << "Maze Solved Using AwsumSolve" << endl;
 }
