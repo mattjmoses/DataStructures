@@ -108,10 +108,54 @@ void Sorting::ShellSort(int *array, int size)
 }
 
 //The venerable Merge Sort
-void Sorting::MergeSort(int *array, int* tempArray, int size)
+void Sorting::MergeSort(int *array, int* tempArray, int last, int first)
 {
 
+
 }
+
+void Sorting::DoMerge(int *array, int *tempArray, int first, int last, int pivot)
+{
+    //Declaring our variables which will be used in this here merger
+    int h,i,j,k;
+    h=first;
+    i=first;
+    j=pivot+1;
+
+    while((h <= pivot)&&(j <= last))
+    {
+        if(array[h] <= array[j])
+        {
+            tempArray[i] = array[h];
+            h++;
+        }
+        else
+        {
+            tempArray[i] = array[j];
+            j++;
+        }
+        i++;
+    }
+    if(h > pivot)
+    {
+        for(k = j; k<=last; k++)
+        {
+            tempArray[i] = array[k];
+            i++;
+        }
+    }
+    else
+    {
+        for(k=h; k <= pivot; k++)
+        {
+            tempArray[i] = array[k];
+            i++;
+        }
+    }
+    for(k = first; k <= last; k++) array[k] = tempArray[k];
+}
+
+
 
 
 
