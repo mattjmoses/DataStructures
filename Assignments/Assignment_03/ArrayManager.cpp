@@ -15,11 +15,17 @@ int* ArrayManager::createRandomArray(int size) {
     int arrSize = size;
     int *myArray = new int[arrSize];
     int fillArray = -1;
-
+    int upperLimit = 32767;
 
     //This counts up from zero and populates our array
     for(int i = 0; i < arrSize; i++)
     {
+        //Making sure the count is below the given threshold
+        if(fillArray > upperLimit)
+        {
+            //IF it's above the threshold then reset the counter
+            fillArray = -1;
+        }
         fillArray ++;
         myArray[i] = fillArray;
     }

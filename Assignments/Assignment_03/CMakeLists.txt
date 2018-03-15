@@ -3,4 +3,4 @@ project(Assignment_03)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Assignment_03 main.cpp ArrayManager.cpp ArrayManager.h)
+add_executable(Assignment_03 main.cpp ArrayManager.cpp ArrayManager.h Sorting.cpp Sorting.h)

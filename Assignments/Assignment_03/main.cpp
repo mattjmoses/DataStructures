@@ -8,6 +8,7 @@ int main()
     //Here we create our array
     //going to need to take it from a command line argument, but for now she's okay.
     int arrSize =1000;
+    int upperLimit = 32767;
     int a[arrSize];
     int fillArray = -1;
 
@@ -15,9 +16,10 @@ int main()
     for(int i = 0; i < arrSize; i++)
     {
         //Checking reset the count if it's above the given threshold
-        if(fillArray > 32767)
+        if(fillArray > upperLimit)
         {
-            fillArray = 0;
+            //IF so, then reset the counter
+            fillArray = -1;
         }
         fillArray ++;
         a[i] = fillArray;
