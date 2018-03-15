@@ -110,11 +110,23 @@ void Sorting::ShellSort(int *array, int size)
 //The venerable Merge Sort
 void Sorting::MergeSort(int *array, int* tempArray, int last, int first)
 {
+    int pivot;
+    if(first<last)
+    {
+        pivot=(first+last)/2;
+        MergeSort(array,tempArray,first,pivot);
+        MergeSort(array,tempArray,pivot+1,last);
+        DoMerge(array,tempArray,first,pivot,last);
+    }
 
-
+    cout<<"Merge sort!"<< endl;
+    for (int b = 0; b < last; b++)
+    {
+        cout << array[b] << ",";
+    }
 }
 
-void Sorting::DoMerge(int *array, int *tempArray, int first, int last, int pivot)
+void Sorting::DoMerge(int *array, int *tempArray, int first, int pivot,int last)
 {
     //Declaring our variables which will be used in this here merger
     int h,i,j,k;
