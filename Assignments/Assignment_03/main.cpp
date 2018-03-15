@@ -9,13 +9,13 @@ int main()
     Sorting sorter;
 
     //Creating the shuffled array
-    int  *shuffledArray = arrayManager.createRandomArray(50);
+    int  *shuffledArray = arrayManager.createRandomArray(1000);
 
-    sorter.BubbleSort(shuffledArray,50);
+    sorter.BubbleSort(shuffledArray,1000);
     cout<<endl;
     //Minor issue, the sort, sorts the whole goddamn array globally
     cout<<endl;
-    for(int i = 0; i< 50; i++)
+    for(int i = 0; i< 1000; i++)
     {
         cout<< shuffledArray[i]<<",";
     }

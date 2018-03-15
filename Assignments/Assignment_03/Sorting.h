@@ -14,12 +14,12 @@ class Sorting
 
     //Our sorting methods
     void BubbleSort(int*, int);
-    void SelectionSort(int*);
-    void InsertionSort(int*);
-    void ShellSort(int*);
-    void MergeSort(int*);
-    void QuickSort(int*);
-    void ExternalMergeSort(int*);
+    void SelectionSort(int*, int);
+    void InsertionSort(int*, int);
+    void ShellSort(int*, int);
+    void MergeSort(int*, int);
+    void QuickSort(int*, int);
+    void ExternalMergeSort(int*, int);
 };
 
 
