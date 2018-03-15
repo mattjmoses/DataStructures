@@ -54,6 +54,28 @@ void Sorting::SelectionSort(int *array, int size)
         cout << array[i] << ",";
     }
 }
+//The ol Insertion Sort
+void Sorting::InsertionSort(int *array, int size)
+{
+    int i, j ,tmp;
+    for (i = 1; i < size; i++)
+    {
+        j = i;
+        while (j > 0 && array[j - 1] > array[j])
+        {
+            tmp = array[j];
+            array[j] = array[j - 1];
+            array[j - 1] = tmp;
+            j--;
+        } //end of while loop
+    } //end of for loop
+
+    cout<<"Insertion sort!"<< endl;
+    for (int b = 0; b < size; b++)
+    {
+        cout << array[b] << ",";
+    }
+}
 
 
 
