@@ -17,8 +17,8 @@ class Sorting
     void SelectionSort(int*, int);
     void InsertionSort(int*, int);
     void ShellSort(int*, int);
-    void MergeSort(int*,int*, int, int);
-    void DoMerge(int*,int*,int,int,int);
+    void Merge(int*,int*,int,int,int);
+    void MergeSort(int *, int*, int, int);
     void QuickSort(int*, int);
     void ExternalMergeSort(int*, int);
 };

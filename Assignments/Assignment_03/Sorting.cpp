@@ -107,64 +107,56 @@ void Sorting::ShellSort(int *array, int size)
     }
 }
 
-//The venerable Merge Sort
-void Sorting::MergeSort(int *array, int* tempArray, int last, int first)
+void Sorting::Merge(int *a, int *b, int low, int pivot, int high)
 {
-    int pivot;
-    if(first<last)
-    {
-        pivot=(first+last)/2;
-        MergeSort(array,tempArray,first,pivot);
-        MergeSort(array,tempArray,pivot+1,last);
-        DoMerge(array,tempArray,first,pivot,last);
-    }
-
-    cout<<"Merge sort!"<< endl;
-    for (int b = 0; b < last; b++)
-    {
-        cout << array[b] << ",";
-    }
-}
-
-void Sorting::DoMerge(int *array, int *tempArray, int first, int pivot,int last)
-{
-    //Declaring our variables which will be used in this here merger
     int h,i,j,k;
-    h=first;
-    i=first;
+    h=low;
+    i=low;
     j=pivot+1;
 
-    while((h <= pivot)&&(j <= last))
+    while((h<=pivot)&&(j<=high))
     {
-        if(array[h] <= array[j])
+        if(a[h]<=a[j])
         {
-            tempArray[i] = array[h];
+            b[i]=a[h];
             h++;
         }
         else
         {
-            tempArray[i] = array[j];
+            b[i]=a[j];
             j++;
         }
         i++;
     }
-    if(h > pivot)
+    if(h>pivot)
     {
-        for(k = j; k<=last; k++)
+        for(k=j; k<=high; k++)
         {
-            tempArray[i] = array[k];
+            b[i]=a[k];
             i++;
         }
     }
     else
     {
-        for(k=h; k <= pivot; k++)
+        for(k=h; k<=pivot; k++)
         {
-            tempArray[i] = array[k];
+            b[i]=a[k];
             i++;
         }
     }
-    for(k = first; k <= last; k++) array[k] = tempArray[k];
+    for(k=low; k<=high; k++) a[k]=b[k];
+}
+
+void Sorting::MergeSort(int *a, int*b, int low, int high)
+{
+    int pivot;
+    if(low<high)
+    {
+        pivot=(low+high)/2;
+        MergeSort(a,b,low,pivot);
+        MergeSort(a,b,pivot+1,high);
+        Merge(a,b,low,pivot,high);
+    }
 }
 
 
