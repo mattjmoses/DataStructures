@@ -9,10 +9,11 @@ int main()
     Sorting sorter;
 
     //Creating the shuffled array
-    int  *shuffledArray = arrayManager.createRandomArray(1000);
+    int  *shuffledArray = arrayManager.createRandomArray(10);
 
     //sorter.BubbleSort(shuffledArray,1000);
-    sorter.SelectionSort(shuffledArray,1000);
+    //sorter.SelectionSort(shuffledArray,1000);
+    sorter.InsertionSort(shuffledArray,10);
     cout<<endl;
 
 
