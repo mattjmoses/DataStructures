@@ -12,7 +12,13 @@ int main()
     int  *shuffledArray = arrayManager.createRandomArray(50);
 
     sorter.BubbleSort(shuffledArray,50);
-
+    cout<<endl;
+    //Minor issue, the sort, sorts the whole goddamn array globally
+    cout<<endl;
+    for(int i = 0; i< 50; i++)
+    {
+        cout<< shuffledArray[i]<<",";
+    }
 
     return 0;
 }
