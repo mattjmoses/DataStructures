@@ -13,7 +13,7 @@ class Sorting
     ~Sorting();//The ol' default destructor
 
     //Our sorting methods
-    void BubbleSort(int*);
+    void BubbleSort(int*, int);
     void SelectionSort(int*);
     void InsertionSort(int*);
     void ShellSort(int*);

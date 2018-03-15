@@ -29,14 +29,17 @@ int* ArrayManager::createRandomArray(int size) {
         fillArray ++;
         myArray[i] = fillArray;
     }
-    //This just prints out the unshuffled array
+
+    cout << endl;
+    //Performs the shuffle on the array
+    shuffle(&myArray[0],&myArray[arrSize],mt19937(random_device()()));
+
+    //Showing the shuffled array
     for (int i = 0; i < arrSize; i++)
     {
         cout << myArray[i]<<",";
     }
     cout << endl;
-    //Performs the shuffle on the array
-    shuffle(&myArray[0],&myArray[arrSize],mt19937(random_device()()));
 
 
 
