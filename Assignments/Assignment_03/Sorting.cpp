@@ -144,7 +144,12 @@ void Sorting::Merge(int *a, int *b, int low, int pivot, int high)
             i++;
         }
     }
-    for(k=low; k<=high; k++) a[k]=b[k];
+    for(k=low; k<=high; k++)
+    {
+        a[k]=b[k];
+    }
+
+
 }
 
 void Sorting::MergeSort(int *a, int*b, int low, int high)
@@ -157,6 +162,11 @@ void Sorting::MergeSort(int *a, int*b, int low, int high)
         MergeSort(a,b,pivot+1,high);
         Merge(a,b,low,pivot,high);
     }
+
+    cout<<endl;
+    for(int w=0; w<high; w++)
+        cout<<a[w]<<",";
+    cout<<endl;
 }
 
 
