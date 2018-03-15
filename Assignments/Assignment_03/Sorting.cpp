@@ -107,5 +107,11 @@ void Sorting::ShellSort(int *array, int size)
     }
 }
 
+//The venerable Merge Sort
+void Sorting::MergeSort(int *array, int* tempArray, int size)
+{
+
+}
+
 
 

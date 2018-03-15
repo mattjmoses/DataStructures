@@ -14,7 +14,7 @@ int main()
     //sorter.BubbleSort(shuffledArray,1000);
     //sorter.SelectionSort(shuffledArray,1000);
     //sorter.InsertionSort(shuffledArray,10);
-    sorter.ShellSort(shuffledArray,1000);
+    //sorter.ShellSort(shuffledArray,1000);
     cout<<endl;
 
 
