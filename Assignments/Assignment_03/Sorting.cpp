@@ -35,11 +35,9 @@ void Sorting::BubbleSort(int* array,int size)
 void Sorting::SelectionSort(int *array, int size)
 {
     int outer, inner, min;
-    for (outer = 0; outer < size - 1; outer++)
-    { // outer counts down
+    for (outer = 0; outer < size - 1; outer++) { // outer counts down
         min = outer;
-        for (inner = outer + 1; inner <size; inner++)
-        {
+        for (inner = outer + 1; inner < size; inner++) {
             if (array[inner] < array[min]) {
                 min = inner;
             }
@@ -48,33 +46,14 @@ void Sorting::SelectionSort(int *array, int size)
         int temp = array[outer];
         array[outer] = array[min];
         array[min] = temp;
-}
-//The ol' Insertion Sort -Takes in an integer array
-void Sorting::InsertionSort(int *array, int size)
-{
 
-}
-//The ol' Shell Sort -Takes in an integer array
-void Sorting::ShellSort(int *array, int size)
-{
-
-}
-//The ol' Merge Sort -Takes in an integer array
-void Sorting::MergeSort(int *array, int size)
-{
-
-}
-//The ol' Quick Sort -Takes in an integer array
-void Sorting::QuickSort(int *array, int sizr)
-{
-
-}
-//The venerable External Merge Sort -Takes in an integer array
-void Sorting::ExternalMergeSort(int *array, int size)
-{
-
+    }
+    cout<<"Selection sort!"<< endl;
+    for (int i = 0; i < size; i++)
+    {
+        cout << array[i] << ",";
+    }
 }
 
-}
 
 
