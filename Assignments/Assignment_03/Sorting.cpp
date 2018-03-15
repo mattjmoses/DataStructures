@@ -77,5 +77,35 @@ void Sorting::InsertionSort(int *array, int size)
     }
 }
 
+//The ol' Shell Sort
+void Sorting::ShellSort(int *array, int size)
+{
+    int i, j, temp, increment;
+    for(increment = size/2; increment > 0; increment /= 2)
+    {
+        for(i = increment; i<size; i++)
+        {
+            temp = array[i];
+            for(j = i; j >= increment; j-=increment)
+            {
+                if(temp < array[j-increment])
+                {
+                    array[j] = array[j-increment];
+                }
+                else
+                {
+                    break;
+                }
+            }
+            array[j] = temp;
+        }
+    }
+    cout<<"Shell sort!"<< endl;
+    for (int b = 0; b < size; b++)
+    {
+        cout << array[b] << ",";
+    }
+}
+
 
 
