@@ -163,10 +163,48 @@ void Sorting::MergeSort(int *a, int*b, int low, int high)
         Merge(a,b,low,pivot,high);
     }
 
-    cout<<endl;
-    for(int w=0; w<high; w++)
-        cout<<a[w]<<",";
-    cout<<endl;
+}
+
+//Utility function for the quicksort
+int Sorting::Partition(int *arr, int low, int high)
+{
+    int pivot = arr[high];    // pivot
+    int i = (low - 1);  // Index of smaller element
+
+    for (int j = low; j <= high- 1; j++)
+    {
+        // If current element is smaller than or
+        // equal to pivot
+        if (arr[j] <= pivot)
+        {
+            i++;    // increment index of smaller element
+            Swap(&arr[i], &arr[j]);
+        }
+    }
+    Swap(&arr[i + 1], &arr[high]);
+    return (i + 1);
+}
+//Utility function for the quick sort
+void Sorting::Swap(int *a, int *b)
+{
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+//The ol' Quick Sort
+void Sorting::QuickSort(int *arr, int low, int high)
+{
+    if (low < high)
+    {
+        /* pi is partitioning index, arr[p] is now
+           at right place */
+        int pi = Partition(arr, low, high);
+
+        // Separately sort elements before
+        // partition and after partition
+        QuickSort(arr, low, pi - 1);
+        QuickSort(arr, pi + 1, high);
+    }
 }
 
 

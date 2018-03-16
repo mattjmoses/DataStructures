@@ -12,30 +12,35 @@ int main()
     Sorting sorter;
 
     //Creating the shuffled array
-    int  *shuffledArray = arrayManager.createRandomArray(1000);
+    int  *shuffledArray = arrayManager.createRandomArray(100000);
 
-    int arrayCopy[1000];
+    int arrayCopy[100000];
 
-    for(int i = 0; i< 1000; i++)
+    for(int i = 0; i< 100000; i++)
     {
         arrayCopy[i] = shuffledArray[i];
     }
 
-    //sorter.BubbleSort(shuffledArray,1000);
-    //sorter.SelectionSort(shuffledArray,1000);
+    //sorter.BubbleSort(arrayCopy,100000);
+    //sorter.SelectionSort(arrayCopy,100000);
     //sorter.InsertionSort(shuffledArray,10);
     //sorter.ShellSort(shuffledArray,1000);
+    sorter.QuickSort(arrayCopy,0,100000);
 
-    //arrayCopy= {-100,10,43,23,-78,45,123,56,98,41,90,24,8,7,7,7,7,3};
-    int num;
+    int pivot;
 
-    num = sizeof(arrayCopy)/sizeof(int);
+    pivot = sizeof(arrayCopy)/sizeof(int);
 
-    int tempArray[num];
+    int tempArray[pivot];
 
-    sorter.MergeSort(arrayCopy,tempArray,0,num-1);
+//    sorter.MergeSort(arrayCopy,tempArray,0,pivot-1);
 
+    cout<<endl;
+    for (int w : arrayCopy) {
+        cout<< w <<",";
+    }
 
+    cout<<endl;
 
 
 

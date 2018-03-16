@@ -17,9 +17,11 @@ class Sorting
     void SelectionSort(int*, int);
     void InsertionSort(int*, int);
     void ShellSort(int*, int);
-    void Merge(int*,int*,int,int,int);
+    void Merge(int*,int*,int,int,int); //The merge function used in the merge sort
     void MergeSort(int *, int*, int, int);
-    void QuickSort(int*, int);
+    int Partition(int*,int,int); //Partition for the quicksort
+    void Swap(int*, int*); //Swapping function to swap arrays around. <-get back to that
+    void QuickSort(int*, int, int);
     void ExternalMergeSort(int*, int);
 };
 

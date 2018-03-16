@@ -21,7 +21,7 @@ int* ArrayManager::createRandomArray(int size) {
     for(int i = 0; i < arrSize; i++)
     {
         //Making sure the count is below the given threshold
-        if(fillArray > upperLimit)
+        if(fillArray == upperLimit)
         {
             //IF it's above the threshold then reset the counter
             fillArray = -1;
