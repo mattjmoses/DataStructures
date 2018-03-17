@@ -3,3 +3,5 @@
 //
 
 #include "ExternalMergeSort.h"
+
+ExternalMergeSort::ExternalMergeSort() = default;
