@@ -19,7 +19,7 @@ void ExternalMergeSort::Error(const string &MsgA, const string &MsgB)
 {
 
 }
-
+//Pulling in files and sorting them around
 int ExternalMergeSort::PerformSortedRuns(fstream &dataFile, char *fileName)
 {
     //All our file business
@@ -48,6 +48,25 @@ int ExternalMergeSort::PerformSortedRuns(fstream &dataFile, char *fileName)
         numWords = FillBuffer(dataFile, buffer, moreData, word);
         //And hit the quicksort
         QuickSort(buffer,0,numWords -1);
+
+        //Next we build a temp file for the sorted data
+        strcpy(outFileName, "sortTemp.");
+        //Dear jesus christ
+        sprintf(extension,"%d",numFiles);
+        //And then send it along...
+        strcat(outFileName, extension);
+
+        //And then write it out
+        outFile.open(outFileName,ios::out);
+        if(outFile.fail())
+        {
+            Error("File not found", outFileName);
+        }
+        //And here we add all the text to the file.
+        for(k = 0; k< numWords; k++)
+        {
+            outFile << buffer[k] << endl;
+        }
 
     }
     return 0;
