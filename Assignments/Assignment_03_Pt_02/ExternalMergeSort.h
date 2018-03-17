@@ -1,6 +1,4 @@
-//
-// Created by matt on 16/03/18.
-//
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -25,31 +23,31 @@ class ExternalMergeSort
     //Setting the path type *cough* And we ran into our first Windows exclusive bug! Hoot hoot
     typedef char PathType[FILENAME_MAX];
 
-    public:
-        ExternalMergeSort(); //The ol' default constructor
-        ~ExternalMergeSort(); //Our dear friend the default destructor
+public:
+    ExternalMergeSort(); //The ol' default constructor
+    ~ExternalMergeSort(); //Our dear friend the default destructor
 
-        //Setting up some error handling methods
-        void Error(const string & Msg );
-        void Error(const string & MsgA, const string & MsgB);
-        //Sorting method
-        int PerformSortedRuns(fstream & dataFile, PathType fileName);
-        //Calculating string values
-        bool CalculateLessThan(StringType first, StringType second);
-        //What's quicksort doing here?! It's here now. So deal with it!
-        void QuickSort(Buftype buf, int lower, int upper);
-        //Swap helper method for the quicksort
-        void Swap(StringType first, StringType second);
-        //Partition which ALSO is in the service of the quicksort *cough*
-        int Partition(Buftype buf, int lower, int upper);
-        //AND WE MERGE!
-        void Merge(StringType inFileOne, StringType inFileToo, StringType ootFile);
-        //And our fill buffer. Filling in the buffers.
-        int FillBuffer(fstream & inFile, Buftype buff, bool & hasData, StringType nextWord);
-        //Our copy method. Sending data from one file to another and so on.
-        void Copy(StringType word, Buftype buff, int & index, fstream outFile);
-        //Handling the merging of the merges
-        void HandleMerges(int numFiles, PathType filenName);
+    //Setting up some error handling methods
+    void Error(const string & Msg );
+    void Error(const string & MsgA, const string & MsgB);
+    //Sorting method
+    int PerformSortedRuns(fstream & dataFile, PathType fileName);
+    //Calculating string values
+    bool CalculateLessThan(StringType first, StringType second);
+    //What's quicksort doing here?! It's here now. So deal with it!
+    void QuickSort(Buftype buf, int lower, int upper);
+    //Swap helper method for the quicksort
+    void Swap(StringType first, StringType second);
+    //Partition which ALSO is in the service of the quicksort *cough*
+    int Partition(Buftype buf, int lower, int upper);
+    //AND WE MERGE!
+    void Merge(StringType inFileOne, StringType inFileToo, StringType ootFile);
+    //And our fill buffer. Filling in the buffers.
+    int FillBuffer(fstream & inFile, Buftype buff, bool & hasData, StringType nextWord);
+    //Our copy method. Sending data from one file to another and so on.
+    void Copy(StringType word, Buftype buff, int & index, fstream outFile);
+    //Handling the merging of the merges
+    void HandleMerges(int numFiles, PathType filenName);
 };
 
 
