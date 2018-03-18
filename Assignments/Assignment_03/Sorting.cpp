@@ -29,10 +29,7 @@ void Sorting::BubbleSort(int* array,int size)
             }
         }
     }
-    for(int i = 0; i < size; i++)
-    {
-        cout <<array[i]<<",";
-    }
+
 }
 //The ol' Selection Sort -Takes in an integer array
 void Sorting::SelectionSort(int *array, int size)
@@ -51,11 +48,7 @@ void Sorting::SelectionSort(int *array, int size)
         array[min] = temp;
 
     }
-    cout<<"Selection sort!"<< endl;
-    for (int i = 0; i < size; i++)
-    {
-        cout << array[i] << ",";
-    }
+
 }
 //The ol Insertion Sort
 void Sorting::InsertionSort(int *array, int size)
@@ -73,11 +66,7 @@ void Sorting::InsertionSort(int *array, int size)
         } //end of while loop
     } //end of for loop
 
-    cout<<"Insertion sort!"<< endl;
-    for (int b = 0; b < size; b++)
-    {
-        cout << array[b] << ",";
-    }
+
 }
 
 //The ol' Shell Sort
@@ -103,11 +92,7 @@ void Sorting::ShellSort(int *array, int size)
             array[j] = temp;
         }
     }
-    cout<<"Shell sort!"<< endl;
-    for (int b = 0; b < size; b++)
-    {
-        cout << array[b] << ",";
-    }
+
 }
 
 void Sorting::Merge(int *array, int *tempArray, int low, int pivot, int high)
