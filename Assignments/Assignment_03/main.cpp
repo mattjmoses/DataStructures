@@ -59,19 +59,27 @@ int main(int argc,char* argv[])
             clock_t end = clock();
             double timeSec = (end - begin) / static_cast<double>( CLOCKS_PER_SEC );
             //--Output result of the bubbleCopy to file here
-            bub<< "Sorting: "<< arraySiz << " items" << endl;
-            bub<<"==================================================================="<<endl;
-            for(int i = 0; i< arraySiz; i++)
+            if(!bub.is_open())
             {
-                if(i % 100 == 0)
-                {
-                    bub << endl;
-                }
-                bub << bubbleCopy[i]<<",";
+                cout << "error opening file" << endl;
             }
-            bub << endl;
-            bub << "================================================================="<< endl;
-            bub.close();
+            else
+            {
+                bub<< "Sorting: "<< arraySiz << " items" << endl;
+                bub<<"==================================================================="<<endl;
+                for(int i = 0; i< arraySiz; i++)
+                {
+                    if(i % 100 == 0)
+                    {
+                        bub << endl;
+                    }
+                    bub << bubbleCopy[i]<<",";
+                }
+                bub << endl;
+                bub << "================================================================="<< endl;
+                bub.close();
+            }
+
 
         }
         //Selection Sort business ==========================================
