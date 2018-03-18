@@ -22,6 +22,7 @@ int main(int argc,char* argv[])
 
         //And now we do all the stuff.
         int  *shuffledArray = arrayManager.createRandomArray(arraySiz);
+
         //Bubble sort business============================================
         int bubbleCopy[arraySiz];
         for(int i = 0; i< arraySiz; i++)
@@ -106,6 +107,57 @@ int main(int argc,char* argv[])
             double timeSec = (end - begin) / static_cast<double>( CLOCKS_PER_SEC );
             //--Output result of the bubbleCopy to file here
         }
+        //Merge Sort business ==========================================
+        int mergeCopy[arraySiz];
+        for(int i = 0; i< arraySiz; i++)
+        {
+            mergeCopy[i] = shuffledArray[i];
+        }
+        if(arraySiz <= startValue)
+        {
+            //Do a sort without timing for verification
+
+            int pivot;
+
+            pivot = sizeof(mergeCopy)/sizeof(int);
+            int tempArray[pivot];
+            sorter.MergeSort(mergeCopy,tempArray,0,pivot-1);
+            ofstream mergeFile("mergesort.txt");
+
+        }
+        else
+        {
+            //Merge sort with timing
+            int pivot;
+            int tempArray[pivot];
+            clock_t begin = clock();
+            pivot = sizeof(mergeCopy)/sizeof(int);
+            sorter.MergeSort(mergeCopy,tempArray,0,pivot-1);
+            clock_t end = clock();
+            double timeSec = (end - begin) / static_cast<double>( CLOCKS_PER_SEC );
+            //--Output result of the bubbleCopy to file here
+        }
+        //Quick Sort business ==========================================
+        int quickCopy[arraySiz];
+        for(int i = 0; i< arraySiz; i++)
+        {
+            quickCopy[i] = shuffledArray[i];
+        }
+        if(arraySiz <= startValue)
+        {
+            //Do a sort without timing for verification
+            sorter.SelectionSort(quickCopy,arraySiz);
+            ofstream shellFile("shellSort.txt");
+        }
+        else
+        {
+            //Quick sort with timing
+            clock_t begin = clock();
+            sorter.QuickSort(quickCopy,0,arraySiz);
+            clock_t end = clock();
+            double timeSec = (end - begin) / static_cast<double>( CLOCKS_PER_SEC );
+            //--Output result of the bubbleCopy to file here
+        }
 
     }
     catch (exception e)
@@ -136,14 +188,10 @@ int main(int argc,char* argv[])
 //    //sorter.ShellSort(shuffledArray,1000);
 //    //sorter.QuickSort(arrayCopy,0,100000);
 //
-//    int pivot;
-//
-//    pivot = sizeof(arrayCopy)/sizeof(int);
-//
-//    int tempArray[pivot];
-//
-////    sorter.MergeSort(arrayCopy,tempArray,0,pivot-1);
-//
+
+
+
+
 //    cout<<endl;
 //    for (int w : arrayCopy) {
 //        cout<< w <<",";
