@@ -68,7 +68,7 @@ int main(int argc,char* argv[])
                 bub<< "Sorting: "<< arraySiz << " items" << endl;
                 bub<< "Start time: " << begin << " miliseconds" << endl;
                 bub<< "End time: " << end << " miliseconds" << endl;
-                bub<< "Total time:" << timeSec <<" seconds" << endl;
+                bub<< "Total time: " << timeSec <<" seconds" << endl;
                 bub<<"==================================================================="<<endl;
                 for(int i = 0; i< arraySiz; i++)
                 {
@@ -128,7 +128,7 @@ int main(int argc,char* argv[])
                 sel<< "Sorting: "<< arraySiz << " items" << endl;
                 sel<< "Start time: " << begin << " miliseconds" << endl;
                 sel<< "End time: " << end << " miliseconds" << endl;
-                sel<< "Total time:" << timeSec <<" seconds" << endl;
+                sel<< "Total time: " << timeSec <<" seconds" << endl;
                 sel<<"==================================================================="<<endl;
                 for(int i = 0; i< arraySiz; i++)
                 {
@@ -186,7 +186,7 @@ int main(int argc,char* argv[])
                 ins<< "Sorting: "<< arraySiz << " items" << endl;
                 ins<< "Start time: " << begin << " miliseconds" << endl;
                 ins<< "End time: " << end << " miliseconds" << endl;
-                ins<< "Total time:" << timeSec <<" seconds" << endl;
+                ins<< "Total time: " << timeSec <<" seconds" << endl;
                 ins<<"==================================================================="<<endl;
                 for(int i = 0; i< arraySiz; i++)
                 {
@@ -244,7 +244,7 @@ int main(int argc,char* argv[])
                 shl<< "Sorting: "<< arraySiz << " items" << endl;
                 shl<< "Start time: " << begin << " miliseconds" << endl;
                 shl<< "End time: " << end << " miliseconds" << endl;
-                shl<< "Total time:" << timeSec <<" seconds" << endl;
+                shl<< "Total time: " << timeSec <<" seconds" << endl;
                 shl<<"==================================================================="<<endl;
                 for(int i = 0; i< arraySiz; i++)
                 {
@@ -311,7 +311,7 @@ int main(int argc,char* argv[])
                 mrg<< "Sorting: "<< arraySiz << " items" << endl;
                 mrg<< "Start time: " << begin << " miliseconds" << endl;
                 mrg<< "End time: " << end << " miliseconds" << endl;
-                mrg<< "Total time:" << timeSec <<" seconds" << endl;
+                mrg<< "Total time: " << timeSec <<" seconds" << endl;
                 mrg<<"==================================================================="<<endl;
                 for(int i = 0; i< arraySiz; i++)
                 {
@@ -369,7 +369,7 @@ int main(int argc,char* argv[])
                 qwk<< "Sorting: "<< arraySiz << " items" << endl;
                 qwk<< "Start time: " << begin << " miliseconds" << endl;
                 qwk<< "End time: " << end << " miliseconds" << endl;
-                qwk<< "Total time:" << timeSec <<" seconds" << endl;
+                qwk<< "Total time: " << timeSec <<" seconds" << endl;
                 qwk<<"==================================================================="<<endl;
                 for(int i = 0; i< arraySiz; i++)
                 {
