@@ -107,7 +107,7 @@ void Sorting::ShellSort(int *array, int size)
     }
 }
 
-void Sorting::Merge(int *a, int *b, int low, int pivot, int high)
+void Sorting::Merge(int *array, int *tempArray, int low, int pivot, int high)
 {
     int h,i,j,k;
     h=low;
@@ -116,14 +116,14 @@ void Sorting::Merge(int *a, int *b, int low, int pivot, int high)
 
     while((h<=pivot)&&(j<=high))
     {
-        if(a[h]<=a[j])
+        if(array[h]<=array[j])
         {
-            b[i]=a[h];
+            tempArray[i]=array[h];
             h++;
         }
         else
         {
-            b[i]=a[j];
+            tempArray[i]=array[j];
             j++;
         }
         i++;
@@ -132,7 +132,7 @@ void Sorting::Merge(int *a, int *b, int low, int pivot, int high)
     {
         for(k=j; k<=high; k++)
         {
-            b[i]=a[k];
+            tempArray[i]=array[k];
             i++;
         }
     }
@@ -140,13 +140,13 @@ void Sorting::Merge(int *a, int *b, int low, int pivot, int high)
     {
         for(k=h; k<=pivot; k++)
         {
-            b[i]=a[k];
+            tempArray[i]=array[k];
             i++;
         }
     }
     for(k=low; k<=high; k++)
     {
-        a[k]=b[k];
+        array[k]=tempArray[k];
     }
 
 
