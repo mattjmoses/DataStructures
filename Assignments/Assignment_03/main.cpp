@@ -64,6 +64,48 @@ int main(int argc,char* argv[])
             double timeSec = (end - begin) / static_cast<double>( CLOCKS_PER_SEC );
             //--Output result of the bubbleCopy to file here
         }
+        //Insertion Sort business ==========================================
+        int insertCopy[arraySiz];
+        for(int i = 0; i< arraySiz; i++)
+        {
+            insertCopy[i] = shuffledArray[i];
+        }
+        if(arraySiz <= startValue)
+        {
+            //Do a sort without timing for verification
+            sorter.InsertionSort(insertCopy,arraySiz);
+            ofstream insertionFile("insertionSort.txt");
+        }
+        else
+        {
+            //Selection sort with timing
+            clock_t begin = clock();
+            sorter.InsertionSort(insertCopy,arraySiz);
+            clock_t end = clock();
+            double timeSec = (end - begin) / static_cast<double>( CLOCKS_PER_SEC );
+            //--Output result of the bubbleCopy to file here
+        }
+        //Shell Sort business ==========================================
+        int shellCopy[arraySiz];
+        for(int i = 0; i< arraySiz; i++)
+        {
+            shellCopy[i] = shuffledArray[i];
+        }
+        if(arraySiz <= startValue)
+        {
+            //Do a sort without timing for verification
+            sorter.SelectionSort(shellCopy,arraySiz);
+            ofstream shellFile("shellSort.txt");
+        }
+        else
+        {
+            //Selection sort with timing
+            clock_t begin = clock();
+            sorter.ShellSort(shellCopy,arraySiz);
+            clock_t end = clock();
+            double timeSec = (end - begin) / static_cast<double>( CLOCKS_PER_SEC );
+            //--Output result of the bubbleCopy to file here
+        }
 
     }
     catch (exception e)
@@ -75,8 +117,8 @@ int main(int argc,char* argv[])
 //    //Our variious files.
 //
 //
-//    ofstream insertionFile("insertionSort.txt");
-//    ofstream shellFile("shellSort.txt");
+//
+//
 //    ofstream quickFile("quickSort.txt");
 //    ofstream mergeFile("mergesort.txt");
 //    //Creating the shuffled array
