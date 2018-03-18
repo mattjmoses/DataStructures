@@ -16,6 +16,7 @@ int main(int argc,char* argv[])
     //Pulling in our arraysize from the command line.
     try
     {
+
         int startValue = 1000;
         int arraySiz = stoi(argv[1]);
         cout<< arraySiz << endl;
@@ -54,9 +55,24 @@ int main(int argc,char* argv[])
             //Bubble Sorting with timer
             clock_t begin = clock();
             sorter.BubbleSort(bubbleCopy,arraySiz);
+            fstream bub("bubbleSort.txt", ios::in | ios::out | ios::app);
             clock_t end = clock();
             double timeSec = (end - begin) / static_cast<double>( CLOCKS_PER_SEC );
             //--Output result of the bubbleCopy to file here
+            bub<< "Sorting: "<< arraySiz << " items" << endl;
+            bub<<"==================================================================="<<endl;
+            for(int i = 0; i< arraySiz; i++)
+            {
+                if(i % 100 == 0)
+                {
+                    bub << endl;
+                }
+                bub << bubbleCopy[i]<<",";
+            }
+            bub << endl;
+            bub << "================================================================="<< endl;
+            bub.close();
+
         }
         //Selection Sort business ==========================================
         int selectCopy[arraySiz];
