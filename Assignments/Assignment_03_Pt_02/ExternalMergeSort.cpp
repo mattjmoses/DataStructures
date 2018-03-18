@@ -4,9 +4,11 @@
 
 #include "ExternalMergeSort.h"
 
-char * ExternalMergeSort::ExternalMergeSort(char *string, int i) = default;
 
-ExternalMergeSort::~ExternalMergeSort() = default;
+ExternalMergeSort::ExternalMergeSort() = default;
+ExternalMergeSort::~ExternalMergeSort() =default;
+
+
 
 //To begin we're taking in a simple character array. This will change to a file which we'll mank into an array.
 char* ExternalMergeSort::ExtMergeSort(char *File, int n)
@@ -41,6 +43,7 @@ char* ExternalMergeSort::ExtMergeSort(char *File, int n)
         second = ExtMergeSort(second, n-pivot);
 
         //And then we put this mess back together.
+        //This is where the second file comes into play. So the file here would be a new file
         int l = 0;
         int r = 0;
         int k = 0;
@@ -57,9 +60,38 @@ char* ExternalMergeSort::ExtMergeSort(char *File, int n)
                 //Then iterate on up!
                 l++;
             }
+            else
+            {
+                //Otherwise put the other one into the result(since it's lower)
+                File[k] = second[r];
+                r++;
+            }
+            k++;
+        }
+
+        //After that we need to check if there's anything left over
+        if(l <  pivot)
+        {
+            while(l < pivot)
+            {
+                File[k] = first[l];
+                l++;
+                k++;
+            }
+        }
+
+        if(r < n-pivot)
+        {
+            while(r < n-pivot)
+            {
+                File[k] = second[r];
+                r++;
+                k++;
+            }
         }
 
     }
 
     return File;
 }
+
