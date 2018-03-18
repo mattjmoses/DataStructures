@@ -35,14 +35,16 @@ void Sorting::BubbleSort(int* array,int size)
 void Sorting::SelectionSort(int *array, int size)
 {
     int outer, inner, min;
+    //So we start looping through our list
     for (outer = 0; outer < size - 1; outer++) { // outer counts down
         min = outer;
+        //Then we scan through the array to find the smallest element
         for (inner = outer + 1; inner < size; inner++) {
             if (array[inner] < array[min]) {
                 min = inner;
             }
         }
-        // a[min] is least among a[outer]..a[a.length - 1]
+        //Once we find the smallest element we place it at the minimum position
         int temp = array[outer];
         array[outer] = array[min];
         array[min] = temp;
@@ -53,12 +55,15 @@ void Sorting::SelectionSort(int *array, int size)
 //The ol Insertion Sort
 void Sorting::InsertionSort(int *array, int size)
 {
+
     int i, j ,tmp;
     for (i = 1; i < size; i++)
     {
+        //We loop through until we find an element to be switched
         j = i;
         while (j > 0 && array[j - 1] > array[j])
         {
+            //We shift the array over and insert the element in the correct position
             tmp = array[j];
             array[j] = array[j - 1];
             array[j - 1] = tmp;
