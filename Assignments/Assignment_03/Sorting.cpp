@@ -107,13 +107,14 @@ void Sorting::ShellSort(int *array, int size)
 
 }
 //The venerable merge sort. Takes in the array, a temp array, the range of the array and a pivot(half way point)
+//This takes place over a couple different methods
 void Sorting::Merge(int *array, int *tempArray, int low, int pivot, int high)
 {
     int h,i,j,k;
     h=low;
     i=low;
     j=pivot+1;
-    //SO we start by checki
+    //FIRST we copy everything before the pivot to the temp array
     while((h<=pivot)&&(j<=high))
     {
         if(array[h]<=array[j])
@@ -128,6 +129,7 @@ void Sorting::Merge(int *array, int *tempArray, int low, int pivot, int high)
         }
         i++;
     }
+    //Next we continue subdividing our parts down
     if(h>pivot)
     {
         for(k=j; k<=high; k++)
@@ -144,6 +146,7 @@ void Sorting::Merge(int *array, int *tempArray, int low, int pivot, int high)
             i++;
         }
     }
+    //Then we start checking our ranges and moving things from the temp array back into our main array
     for(k=low; k<=high; k++)
     {
         array[k]=tempArray[k];
@@ -151,42 +154,52 @@ void Sorting::Merge(int *array, int *tempArray, int low, int pivot, int high)
 
 
 }
-
-void Sorting::MergeSort(int *a, int*b, int low, int high)
+//The recursion method for our merge sort
+void Sorting::MergeSort(int *first, int*second, int low, int high)
 {
+    //Declaring our pivot
     int pivot;
+    //Here's where we're handling our recursion
     if(low<high)
     {
+        //Moving the pivot point
         pivot=(low+high)/2;
-        MergeSort(a,b,low,pivot);
-        MergeSort(a,b,pivot+1,high);
-        Merge(a,b,low,pivot,high);
+        //We re-do the merge sort with the arrays and the newly changed pivot
+        //This continues until the merge sort is complete.
+        MergeSort(first,second,low,pivot);
+        MergeSort(first,second,pivot+1,high);
+        Merge(first,second,low,pivot,high);
     }
 
 }
 
 //Utility function for the quicksort
-int Sorting::Partition(int *arr, int low, int high)
+int Sorting::Partition(int *array, int low, int high)
 {
-    int pivot = arr[high];    // pivot
-    int i = (low - 1);  // Index of smaller element
+    //Setting our pivot..
+    int pivot = array[high];
+    int i = (low - 1);
 
     for (int j = low; j <= high- 1; j++)
     {
-        // If current element is smaller than or
-        // equal to pivot
-        if (arr[j] <= pivot)
+        //Checking if our element is smaller thn the pivot
+        if (array[j] <= pivot)
         {
-            i++;    // increment index of smaller element
-            Swap(&arr[i], &arr[j]);
+            //We increment the index of the lower element
+            i++;
+            //AND SWAP!
+            Swap(&array[i], &array[j]);
         }
     }
-    Swap(&arr[i + 1], &arr[high]);
+    //Helper function to swap array elements
+    Swap(&array[i + 1], &array[high]);
+    //We return the next increment index through the array
     return (i + 1);
 }
 //Utility function for the quick sort
 void Sorting::Swap(int *a, int *b)
 {
+    //This just swaps array elements.
     int t = *a;
     *a = *b;
     *b = t;
@@ -196,13 +209,12 @@ void Sorting::QuickSort(int *arr, int low, int high)
 {
     if (low < high)
     {
-        /* pi is partitioning index, arr[p] is now
-           at right place */
+        //This is the partition index
         int pi = Partition(arr, low, high);
 
-        // Separately sort elements before
-        // partition and after partition
+        //Here we sort the elements before
         QuickSort(arr, low, pi - 1);
+        //and after the partition
         QuickSort(arr, pi + 1, high);
     }
 }
