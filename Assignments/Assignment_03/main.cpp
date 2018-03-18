@@ -66,6 +66,9 @@ int main(int argc,char* argv[])
             else
             {
                 bub<< "Sorting: "<< arraySiz << " items" << endl;
+                bub<< "Start time: " << begin << " miliseconds" << endl;
+                bub<< "End time: " << end << " miliseconds" << endl;
+                bub<< "Total time:" << timeSec <<" seconds" << endl;
                 bub<<"==================================================================="<<endl;
                 for(int i = 0; i< arraySiz; i++)
                 {
