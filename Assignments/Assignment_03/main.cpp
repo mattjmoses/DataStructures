@@ -46,6 +46,7 @@ int main(int argc,char* argv[])
                 bubbleFile << bubbleCopy[i];
             }
             bubbleFile << "========================"<< endl;
+            bubbleFile.close();
 
         }
         else
@@ -80,6 +81,7 @@ int main(int argc,char* argv[])
                 selectionFile << selectCopy[i];
             }
             selectionFile << "========================"<< endl;
+            selectionFile.close();
         }
         else
         {
@@ -113,10 +115,11 @@ int main(int argc,char* argv[])
                 insertionFile<< insertCopy[i];
             }
             insertionFile << "========================"<< endl;
+            insertionFile.close();
         }
         else
         {
-            //Selection sort with timing
+            //Insertion sort with timing
             clock_t begin = clock();
             sorter.InsertionSort(insertCopy,arraySiz);
             clock_t end = clock();
@@ -132,8 +135,21 @@ int main(int argc,char* argv[])
         if(arraySiz <= startValue)
         {
             //Do a sort without timing for verification
-            sorter.SelectionSort(shellCopy,arraySiz);
+            sorter.ShellSort(shellCopy,arraySiz);
             ofstream shellFile("shellSort.txt");
+            shellFile.open("shellSort.txt", std::ofstream::out | std::ofstream::app);
+            shellFile<< "Initial sort test"<< endl;
+            shellFile<<"=========================="<<endl;
+            for(int i = 0; i< arraySiz; i++)
+            {
+                if(i % 100 == 0)
+                {
+                    shellFile << endl;
+                }
+                shellFile<< shellCopy[i];
+            }
+            shellFile << "========================"<< endl;
+            shellFile.close();
         }
         else
         {
@@ -160,13 +176,26 @@ int main(int argc,char* argv[])
             int tempArray[pivot];
             sorter.MergeSort(mergeCopy,tempArray,0,pivot-1);
             ofstream mergeFile("mergesort.txt");
+            mergeFile.open("mergesort.txt", std::ofstream::out | std::ofstream::app);
+            mergeFile<< "Initial sort test"<< endl;
+            mergeFile<<"=========================="<<endl;
+            for(int i = 0; i< arraySiz; i++)
+            {
+                if(i % 100 == 0)
+                {
+                    mergeFile << endl;
+                }
+                mergeFile<< mergeCopy[i];
+            }
+            mergeFile<< "========================"<< endl;
+            mergeFile.close();
 
         }
         else
         {
             //Merge sort with timing
             int pivot;
-            int tempArray[pivot];
+            int tempArray[arraySiz];
             clock_t begin = clock();
             pivot = sizeof(mergeCopy)/sizeof(int);
             sorter.MergeSort(mergeCopy,tempArray,0,pivot-1);
@@ -183,8 +212,21 @@ int main(int argc,char* argv[])
         if(arraySiz <= startValue)
         {
             //Do a sort without timing for verification
-            sorter.SelectionSort(quickCopy,arraySiz);
-            ofstream shellFile("shellSort.txt");
+            sorter.QuickSort(quickCopy,0,arraySiz);
+            ofstream quickFile("quickSort.txt");
+            quickFile.open("quickSort.txt", std::ofstream::out | std::ofstream::app);
+            quickFile<< "Initial sort test"<< endl;
+            quickFile<<"=========================="<<endl;
+            for(int i = 0; i< arraySiz; i++)
+            {
+                if(i % 100 == 0)
+                {
+                    quickFile << endl;
+                }
+                quickFile<< quickCopy[i];
+            }
+            quickFile << "========================"<< endl;
+            quickFile.close();
         }
         else
         {
@@ -194,6 +236,7 @@ int main(int argc,char* argv[])
             clock_t end = clock();
             double timeSec = (end - begin) / static_cast<double>( CLOCKS_PER_SEC );
             //--Output result of the bubbleCopy to file here
+
         }
 
     }
@@ -203,38 +246,6 @@ int main(int argc,char* argv[])
     }
 
 
-//    //Our variious files.
-//
-//
-//
-//
-//    ofstream quickFile("quickSort.txt");
-//    ofstream mergeFile("mergesort.txt");
-//    //Creating the shuffled array
-
-//
-//
-//
-//    //Our timer code. Use this for all array sorting
-
-//    cout<< endl;
-//    cout<< "Total calulation time: "<< timeSec << endl;
-//
-//    //sorter.SelectionSort(arrayCopy,100000);
-//    //sorter.InsertionSort(shuffledArray,10);
-//    //sorter.ShellSort(shuffledArray,1000);
-//    //sorter.QuickSort(arrayCopy,0,100000);
-//
-
-
-
-
-//    cout<<endl;
-//    for (int w : arrayCopy) {
-//        cout<< w <<",";
-//    }
-//
-//    cout<<endl;
 
 
 
