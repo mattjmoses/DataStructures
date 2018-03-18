@@ -14,8 +14,7 @@ class ExternalMergeSort
         ExternalMergeSort(); //The ol' default constructor
         ~ExternalMergeSort();//The ol' default destructor
 
-        char* ExtMergeSort(char*, int);//Our merge sorting array. Not yet able to take in a file but that'll change
-        string* MergeSort(string*, int);
+        string* MergeSort(string*, int); //The framework for external merge sort
 };
 
 

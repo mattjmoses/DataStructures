@@ -4,6 +4,7 @@
 
 #include "Sorting.h"
 #include "iostream"
+
 using namespace std;
 Sorting::Sorting() = default;
 
@@ -13,11 +14,13 @@ Sorting::~Sorting() = default;
 void Sorting::BubbleSort(int* array,int size)
 {
 
+    //So our, two numbers to compare
     int outer, inner;
+    //We start looping through comparing each neighboring number
     for (outer = size - 1; outer > 0; outer--)
     {  // counting down
         for (inner = 0; inner < outer; inner++)
-        {        // bubbling up
+        {   //If the current number is bigger than it's neighboer then switch them
             if (array[inner] > array[inner + 1])
             {  // if out of order...swap
                 int temp = array[inner];

@@ -8,13 +8,11 @@ int main()
     //Sample string array.
     string strArray[10] = {"lala","toop","zop","garpo","alphaghetti","tootson","boobs","vagona","skiing","zzzzzzzzzzZ"};
 
-    char str[] = "sdlkjhfljkh";
-    //Sort string
-    //The merge sort.
-    char* res = mergeSort.ExtMergeSort(str, 11);
+
+    //She sorts!
     string* newArr = mergeSort.MergeSort(strArray,10);
-    //Print result
-    cout << res << endl;
+
+    cout << strArray << endl;
 
     for(int i = 0; i < 10; i++)
     {
