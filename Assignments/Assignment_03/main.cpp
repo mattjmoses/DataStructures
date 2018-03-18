@@ -16,26 +16,55 @@ int main(int argc,char* argv[])
     //Pulling in our arraysize from the command line.
     try
     {
+        int startValue = 1000;
         int arraySiz = stoi(argv[1]);
         cout<< arraySiz << endl;
 
         //And now we do all the stuff.
         int  *shuffledArray = arrayManager.createRandomArray(arraySiz);
-
-        //Copying the array for the bubble sort
+        //Bubble sort business============================================
         int bubbleCopy[arraySiz];
-
         for(int i = 0; i< arraySiz; i++)
         {
             bubbleCopy[i] = shuffledArray[i];
         }
+        if(arraySiz <= startValue)
+        {
+            //Do a sort without timing for verification
+            sorter.BubbleSort(bubbleCopy,arraySiz);
+            ofstream bubbleFile("bubbleSort.txt");
+        }
+        else
+        {
+            //Bubble Sorting with timer
+            clock_t begin = clock();
+            sorter.BubbleSort(bubbleCopy,arraySiz);
+            clock_t end = clock();
+            double timeSec = (end - begin) / static_cast<double>( CLOCKS_PER_SEC );
+            //--Output result of the bubbleCopy to file here
+        }
+        //Selection Sort business ==========================================
+        int selectCopy[arraySiz];
+        for(int i = 0; i< arraySiz; i++)
+        {
+            selectCopy[i] = shuffledArray[i];
+        }
+        if(arraySiz <= startValue)
+        {
+            //Do a sort without timing for verification
+            sorter.SelectionSort(selectCopy,arraySiz);
+            ofstream selectionFile("selectionSort.txt");;
+        }
+        else
+        {
+            //Selection sort with timing
+            clock_t begin = clock();
+            sorter.SelectionSort(selectCopy,arraySiz);
+            clock_t end = clock();
+            double timeSec = (end - begin) / static_cast<double>( CLOCKS_PER_SEC );
+            //--Output result of the bubbleCopy to file here
+        }
 
-        //Bubble Sorting with timer
-        clock_t begin = clock();
-        sorter.BubbleSort(bubbleCopy,arraySiz);
-        clock_t end = clock();
-        double timeSec = (end - begin) / static_cast<double>( CLOCKS_PER_SEC );
-        //--Output result of the bubbleCopy to file here
     }
     catch (exception e)
     {
@@ -44,8 +73,8 @@ int main(int argc,char* argv[])
 
 
 //    //Our variious files.
-//    ofstream bubbleFile("bubbleSort.txt");
-//    ofstream selectionFile("selectionSort.txt");
+//
+//
 //    ofstream insertionFile("insertionSort.txt");
 //    ofstream shellFile("shellSort.txt");
 //    ofstream quickFile("quickSort.txt");
