@@ -34,6 +34,19 @@ int main(int argc,char* argv[])
             //Do a sort without timing for verification
             sorter.BubbleSort(bubbleCopy,arraySiz);
             ofstream bubbleFile("bubbleSort.txt");
+            bubbleFile.open("bubbleSort.txt", std::ofstream::out | std::ofstream::app);
+            bubbleFile<< "Initial sort test"<< endl;
+            bubbleFile<<"=========================="<<endl;
+            for(int i = 0; i< arraySiz; i++)
+            {
+                if(i % 100 == 0)
+                {
+                    bubbleFile << endl;
+                }
+                bubbleFile << bubbleCopy[i];
+            }
+            bubbleFile << "========================"<< endl;
+
         }
         else
         {
@@ -55,6 +68,18 @@ int main(int argc,char* argv[])
             //Do a sort without timing for verification
             sorter.SelectionSort(selectCopy,arraySiz);
             ofstream selectionFile("selectionSort.txt");;
+            selectionFile.open("selectionSort.txt", std::ofstream::out | std::ofstream::app);
+            selectionFile<< "Initial sort test"<< endl;
+            selectionFile<<"=========================="<<endl;
+            for(int i = 0; i< arraySiz; i++)
+            {
+                if(i % 100 == 0)
+                {
+                 selectionFile << endl;
+                }
+                selectionFile << selectCopy[i];
+            }
+            selectionFile << "========================"<< endl;
         }
         else
         {
@@ -76,6 +101,18 @@ int main(int argc,char* argv[])
             //Do a sort without timing for verification
             sorter.InsertionSort(insertCopy,arraySiz);
             ofstream insertionFile("insertionSort.txt");
+            insertionFile.open("insertionSort.txt", std::ofstream::out | std::ofstream::app);
+            insertionFile<< "Initial sort test"<< endl;
+            insertionFile<<"=========================="<<endl;
+            for(int i = 0; i< arraySiz; i++)
+            {
+                if(i % 100 == 0)
+                {
+                    insertionFile << endl;
+                }
+                insertionFile<< insertCopy[i];
+            }
+            insertionFile << "========================"<< endl;
         }
         else
         {
