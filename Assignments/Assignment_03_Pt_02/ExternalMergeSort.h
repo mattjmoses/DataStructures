@@ -9,7 +9,7 @@
 class ExternalMergeSort
 {
     public:
-        ExternalMergeSort(); //The ol' default constructor
+        char * ExternalMergeSort(char *string, int i); //The ol' default constructor
         ~ExternalMergeSort();//The ol' default destructor
 
         char* ExtMergeSort(char*, int);//Our merge sorting array. Not yet able to take in a file but that'll change
