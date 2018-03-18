@@ -63,7 +63,7 @@ void Sorting::InsertionSort(int *array, int size)
         j = i;
         while (j > 0 && array[j - 1] > array[j])
         {
-            //We shift the array over and insert the element in the correct position
+            //If the element is greater than the array[j] we move it over
             tmp = array[j];
             array[j] = array[j - 1];
             array[j - 1] = tmp;
@@ -78,15 +78,21 @@ void Sorting::InsertionSort(int *array, int size)
 void Sorting::ShellSort(int *array, int size)
 {
     int i, j, temp, increment;
+    //We start off with a large gap, then reduce its size as we iterate
     for(increment = size/2; increment > 0; increment /= 2)
     {
+        //Now we're doing a variation insertion sort on the gap
+        //We keep adding elements until the gap is sorted...
         for(i = increment; i<size; i++)
         {
+            //Saving elements into a temp variable for comparison purposes
             temp = array[i];
             for(j = i; j >= increment; j-=increment)
             {
+                //If the element compared is larger than the temp variable
                 if(temp < array[j-increment])
                 {
+                    //THEN switch it!
                     array[j] = array[j-increment];
                 }
                 else
@@ -94,19 +100,20 @@ void Sorting::ShellSort(int *array, int size)
                     break;
                 }
             }
+            //Make the lower value the val of the temp variable, and repeat until done.
             array[j] = temp;
         }
     }
 
 }
-
+//The venerable merge sort. Takes in the array, a temp array, the range of the array and a pivot(half way point)
 void Sorting::Merge(int *array, int *tempArray, int low, int pivot, int high)
 {
     int h,i,j,k;
     h=low;
     i=low;
     j=pivot+1;
-
+    //SO we start by checki
     while((h<=pivot)&&(j<=high))
     {
         if(array[h]<=array[j])
