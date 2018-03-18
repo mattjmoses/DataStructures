@@ -53,9 +53,9 @@ int main(int argc,char* argv[])
         else
         {
             //Bubble Sorting with timer
+            fstream bub("bubbleSort.txt", ios::in | ios::out | ios::app);
             clock_t begin = clock();
             sorter.BubbleSort(bubbleCopy,arraySiz);
-            fstream bub("bubbleSort.txt", ios::in | ios::out | ios::app);
             clock_t end = clock();
             double timeSec = (end - begin) / static_cast<double>( CLOCKS_PER_SEC );
             //--Output result of the bubbleCopy to file here
@@ -112,12 +112,37 @@ int main(int argc,char* argv[])
         }
         else
         {
+            fstream sel("selectionSort.txt", ios::in | ios::out | ios::app);
             //Selection sort with timing
             clock_t begin = clock();
             sorter.SelectionSort(selectCopy,arraySiz);
             clock_t end = clock();
             double timeSec = (end - begin) / static_cast<double>( CLOCKS_PER_SEC );
             //--Output result of the bubbleCopy to file here
+            if(!sel.is_open())
+            {
+                cout << "error opening file"<< endl;
+            }
+            else
+            {
+                sel<< "Sorting: "<< arraySiz << " items" << endl;
+                sel<< "Start time: " << begin << " miliseconds" << endl;
+                sel<< "End time: " << end << " miliseconds" << endl;
+                sel<< "Total time:" << timeSec <<" seconds" << endl;
+                sel<<"==================================================================="<<endl;
+                for(int i = 0; i< arraySiz; i++)
+                {
+                    if(i % 100 == 0)
+                    {
+                        sel << endl;
+                    }
+                    sel << selectCopy[i]<<",";
+                }
+                sel << endl;
+                sel << "================================================================="<< endl;
+                sel.close();
+
+            }
         }
         //Insertion Sort business ==========================================
         int insertCopy[arraySiz];
@@ -146,12 +171,36 @@ int main(int argc,char* argv[])
         }
         else
         {
+            fstream ins("insertionSort.txt", ios::in | ios::out | ios::app);
             //Insertion sort with timing
             clock_t begin = clock();
             sorter.InsertionSort(insertCopy,arraySiz);
             clock_t end = clock();
             double timeSec = (end - begin) / static_cast<double>( CLOCKS_PER_SEC );
-            //--Output result of the bubbleCopy to file here
+            if(!ins.is_open())
+            {
+                cout << "error opening file"<< endl;
+            }
+            else
+            {
+                ins<< "Sorting: "<< arraySiz << " items" << endl;
+                ins<< "Start time: " << begin << " miliseconds" << endl;
+                ins<< "End time: " << end << " miliseconds" << endl;
+                ins<< "Total time:" << timeSec <<" seconds" << endl;
+                ins<<"==================================================================="<<endl;
+                for(int i = 0; i< arraySiz; i++)
+                {
+                    if(i % 100 == 0)
+                    {
+                        ins << endl;
+                    }
+                    ins << insertCopy[i]<<",";
+                }
+                ins << endl;
+                ins << "================================================================="<< endl;
+                ins.close();
+
+            }
         }
         //Shell Sort business ==========================================
         int shellCopy[arraySiz];
@@ -180,12 +229,36 @@ int main(int argc,char* argv[])
         }
         else
         {
+            fstream shl("shellSort.txt", ios::in | ios::out | ios::app);
             //Selection sort with timing
             clock_t begin = clock();
             sorter.ShellSort(shellCopy,arraySiz);
             clock_t end = clock();
             double timeSec = (end - begin) / static_cast<double>( CLOCKS_PER_SEC );
-            //--Output result of the bubbleCopy to file here
+            if(!shl.is_open())
+            {
+                cout << "error opening file"<< endl;
+            }
+            else
+            {
+                shl<< "Sorting: "<< arraySiz << " items" << endl;
+                shl<< "Start time: " << begin << " miliseconds" << endl;
+                shl<< "End time: " << end << " miliseconds" << endl;
+                shl<< "Total time:" << timeSec <<" seconds" << endl;
+                shl<<"==================================================================="<<endl;
+                for(int i = 0; i< arraySiz; i++)
+                {
+                    if(i % 100 == 0)
+                    {
+                        shl << endl;
+                    }
+                    shl << shellCopy[i]<<",";
+                }
+                shl << endl;
+                shl << "================================================================="<< endl;
+                shl.close();
+
+            }
         }
         //Merge Sort business ==========================================
         int mergeCopy[arraySiz];
@@ -220,6 +293,7 @@ int main(int argc,char* argv[])
         }
         else
         {
+            fstream mrg("mergesort.txt", ios::in | ios::out | ios::app);
             //Merge sort with timing
             int pivot;
             int tempArray[arraySiz];
@@ -228,7 +302,30 @@ int main(int argc,char* argv[])
             sorter.MergeSort(mergeCopy,tempArray,0,pivot-1);
             clock_t end = clock();
             double timeSec = (end - begin) / static_cast<double>( CLOCKS_PER_SEC );
-            //--Output result of the bubbleCopy to file here
+            if(!mrg.is_open())
+            {
+                cout << "error opening file"<< endl;
+            }
+            else
+            {
+                mrg<< "Sorting: "<< arraySiz << " items" << endl;
+                mrg<< "Start time: " << begin << " miliseconds" << endl;
+                mrg<< "End time: " << end << " miliseconds" << endl;
+                mrg<< "Total time:" << timeSec <<" seconds" << endl;
+                mrg<<"==================================================================="<<endl;
+                for(int i = 0; i< arraySiz; i++)
+                {
+                    if(i % 100 == 0)
+                    {
+                        mrg << endl;
+                    }
+                    mrg << mergeCopy[i]<<",";
+                }
+                mrg << endl;
+                mrg << "================================================================="<< endl;
+                mrg.close();
+
+            }
         }
         //Quick Sort business ==========================================
         int quickCopy[arraySiz];
@@ -257,12 +354,36 @@ int main(int argc,char* argv[])
         }
         else
         {
+            fstream qwk("quickSort.txt", ios::in | ios::out | ios::app);
             //Quick sort with timing
             clock_t begin = clock();
             sorter.QuickSort(quickCopy,0,arraySiz);
             clock_t end = clock();
             double timeSec = (end - begin) / static_cast<double>( CLOCKS_PER_SEC );
-            //--Output result of the bubbleCopy to file here
+            if(!qwk.is_open())
+            {
+                cout << "error opening file"<< endl;
+            }
+            else
+            {
+                qwk<< "Sorting: "<< arraySiz << " items" << endl;
+                qwk<< "Start time: " << begin << " miliseconds" << endl;
+                qwk<< "End time: " << end << " miliseconds" << endl;
+                qwk<< "Total time:" << timeSec <<" seconds" << endl;
+                qwk<<"==================================================================="<<endl;
+                for(int i = 0; i< arraySiz; i++)
+                {
+                    if(i % 100 == 0)
+                    {
+                        qwk << endl;
+                    }
+                    qwk << mergeCopy[i]<<",";
+                }
+                qwk << endl;
+                qwk << "================================================================="<< endl;
+                qwk.close();
+
+            }
 
         }
 
