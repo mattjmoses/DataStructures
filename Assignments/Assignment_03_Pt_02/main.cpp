@@ -12,6 +12,8 @@ int main()
     //Doing some setup so we know how many entries are in the file
     //For NOW we're only inputting a single file
     ifstream readFile("phonebook.txt");
+    //Creating out output file
+    ofstream writeFile("sorted.txt");
     int numEntries = -1;
     //This only serves for looping purpose. Doesn't serve a function in the program at this point.
     string throwAway;

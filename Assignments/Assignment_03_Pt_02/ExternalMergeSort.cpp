@@ -98,3 +98,7 @@ string *ExternalMergeSort::MergeSort(string *File, int n)
     return File;
 }
 
+string ExternalMergeSort::FileSort(string inFile, int) {
+
+}
+

@@ -15,6 +15,7 @@ class ExternalMergeSort
         ~ExternalMergeSort();//The ol' default destructor
 
         string* MergeSort(string*, int); //The framework for external merge sort
+        string FileSort(string, int); //Merge sort using files
 };
 
 
