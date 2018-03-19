@@ -27,13 +27,13 @@ int main()
 
     cout<<"Number of entries in file: " << numEntries << endl;
     //She sorts!
-    string* newArr = mergeSort.MergeSort(strArray,10);
+    string* newArr = mergeSort.FileSort("phonebook.txt","sorted.txt",numEntries);
 
-//    cout << strArray << endl;
-//
-//    for(int i = 0; i < 10; i++)
-//    {
-//        cout<< newArr[i] << endl;
-//    }
+    cout << strArray << endl;
+
+    for(int i = 0; i < 10; i++)
+    {
+        cout<< newArr[i] << endl;
+    }
     return 0;
 }

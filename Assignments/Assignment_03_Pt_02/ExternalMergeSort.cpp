@@ -101,21 +101,28 @@ string *ExternalMergeSort::MergeSort(string *File, int n)
 //Merge sorting using files.
 string* ExternalMergeSort::FileSort(string inFile,string outFile, int num)
 {
+    //To cover for the line break.
+    num = num +1;
     //This is going to temporarily hold the inFile contents
     string* File = new string[num];
+
     //Getting info from the file
     ifstream readFile(inFile);
     string fileContents;
-    int fileIndex = -1;
+    int fileIndex = 0;
     if(readFile.is_open())
     {
         //Looping through the file and dumping the contents into the  array.
         //We need to manage the fileIndex counter to get the position within the file
         while(getline(readFile,fileContents))
         {
-            fileIndex++;
+
             File[fileIndex] = fileContents;
+            fileIndex++;
         }
+
+
+
     }
 
 
