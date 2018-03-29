@@ -29,6 +29,7 @@ int Search::sequentialSearch(int *array, int search)
 //And beginning and end of the array (or left right)
 int Search::binarySearch(int *array,int left, int right, int search)
 {
+    //this guy is fucking us over
     int middle;
     //If the left is less than the right(which is generally is going to be, at the start anyhow)
     while(left <= right)

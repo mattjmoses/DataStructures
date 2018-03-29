@@ -14,7 +14,7 @@ class Search
 
     //Method for the sequential seach. Takes in an integer array, and search number, and returns the index location
     int sequentialSearch(int*,int);
-    //Method for the binary search. Takes in an integer array, and search number, and returns the index location
+    //Method for the binary search. Takes in an integer array, left, right and sesrch number
     int binarySearch(int*,int,int,int);
 };
 
