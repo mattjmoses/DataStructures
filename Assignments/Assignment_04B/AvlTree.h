@@ -5,29 +5,31 @@
 #ifndef ASSIGNMENT_04B_AVLTREE_H
 #define ASSIGNMENT_04B_AVLTREE_H
 
+//Our node structure
+struct Node
+{
+    //The node data
+    int data;
+    //Left and right branch pointers
+    Node* left;
+    Node* right;
+    //The height of our tree
+    int height;
+};
 
 class AvlTree
 {
     public:
 
-    //The node what holds all the data
-    struct Node
-    {
-        //Our node data
-        int data;
-        //Pointers to the other nodes
-        Node *left;
-        Node *right;
-        //Height of our node tree
-        int height;
-    };
+    void insertNode(Node *, int);
+    void deleteNode(Node*, int);
+    int deleteMinNode(Node*, int);
+    void findNode(Node* ,int);
+    Node* findMin(Node*);
+    Node* findMax(Node*);
 
-    int max(int, int); //Used to get the higher value of two numbers. Will have to change this in future
-    int getHeight(Node*);//Gets the height of the tree
-    Node* createNode(int);//This makes a new node
-    Node* rotateRight(Node*);//Rotates our branch to the... RIGHT
-    Node* rotateLeft(Node*); //Rotating to the left
-    int getBalance(Node*); //Gets the balance of a specific node. Returns it's height essentially
+
+
 
 };
 
