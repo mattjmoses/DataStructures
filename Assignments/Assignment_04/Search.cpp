@@ -56,5 +56,6 @@ int Search::binarySearch(int *array,int left, int right, int search)
 
 
     }
+    //If no number is found we return -1
     return -1;
 }
