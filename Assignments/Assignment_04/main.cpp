@@ -14,9 +14,9 @@ int main() {
 
     }
 
-    //int result = goSearch.sequentialSearch(array,50);
-    int result02 = goSearch.binarySearch(array, 0,arraySize,800);
-    //cout << result;
+    int result = goSearch.sequentialSearch(array,50);
+    int result02 = goSearch.binarySearch(array, 0,arraySize,999);
+    cout << result;
     cout << endl;
     cout << result02;
 

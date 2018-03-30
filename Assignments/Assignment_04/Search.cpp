@@ -29,13 +29,12 @@ int Search::sequentialSearch(int *array, int search)
 //And beginning and end of the array (or left right)
 int Search::binarySearch(int *array,int left, int right, int search)
 {
-    //this guy is fucking us over
-    int middle;
+
     //If the left is less than the right(which is generally is going to be, at the start anyhow)
     while(left <= right)
     {
         //We get the midpoint of the array
-        middle = left + (right-1)/2;
+        int middle = left + (right-left)/2;
 
         //If the search number is at the midpoint
         if(array[middle] == search)
@@ -54,6 +53,8 @@ int Search::binarySearch(int *array,int left, int right, int search)
             //Otherwise if the search is less than the midpoint we dump the righthand side.
             right = middle - 1;
         }
+
+
     }
-    return 0;
+    return -1;
 }
