@@ -27,13 +27,13 @@ int main() {
         for(int w =0; w < arraySize; w++)
         {
             //timer start
-            clock_t begin = clock();
+            double begin = clock();
             result = goSearch.sequentialSearch(array,w);
             //timer stop
-            clock_t end = clock();
+            double end = clock();
 
             //Calculating time in seconds
-            double timeSec = (end - begin) / static_cast<double>( CLOCKS_PER_SEC );
+            double timeSec = (end-begin)/double(CLOCKS_PER_SEC)*1000;
             //writer to file
             seq<< "Time to search for " << result <<" : " << timeSec << endl;
         }
@@ -54,13 +54,13 @@ int main() {
         for(int q = 0; q < arraySize; q++)
         {
             //timer start
-            clock_t begin = clock();
+            double begin = clock();
             result02 = goSearch.binarySearch(array, 0,arraySize,q);
             //timer stop
-            clock_t end = clock();
+            double end = clock();
 
             //Calculating time in seconds
-            double timeSec = (end - begin) / static_cast<double>( CLOCKS_PER_SEC );
+            double timeSec = (end-begin)/double(CLOCKS_PER_SEC)*1000;
             //write to file
             bin<< "Time to search for " << result02 <<" : " << timeSec << endl;
         }
