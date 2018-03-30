@@ -6,16 +6,8 @@
 #define ASSIGNMENT_04B_AVLTREE_H
 
 
-class AVLTree
-{
-    public:
-    AVLTree(); //The ol' default constructor
-    ~AVLTree(); //The ol' default destructor
+class AVLTree {
 
-    //The methods for our AVL tree
-    int getMaxVal(int, int); //Get max value between to entries -Will need to be changed to strings
-    int getTreeHeight(struct Node*);//Get the height of our tree
-    int getTreeBalance(struct Node*);
 };
 
 
