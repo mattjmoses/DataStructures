@@ -3,7 +3,9 @@
 //
 
 #include "AvlTree.h"
-#include <stdlib.h>
+#include <cstdlib>
+#include <iostream>
+using namespace std;
 
 AvlTree::AvlTree() = default;
 
@@ -47,37 +49,66 @@ AvlTree::Node *AvlTree::createNode(int data)
 
     return nullptr;
 }
-
+//Handles the right rotation
 AvlTree::Node *AvlTree::rorateRight(Node *nodeY)
 {
     //Node x and y are both root nodes
     //Pointing to our pointers
     Node *nodeX = nodeY->left;
     //Is a subtree of X
-    Node* subTree = nodeX->right;
+    Node *subTree = nodeX->right;
 
     //So we rotate
     nodeX->right = nodeY;
     nodeY->left = subTree;
 
     //Updating our node heights
-    nodeY->height = max(getHeight(nodeY->left),getHeight(nodeY->right)) + 1;
+    nodeY->height = max(getHeight(nodeY->left),getHeight(nodeY->right)) +1;
     nodeX->height = max(getHeight(nodeX->left),getHeight(nodeX->right)) +1;
+
+    //And we send along our freshly rotated branch
+    return nodeX;
+}
+//Handles the left rotation
+AvlTree::Node *AvlTree::rotateLeft(Node *nodeX)
+{
+    //Same as before with the right rotation more or less.
+    Node *nodeY = nodeX->right;
+    Node* subTree = nodeY->left;
+
+    nodeY->left = nodeX;
+    nodeX->right = subTree;
     return nullptr;
 }
 
-AvlTree::Node *AvlTree::rotateLeft(AvlTree::Node *) {
-    return nullptr;
-}
+//Getting the balance of a given node
+int AvlTree::getBalance(Node *node)
+{
+    //If it's empty then return zero
+    if(node == nullptr)
+    {
+        return  0;
+    }
+    else
+        {
+            //Checking the height of the right and left branches
+            return getHeight(node->left) - getHeight(node->right);
+        }
 
-int AvlTree::getBalance(AvlTree::Node *) {
-    return 0;
 }
 
 AvlTree::Node *AvlTree::insertNode(AvlTree::Node *) {
     return nullptr;
 }
 
-void AvlTree::preOrderTree(AvlTree::Node *) {
-
+//The ol preorder traversal
+void AvlTree::preOrderTree(Node *rootNode)
+{
+    if(rootNode != nullptr)
+    {
+        cout << rootNode->data << " ";
+        //Then we keep feeding the tree in until it all reads out.
+        preOrderTree(rootNode->left);
+        preOrderTree(rootNode->right);
+    }
 }
