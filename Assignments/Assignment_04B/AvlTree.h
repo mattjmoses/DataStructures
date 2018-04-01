@@ -34,7 +34,7 @@ class AvlTree
     Node* rorateRight(Node*); //Performs the rightward rotation
     Node* rotateLeft(Node*); //Does a rotate to the devil's direction
     int getBalance(Node*); //Gets the balance of the node
-    Node*insertNode(Node*);//This actually puts the new node into the tree and performs the balancing
+    Node*insertNode(Node*, int);//This actually puts the new node into the tree and performs the balancing
     void preOrderTree(Node*);//Peforms a pre-order traversal of the tree and displays what it finds
 
 

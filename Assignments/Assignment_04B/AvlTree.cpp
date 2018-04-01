@@ -96,9 +96,65 @@ int AvlTree::getBalance(Node *node)
         }
 
 }
+//Here now is our function to add new nodes to the tree.
+//Returns a new subtree root.
+AvlTree::Node *AvlTree::insertNode(Node *node,int data)
+{
+    //If the thing's empty then make the inputted node the root
+    if(node == nullptr)
+    {
+        return(createNode(data));
+    }
+    //Doing the insertion. Checking the values of the data compared
+    //and determining which side to place it.
+    if(data < node->data)
+    {
+        //If less place on the left
+        node->left = insertNode(node->left, data);
+    }
+    else if(data > node->data)
+    {
+        //If more then place on the right
+        node->right = insertNode(node->right, data);
+    }
+    else
+        {
+            //If it's equal then just return the node. Cause y'know
+            return node;
+        }
+    //NEXT we update the height of the previous node so things are kept in order
+    node->height = 1 + max(getHeight(node->left),getHeight(node->right));
 
-AvlTree::Node *AvlTree::insertNode(AvlTree::Node *) {
-    return nullptr;
+    //NEXT we need to make sure our tree is balanced
+    int currentBalance = getBalance(node);
+
+    //NEXT! Comes the balancing (in the case our tree is out of balance)
+    //Making a left left rotation
+    if(currentBalance > 1 && data < node->left->data)
+    {
+        return rorateRight(node);
+    }
+    //Making a right right rotation
+    if(currentBalance < -1 && data > node->right->data)
+    {
+        return rotateLeft(node);
+    }
+    //Making a left right rotation
+    if(currentBalance > 1 && data > node->left->data)
+    {
+        node->left = rotateLeft(node->left);
+        return rorateRight(node);
+    }
+
+    //AND making a right left rotation
+    if(currentBalance < -1 && data < node->right->data)
+    {
+        node->right = rorateRight(node->right);
+        return rotateLeft(node);
+    }
+    //If it gets through all those conditions without getting caught
+    //Return the node as it is.
+    return node;
 }
 
 //The ol preorder traversal
