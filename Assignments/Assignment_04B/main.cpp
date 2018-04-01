@@ -1,28 +1,37 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 #include "Node.h"
 #include "AvlTree.h"
 
 using namespace std;
 int main()
 {
-
-
     Node* root = nullptr;
-    AvlTree test;
+    AvlTree tree;
+    ifstream file;
+    file.open("dictionary.txt");
+    string word;
+    if(!file.is_open())
+    {
+        cout << "error happen :C"<< endl;
+    }
+    else
+    {
+        while(file >> word)
+        {
+            root = tree.insertNode(root, word);
+        }
+    }
 
-    root = test.insertNode(root, "Bill");
-    root = test.insertNode(root, "Hooplaw");
-    root = test.insertNode(root, "Garbage");
-    root = test.insertNode(root, "Apple");
-    root = test.insertNode(root, "Zork");
-    root = test.insertNode(root, "Hello");
-    root = test.insertNode(root, "Dolly Parton");
 
 
 
 
-    test.preOrderTree(root);
+
+
+
+    tree.preOrderTree(root);
 
 
 
