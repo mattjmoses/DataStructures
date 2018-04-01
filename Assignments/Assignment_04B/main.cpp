@@ -5,17 +5,15 @@
 #include <algorithm>
 #include "Node.h"
 #include "AvlTree.h"
+#include "StringManager.h"
 
 using namespace std;
 int main()
 {
-    void stringStripper( string &str, char* toRemove ) {
-        for ( unsigned int i = 0; i < strlen(toRemove); ++i ) {
-            str.erase( remove(str.begin(), str.end(), toRemove[i]), str.end() );
-        }
-        cout << str << endl;
-    }
 
+    StringManager manager;
+
+    manager.stringStripper("123hi");
 
     Node* root = nullptr;
     AvlTree tree;
