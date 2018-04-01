@@ -45,6 +45,7 @@ void SpellChecker::CheckSpelling(string textFile, string dictionary)
     file02.open(textFile);
     string rawWord;
     string cleanedWord;
+
     //So now we're looking through the file
     if(!file02.is_open())
     {
@@ -59,7 +60,12 @@ void SpellChecker::CheckSpelling(string textFile, string dictionary)
                 //Ignoring all empty strings
                 if(cleanedWord != "")
                 {
-                    cout << cleanedWord << endl;
+
+                    //Here now we're checking the words against the dictionary
+                    if(!(search= tree.searchTree(cleanedWord,root)))
+                    {
+                        RecordWrongWords(cleanedWord);
+                    }
                 }
 
             }
@@ -72,4 +78,22 @@ void SpellChecker::CheckSpelling(string textFile, string dictionary)
 
     //tree.preOrderTree(root);
 
+}
+
+//Recording misspelled words.
+void SpellChecker::RecordWrongWords(string badWord)
+{
+    fstream bad("badWords.txt", ios::in | ios::out | ios::app);
+
+    if(!bad.is_open())
+    {
+        cout << "error happen";
+    }
+    else
+    {
+        //Recording the mispelled words to an external file.
+        bad<< badWord << endl;
+
+        bad.close();
+    }
 }

@@ -16,7 +16,8 @@ class SpellChecker
     SpellChecker();//The ol' default constructor
     ~SpellChecker();//The ol' default destructor
 
-    void CheckSpelling(string, string);
+    void CheckSpelling(string, string);//Spellchecks a document against a dictionary
+    void RecordWrongWords(string);//Records any mispelled words to an external file
 };
 
 
