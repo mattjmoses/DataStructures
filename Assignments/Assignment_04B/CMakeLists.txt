@@ -3,4 +3,4 @@ project(Assignment_04B)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Assignment_04B main.cpp AVLTree.cpp AVLTree.h Node.cpp Node.h)
+add_executable(Assignment_04B main.cpp Node.cpp Node.h AvlTree.cpp AvlTree.h)

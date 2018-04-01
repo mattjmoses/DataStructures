@@ -15,10 +15,10 @@ class Node
     ~Node(); //The ol default destructor
 
     //All the elements of our friend, the node
-    string word;
+    int data;
     Node* left;
     Node* right;
-    int count;
+    int height;
 };
 
 
