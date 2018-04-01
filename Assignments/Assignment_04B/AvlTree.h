@@ -19,6 +19,7 @@ public:
 
 
     int max(int, int); //getting the max integer. This is subject to change
+    Node* searchTree(string, Node*); //Searching the tree for specific data
     int getHeight(Node*); //Getting the height of the tree
     Node* createNode(string); //Creates a single node to be used in the insert
     Node* rotateRight(Node *); //Performs the rightward rotation

@@ -15,7 +15,7 @@ int main()
 
     string str = manager.stringStripper("billium.");
     cout << str << endl;
-
+    Node* search = nullptr;
     Node* root = nullptr;
     AvlTree tree;
     ifstream file;
@@ -36,12 +36,12 @@ int main()
     }
     file.close();
 
+    search = tree.searchTree("numbers",root);
 
 
+    cout << search->data << endl;
 
-
-
-    //tree.preOrderTree(root);
+   // tree.preOrderTree(root);
 
 
     return 0;

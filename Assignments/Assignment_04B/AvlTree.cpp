@@ -171,3 +171,23 @@ void AvlTree::preOrderTree(Node *rootNode)
         preOrderTree(rootNode->right);
     }
 }
+//We're searching the tree here...
+Node *AvlTree::searchTree(string data, Node *tree)
+{
+    if(tree == nullptr)
+    {
+        return nullptr;
+    }
+    else if(data < tree->data)
+    {
+        return searchTree(data, tree->left);
+    }
+    else if(data > tree->data)
+    {
+        return searchTree(data, tree->right);
+    }
+    else
+        {
+            return tree;
+        }
+}
