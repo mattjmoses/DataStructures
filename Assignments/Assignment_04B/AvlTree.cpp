@@ -74,15 +74,28 @@ Node *AvlTree::rotateRight(Node *y)
     return x;
 }
 //Handles the left rotation
-Node *AvlTree::rotateLeft(Node *nodeX)
+Node *AvlTree::rotateLeft(Node *x)
 {
-    //Same as before with the right rotation more or less.
-    Node *nodeY = nodeX->right;
-    Node* subTree = nodeY->left;
+//    //Same as before with the right rotation more or less.
+//    Node *nodeY = nodeX->right;
+//    Node* subTree = nodeY->left;
+//
+//    nodeY->left = nodeX;
+//    nodeX->right = subTree;
+//    return nodeY;
+    Node *y = x->right;
+    Node *T2 = y->left;
 
-    nodeY->left = nodeX;
-    nodeX->right = subTree;
-    return nodeY;
+    // Perform rotation
+    y->left = x;
+    x->right = T2;
+
+    //  Update heights
+    x->height = max(getHeight(x->left), getHeight(x->right))+1;
+    y->height = max(getHeight(y->left), getHeight(y->right))+1;
+
+    // Return new root
+    return y;
 }
 
 //Getting the balance of a given node
