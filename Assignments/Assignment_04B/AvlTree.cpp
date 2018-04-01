@@ -52,24 +52,31 @@ Node *AvlTree::createNode(int data)
     return newNode;
 }
 //Handles the right rotation
-Node *AvlTree::rotateRight(Node *nodeY)
+Node *AvlTree::rotateRight(Node *y)
 {
-    //Node x and y are both root nodes
-    //Pointing to our pointers
-    Node *nodeX = nodeY->left;
-    //Is a subtree of X
-    Node *subTree = nodeX->right;
+    struct Node *x = y->left;
+    struct Node *T2 = x->right;
 
-    //So we rotate
-    nodeX->right = nodeY;
-    nodeY->left = subTree;
+    // Perform rotation
+    x->right = y;
+    y->left = T2;
+
+//    //Node x and y are both root nodes
+//    //Pointing to our pointers
+//    Node *nodeX = nodeY->left;
+//    //Is a subtree of X
+//    Node *subTree = nodeX->right;
+//
+//    //So we rotate
+//    nodeX->right = nodeY;
+//    nodeY->left = subTree;
 
     //Updating our node heights
-    nodeY->height = max(getHeight(nodeY->left),getHeight(nodeY->right)) +1;
-    nodeX->height = max(getHeight(nodeX->left),getHeight(nodeX->right)) +1;
+    y->height = max(getHeight(y->left),getHeight(y->right)) +1;
+    x->height = max(getHeight(x->left),getHeight(x->right)) +1;
 
     //And we send along our freshly rotated branch
-    return nodeX;
+    return x;
 }
 //Handles the left rotation
 Node *AvlTree::rotateLeft(Node *nodeX)
