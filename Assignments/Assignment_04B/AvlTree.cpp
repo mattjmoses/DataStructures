@@ -3,6 +3,7 @@
 //
 
 #include "AvlTree.h"
+#include "Node.h"
 #include <cstdlib>
 #include <iostream>
 using namespace std;
@@ -14,6 +15,7 @@ AvlTree::~AvlTree() = default;
 //Figuring out which integer is bigger
 int AvlTree::max(int a, int b)
 {
+
     //Is a larger than b? if so return a, otherwise return b
     //Turnary operators :0
     return (a > b)? a : b;
@@ -34,7 +36,7 @@ int AvlTree::getHeight(Node *node)
 
 }
 //Creating a brand new node -used in the insert function
-AvlTree::Node *AvlTree::createNode(int data)
+Node *AvlTree::createNode(int data)
 {
     //Being fancy allocating a memory thing with the node.
     Node* newNode = (Node*)malloc(sizeof(Node));
@@ -50,7 +52,7 @@ AvlTree::Node *AvlTree::createNode(int data)
     return nullptr;
 }
 //Handles the right rotation
-AvlTree::Node *AvlTree::rotateRight(Node *nodeY)
+Node *AvlTree::rotateRight(Node *nodeY)
 {
     //Node x and y are both root nodes
     //Pointing to our pointers
@@ -70,7 +72,7 @@ AvlTree::Node *AvlTree::rotateRight(Node *nodeY)
     return nodeX;
 }
 //Handles the left rotation
-AvlTree::Node *AvlTree::rotateLeft(Node *nodeX)
+Node *AvlTree::rotateLeft(Node *nodeX)
 {
     //Same as before with the right rotation more or less.
     Node *nodeY = nodeX->right;
@@ -98,7 +100,7 @@ int AvlTree::getBalance(Node *node)
 }
 //Here now is our function to add new nodes to the tree.
 //Returns a new subtree root.
-AvlTree::Node *AvlTree::insertNode(Node *node,int data)
+Node *AvlTree::insertNode(Node *node,int data)
 {
     //If the thing's empty then make the inputted node the root
     if(node == nullptr)

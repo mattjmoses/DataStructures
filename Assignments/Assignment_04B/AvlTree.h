@@ -4,7 +4,7 @@
 
 #ifndef ASSIGNMENT_04B_AVLTREE_H
 #define ASSIGNMENT_04B_AVLTREE_H
-
+#include "Node.h"
 
 
 //Here now is the header for our AVL tree
@@ -16,17 +16,7 @@ class AvlTree
 
     AvlTree(); //The ol' default constructor
     ~AvlTree(); //The ol' default destructor
-    //Our node what contains the data
-    struct Node
-    {
-        //Our data
-        int data;
-        //Pointers to left and right branches
-        Node* left;
-        Node* right;
-        //The tree height
-        int height;
-    };
+
 
     int max(int, int); //getting the max integer. This is subject to change
     int getHeight(Node*); //Getting the height of the tree
