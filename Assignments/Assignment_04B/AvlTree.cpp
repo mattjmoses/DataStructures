@@ -165,13 +165,15 @@ void AvlTree::preOrderTree(Node *rootNode)
 {
     if(rootNode != nullptr)
     {
+        //This isn't showing the branches but it's ordered. So, I guess?
         cout << rootNode->data << " ";
         //Then we keep feeding the tree in until it all reads out.
         preOrderTree(rootNode->left);
         preOrderTree(rootNode->right);
     }
 }
-//We're searching the tree here...
+//We're searching the tree here returns true if the word's found
+//OTHERWISE it returns false. Pretty straightforward.
 bool AvlTree::searchTree(string data, Node *tree)
 {
     if(tree == nullptr)
