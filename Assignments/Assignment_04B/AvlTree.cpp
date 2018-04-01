@@ -49,7 +49,7 @@ Node *AvlTree::createNode(int data)
     //added to the tree
     newNode->height = 1;
 
-    return nullptr;
+    return newNode;
 }
 //Handles the right rotation
 Node *AvlTree::rotateRight(Node *nodeY)

@@ -12,11 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f61b541c-5a92-4f74-a0eb-68a00bbe94fc" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../Assignment_04B/Node.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Assignment_04B/Node.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Assignment_04B/AvlTree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment_04B/AvlTree.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment_04B/AvlTree.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment_04B/AvlTree.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment_04B/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment_04B/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Assignment_04B/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment_04B/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -163,12 +159,12 @@
       <workItem from="1518472064092" duration="31000" />
       <workItem from="1518477516921" duration="2044000" />
       <workItem from="1518574330878" duration="652000" />
-      <workItem from="1522543202836" duration="299000" />
+      <workItem from="1522543202836" duration="617000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5254000" />
+    <option name="totallyTimeSpent" value="5572000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="424" y="38" width="1400" height="1042" extended-state="0" />
