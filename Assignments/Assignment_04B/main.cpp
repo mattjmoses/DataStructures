@@ -1,9 +1,23 @@
 #include <iostream>
-
+#include <string>
 #include "Node.h"
 #include "AvlTree.h"
-int main() {
 
+using namespace std;
+int main()
+{
+
+    string cool = "marppp";
+    string zop = "marpp";
+
+    if(cool > zop)
+    {
+        cout<< cool << endl;
+    }
+    else
+    {
+        cout << zop << endl;
+    }
     Node* root = nullptr;
     AvlTree test;
 
