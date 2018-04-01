@@ -89,7 +89,7 @@ Node *AVLTree::insert(int data, Node *node)
 
 void AVLTree::displayTree(Node *tree)
 {
-    if (tree == NULL)
+    if (tree == nullptr)
         return;
     cout << tree->data << " ";
 
