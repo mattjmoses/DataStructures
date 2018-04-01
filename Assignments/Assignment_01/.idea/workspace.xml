@@ -12,8 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f61b541c-5a92-4f74-a0eb-68a00bbe94fc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../Assignment_04B/AvlTree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment_04B/AvlTree.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment_04B/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment_04B/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
