@@ -31,7 +31,7 @@ class AvlTree
     int max(int, int); //getting the max integer. This is subject to change
     int getHeight(Node*); //Getting the height of the tree
     Node* createNode(int); //Creates a single node to be used in the insert
-    Node* rorateRight(Node*); //Performs the rightward rotation
+    Node* rotateRight(Node *); //Performs the rightward rotation
     Node* rotateLeft(Node*); //Does a rotate to the devil's direction
     int getBalance(Node*); //Gets the balance of the node
     Node*insertNode(Node*, int);//This actually puts the new node into the tree and performs the balancing

@@ -50,7 +50,7 @@ AvlTree::Node *AvlTree::createNode(int data)
     return nullptr;
 }
 //Handles the right rotation
-AvlTree::Node *AvlTree::rorateRight(Node *nodeY)
+AvlTree::Node *AvlTree::rotateRight(Node *nodeY)
 {
     //Node x and y are both root nodes
     //Pointing to our pointers
@@ -132,7 +132,7 @@ AvlTree::Node *AvlTree::insertNode(Node *node,int data)
     //Making a left left rotation
     if(currentBalance > 1 && data < node->left->data)
     {
-        return rorateRight(node);
+        return rotateRight(node);
     }
     //Making a right right rotation
     if(currentBalance < -1 && data > node->right->data)
@@ -143,13 +143,13 @@ AvlTree::Node *AvlTree::insertNode(Node *node,int data)
     if(currentBalance > 1 && data > node->left->data)
     {
         node->left = rotateLeft(node->left);
-        return rorateRight(node);
+        return rotateRight(node);
     }
 
     //AND making a right left rotation
     if(currentBalance < -1 && data < node->right->data)
     {
-        node->right = rorateRight(node->right);
+        node->right = rotateRight(node->right);
         return rotateLeft(node);
     }
     //If it gets through all those conditions without getting caught
