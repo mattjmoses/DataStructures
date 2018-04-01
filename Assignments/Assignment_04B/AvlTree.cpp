@@ -5,6 +5,7 @@
 #include "Node.h"
 #include <cstdlib>
 #include <iostream>
+#include <string>
 using namespace std;
 
 AvlTree::AvlTree() = default;
@@ -31,7 +32,7 @@ int AvlTree::getHeight(Node *node)
 
 }
 //Creating a brand new node -used in the insert function
-Node *AvlTree::createNode(int data)
+Node *AvlTree::createNode(string data)
 {
     //Being fancy allocating a memory thing with the node.
     Node* newNode = (Node*)malloc(sizeof(Node));
@@ -100,7 +101,7 @@ int AvlTree::getBalance(Node *node)
 }
 //Here now is our function to add new nodes to the tree.
 //Returns a new subtree root.
-Node *AvlTree::insertNode(Node *node,int data)
+Node *AvlTree::insertNode(Node *node,string data)
 {
     //If the thing's empty then make the inputted node the root
     if(node == nullptr)

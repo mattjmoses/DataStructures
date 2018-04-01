@@ -20,11 +20,11 @@ public:
 
     int max(int, int); //getting the max integer. This is subject to change
     int getHeight(Node*); //Getting the height of the tree
-    Node* createNode(int); //Creates a single node to be used in the insert
+    Node* createNode(string); //Creates a single node to be used in the insert
     Node* rotateRight(Node *); //Performs the rightward rotation
     Node* rotateLeft(Node*); //Does a rotate to the devil's direction
     int getBalance(Node*); //Gets the balance of the node
-    Node*insertNode(Node*, int);//This actually puts the new node into the tree and performs the balancing
+    Node*insertNode(Node*, string);//This actually puts the new node into the tree and performs the balancing
     void preOrderTree(Node*);//Peforms a pre-order traversal of the tree and displays what it finds
 
 
