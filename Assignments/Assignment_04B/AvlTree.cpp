@@ -50,52 +50,38 @@ Node *AvlTree::createNode(int data)
 Node *AvlTree::rotateRight(Node *y)
 {
     struct Node *x = y->left;
-    struct Node *T2 = x->right;
+    struct Node *subTree = x->right;
 
-    // Perform rotation
+    // Rotating the nodes
     x->right = y;
-    y->left = T2;
+    y->left = subTree;
 
-//    //Node x and y are both root nodes
-//    //Pointing to our pointers
-//    Node *nodeX = nodeY->left;
-//    //Is a subtree of X
-//    Node *subTree = nodeX->right;
-//
-//    //So we rotate
-//    nodeX->right = nodeY;
-//    nodeY->left = subTree;
 
     //Updating our node heights
     y->height = max(getHeight(y->left),getHeight(y->right)) +1;
     x->height = max(getHeight(x->left),getHeight(x->right)) +1;
 
-    //And we send along our freshly rotated branch
+    //And we send along our freshly rotated root
     return x;
 }
 //Handles the left rotation
-Node *AvlTree::rotateLeft(Node *x)
+Node *AvlTree::rotateLeft(Node *nodeX)
 {
-//    //Same as before with the right rotation more or less.
-//    Node *nodeY = nodeX->right;
-//    Node* subTree = nodeY->left;
-//
-//    nodeY->left = nodeX;
-//    nodeX->right = subTree;
-//    return nodeY;
-    Node *y = x->right;
-    Node *T2 = y->left;
+    //Works the same as the left rotation. For some reason the naming convention
+    //is messing with the getHeight methods in other methods...
+    Node *nodeY = nodeX->right;
+    Node *subTree = nodeY->left;
 
-    // Perform rotation
-    y->left = x;
-    x->right = T2;
+    //Making the rotation
+    nodeY->left = nodeX;
+    nodeX->right = subTree;
 
-    //  Update heights
-    x->height = max(getHeight(x->left), getHeight(x->right))+1;
-    y->height = max(getHeight(y->left), getHeight(y->right))+1;
+    //Updating our heights
+    nodeX->height = max(getHeight(nodeX->left), getHeight(nodeX->right))+1;
+    nodeY->height = max(getHeight(nodeY->left), getHeight(nodeY->right))+1;
 
-    // Return new root
-    return y;
+    //And off she goes!
+    return nodeY;
 }
 
 //Getting the balance of a given node
@@ -106,11 +92,10 @@ int AvlTree::getBalance(Node *node)
     {
         return  0;
     }
-    else
-    {
-        //Checking the height of the right and left branches
-        return getHeight(node->left) - getHeight(node->right);
-    }
+
+    //Checking the height of the right and left branches
+    return getHeight(node->left) - getHeight(node->right);
+
 
 }
 //Here now is our function to add new nodes to the tree.
