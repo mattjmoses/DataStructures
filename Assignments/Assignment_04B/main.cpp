@@ -13,7 +13,8 @@ int main()
 
     StringManager manager;
 
-    manager.stringStripper("123hi");
+    string str = manager.stringStripper("billium.");
+    cout << str << endl;
 
     Node* root = nullptr;
     AvlTree tree;

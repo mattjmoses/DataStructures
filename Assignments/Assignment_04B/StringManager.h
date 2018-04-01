@@ -15,7 +15,7 @@ class StringManager
     StringManager(); //The ol' default constructor
     ~StringManager(); //The ol' default destructor
 
-    void stringStripper(string); //Our string stripper class -removes special characters from strings
+    string stringStripper(string); //Our string stripper class -removes special characters from strings
 };
 
 
