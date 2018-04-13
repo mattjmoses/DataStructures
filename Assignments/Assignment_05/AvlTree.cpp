@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
+#include "HashTable.h"
 using namespace std;
 
 AvlTree::AvlTree() = default;
@@ -34,10 +35,11 @@ int AvlTree::getHeight(Node *node)
 //Creating a brand new node -used in the insert function
 Node *AvlTree::createNode(string data)
 {
+
     //Being fancy allocating a memory thing with the node.
     Node* newNode = (Node*)malloc(sizeof(Node));
     //giving the node the data we want
-    newNode->data = data;
+    newNode->data = hash.hashHappener(data);
     //Initializing our pointers kind of. They point to nothing
     newNode->left = nullptr;
     newNode->right = nullptr;
@@ -103,6 +105,7 @@ int AvlTree::getBalance(Node *node)
 //Returns a new subtree root.
 Node *AvlTree::insertNode(Node *node,string data)
 {
+
     //If the thing's empty then make the inputted node the root
     if(node == nullptr)
     {
@@ -110,12 +113,12 @@ Node *AvlTree::insertNode(Node *node,string data)
     }
     //Doing the insertion. Checking the values of the data compared
     //and determining which side to place it.
-    if(data < node->data)
+    if(hash.hashHappener(data) < node->data)
     {
         //If less place on the left
         node->left = insertNode(node->left, data);
     }
-    else if(data > node->data)
+    else if(hash.hashHappener(data) > node->data)
     {
         //If more then place on the right
         node->right = insertNode(node->right, data);
@@ -133,24 +136,24 @@ Node *AvlTree::insertNode(Node *node,string data)
 
     //NEXT! Comes the balancing (in the case our tree is out of balance)
     //Making a left left rotation
-    if(currentBalance > 1 && data < node->left->data)
+    if(currentBalance > 1 && hash.hashHappener(data) < node->left->data)
     {
         return rotateRight(node);
     }
     //Making a right right rotation
-    if(currentBalance < -1 && data > node->right->data)
+    if(currentBalance < -1 && hash.hashHappener(data) > node->right->data)
     {
         return rotateLeft(node);
     }
     //Making a left right rotation
-    if(currentBalance > 1 && data > node->left->data)
+    if(currentBalance > 1 && hash.hashHappener(data) > node->left->data)
     {
         node->left = rotateLeft(node->left);
         return rotateRight(node);
     }
 
     //AND making a right left rotation
-    if(currentBalance < -1 && data < node->right->data)
+    if(currentBalance < -1 && hash.hashHappener(data) < node->right->data)
     {
         node->right = rotateRight(node->right);
         return rotateLeft(node);
@@ -182,15 +185,15 @@ bool AvlTree::searchTree(string data, Node *tree)
     {
         return false;
     }
-    else if(data < tree->data)
+    else if(hash.hashHappener(data) < tree->data)
     {
         return searchTree(data, tree->left);
     }
-    else if(data > tree->data)
+    else if(hash.hashHappener(data) > tree->data)
     {
         return searchTree(data, tree->right);
     }
-    else if(data == tree->data)
+    else if(hash.hashHappener(data) == tree->data)
         {
             return true;
         }

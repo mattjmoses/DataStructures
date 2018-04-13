@@ -5,7 +5,7 @@
 #ifndef ASSIGNMENT_04B_AVLTREE_H
 #define ASSIGNMENT_04B_AVLTREE_H
 #include "Node.h"
-
+#include "HashTable.h"
 
 //Here now is the header for our AVL tree
 //Code referenced from GeeksForGeeks.com
@@ -17,7 +17,7 @@ public:
     AvlTree(); //The ol' default constructor
     ~AvlTree(); //The ol' default destructor
 
-
+    HashTable hash;
     int max(int, int); //getting the max integer. This is subject to change
     bool searchTree(string, Node*); //Searching the tree for specific data
     int getHeight(Node*); //Getting the height of the tree

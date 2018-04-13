@@ -14,20 +14,20 @@ int main()
 {
     SpellChecker hitIt;
 
-   // hitIt.CheckSpelling("mispelled.txt","dictionary.txt");
+    hitIt.CheckSpelling("mispelled.txt","dictionary.txt");
 
-    HashTable hasher;
-
-    string bob = "jan";
-    string carg = "Lala";
-
-    int address = hasher.hashHappener(bob);
-    int address02 = hasher.hashHappener(carg);
-    int address03 = hasher.hashHappener(bob);
-
-    cout << "value: "<< bob << " " << address << endl;
-    cout << "value: "<< carg << " " << address02<< endl;
-    cout << "value: "<< bob << " " << address03 << endl;
+//    HashTable hasher;
+//
+//    string bob = "jan";
+//    string carg = "Lala";
+//
+//    int address = hasher.hashHappener(bob);
+//    int address02 = hasher.hashHappener(carg);
+//    int address03 = hasher.hashHappener(bob);
+//
+//    cout << "value: "<< bob << " " << address << endl;
+//    cout << "value: "<< carg << " " << address02<< endl;
+//    cout << "value: "<< bob << " " << address03 << endl;
 
 
     return 0;
