@@ -181,11 +181,7 @@ void AvlTree::preOrderTree(Node *rootNode)
             cout << "[R] "<< rootNode->right->data << endl;
             cout << endl;
         }
-//        //This isn't showing the branches but it's ordered. So, I guess?
-//        cout << "[Data] " << rootNode->data << " " <<endl;
-////        cout << "[Left]"<< rootNode->left->data << " " << endl;
-////        cout<< "[Right]" << rootNode->right->data <<" " << endl;
-//        //Then we keep feeding the tree in until it all reads out.
+
         preOrderTree(rootNode->left);
         preOrderTree(rootNode->right);
     }
