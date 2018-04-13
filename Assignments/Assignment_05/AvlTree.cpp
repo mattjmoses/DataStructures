@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
+#include <iomanip>
 #include "HashTable.h"
 using namespace std;
 
@@ -202,3 +203,5 @@ bool AvlTree::searchTree(string data, Node *tree)
             return false;
         }
 }
+
+
