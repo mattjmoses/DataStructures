@@ -14,9 +14,10 @@ int main()
 {
     SpellChecker hitIt;
 
-    hitIt.CheckSpelling("mispelled.txt","dictionary.txt");
+//    hitIt.CheckSpelling("mispelled.txt","dictionary.txt");
 
-//    HashTable hasher;
+    HashTable hasher;
+    hasher.checkForCollisions("dictionary.txt");
 //
 //    string bob = "jan";
 //    string carg = "Lala";

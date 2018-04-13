@@ -19,6 +19,8 @@ class HashTable
 
     //And our humble hashing function.
     int hashHappener(string);
+    //Function to check for collisions in our data
+    void checkForCollisions(string);
 
 };
 
