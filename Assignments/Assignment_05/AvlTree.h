@@ -14,7 +14,7 @@ class AvlTree
 
 public:
 
-    AvlTree(); //The ol' default constructor
+    AvlTree();//The ol' default constructor
     ~AvlTree(); //The ol' default destructor
 
     HashTable hash;

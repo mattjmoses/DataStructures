@@ -78,6 +78,9 @@ void SpellChecker::CheckSpelling(string textFile, string dictionary)
 
     tree.preOrderTree(root);
 
+
+
+
 }
 
 //Recording misspelled words.
