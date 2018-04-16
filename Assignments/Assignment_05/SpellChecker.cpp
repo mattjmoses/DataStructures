@@ -77,8 +77,7 @@ void SpellChecker::CheckSpelling(string textFile, string dictionary)
 
     //cout << search << endl;
 
-    tree.preOrderTree(root);
-
+    tab
 
 
 

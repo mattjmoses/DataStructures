@@ -5,7 +5,7 @@ int main() {
 
     SpellChecker speller;
 
-    speller.CheckSpelling("dictionary.txt","badwords.txt");
+    speller.CheckSpelling("mispelled.txt","dictionary.txt");
 //    // Create 26 Items to store in the Hash Table.
 //
 //    Node * B = new Node {"Banana", NULL};
