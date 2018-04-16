@@ -33,6 +33,7 @@ void SpellChecker::CheckSpelling(string textFile, string dictionary)
     }
     else
     {
+
         while(file >> word)
         {
             root = tree.insertNode(root, word);

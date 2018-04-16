@@ -17,7 +17,7 @@ HashTable::~HashTable() = default;
 int HashTable::hashHappener(string value)
 {
 
-    int hash(0);
+    int hash(53);
     //Now were're creating a hash for the inputted string using computer magic.
     for (int i=0; i< value.length(); i++)
     {
