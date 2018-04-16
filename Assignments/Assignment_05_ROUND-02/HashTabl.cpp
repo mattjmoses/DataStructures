@@ -9,7 +9,7 @@ HashTabl::HashTabl(int tableLength)
 {
     if(tableLength <= 0)
     {
-        tableLength = 13;
+        tableLength = 53;
     }
     //Here we're setting a new array of linked lists
     array = new LinkedList_The_Revenge[tableLength];
@@ -18,9 +18,7 @@ HashTabl::HashTabl(int tableLength)
 }
 
 
-HashTabl::~HashTabl() {
-
-}
+HashTabl::~HashTabl() = default;
 
 //Here now is our hashing function. SO y'know. Y'know.
 int HashTabl::hash(string itemKey)
@@ -35,9 +33,9 @@ int HashTabl::hash(string itemKey)
 
 
 //Adding items to our hash map
-void HashTabl::insertItem(Item *newItem)
+void HashTabl::insertItem(Node *newItem)
 {
-    int index = hash(newItem->key);
+    int index = hash(newItem->value);
     //Here we're adding the new item into our array of linked lists
     array[index].insertItem(newItem);
 }
@@ -50,7 +48,7 @@ bool HashTabl::removeItem(string itemKey)
     return array[index].removeItem(itemKey);
 }
 
-Item *HashTabl::getItemByKey(string itemKey)
+bool HashTabl::getItemByKey(string itemKey)
 {
     //So we decode the thing
     int index = hash(itemKey);

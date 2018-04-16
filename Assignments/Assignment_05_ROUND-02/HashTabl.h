@@ -24,19 +24,19 @@ class HashTabl
 
     //The ol defult constructor. Setting the table length
     //to 13 to start.
-    HashTabl(int tableLength = 13);
+    HashTabl(int tableLength = 53);
 
     //The ol default destructor
     ~HashTabl();
 
     //Adds a new item to the hash table
-    void insertItem(Item *newItem);
+    void insertItem(Node *newItem);
 
     //Removes an item from the hash table
     bool removeItem(string itemKey);
 
     //Find an item in the hash table
-    Item * getItemByKey(string itemKey);
+    bool getItemByKey(string itemKey);
 
     //Displays the contents of our hash table
     void printTable();

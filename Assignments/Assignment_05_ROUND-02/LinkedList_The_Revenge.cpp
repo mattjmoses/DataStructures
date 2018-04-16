@@ -7,7 +7,7 @@
 LinkedList_The_Revenge::LinkedList_The_Revenge()
 {
     //Setting our defaults
-    head = new Item;
+    head = new Node;
     head->next = nullptr;
     length = 0;
 
@@ -15,8 +15,8 @@ LinkedList_The_Revenge::LinkedList_The_Revenge()
 //Burning down our linked list
 LinkedList_The_Revenge::~LinkedList_The_Revenge()
 {
-    Item * p = head;
-    Item * q = head;
+    Node * p = head;
+    Node * q = head;
     while(q)
     {
         p = q;
@@ -29,7 +29,7 @@ LinkedList_The_Revenge::~LinkedList_The_Revenge()
 }
 
 //Making a new item on the chain
-void LinkedList_The_Revenge::insertItem(Item *newItem)
+void LinkedList_The_Revenge::insertItem(Node *newItem)
 {
     //And setting the head to point to the next item if it has no neighbor
     if(!head->next)
@@ -40,8 +40,8 @@ void LinkedList_The_Revenge::insertItem(Item *newItem)
     }
 
     //if not then insert the next item in the chain and increase the length
-    Item * p = head;
-    Item * q = head;
+    Node * p = head;
+    Node * q = head;
 
     while(q)
     {
@@ -61,12 +61,12 @@ bool LinkedList_The_Revenge::removeItem(string itemKey)
     {
         return false;
     }
-    Item * p = head;
-    Item * q = head;
+    Node * p = head;
+    Node * q = head;
     //Looping through the list until we find what we're looking for
     while(q)
     {
-        if(q->key == itemKey)
+        if(q->value == itemKey)
         {
             p->next = q->next;
             delete q;
@@ -80,23 +80,23 @@ bool LinkedList_The_Revenge::removeItem(string itemKey)
 }
 
 
-//Searching through the dang list
-Item *LinkedList_The_Revenge::getItem(string itemKey)
+//Searching through the dang list if the item is present we return true
+bool LinkedList_The_Revenge::getItem(string itemKey)
 {
-    Item * p = head;
-    Item * q = head;
+    Node * p = head;
+    Node * q = head;
 
     while(q)
     {
         p = q;
-        if((p != head) && (p->key == itemKey))
+        if((p != head) && (p->value == itemKey))
         {
-            return p;
+            return true;
         }
         q = p->next;
 
     }
-    return nullptr;
+    return false;
 }
 
 void LinkedList_The_Revenge::printList()
@@ -106,15 +106,15 @@ void LinkedList_The_Revenge::printList()
         cout << "THE LIST IS EMPTY!"<< endl;
         return;
     }
-    Item * p = head;
-    Item * q = head;
+    Node * p = head;
+    Node * q = head;
 
     while(q)
     {
         p = q;
         if(p != head)
         {
-            cout << p->key;
+            cout << p->value;
             if(p->next)
             {
                 cout << ", ";

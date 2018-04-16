@@ -3,32 +3,32 @@
 int main() {
 
     // Create 26 Items to store in the Hash Table.
-    Item * A = new Item {"Apple", NULL};
-    Item * B = new Item {"Banana", NULL};
-    Item * C = new Item {"Caterpillar", NULL};
-    Item * D = new Item {"Dog", NULL};
-    Item * E = new Item {"Elephant", NULL};
-    Item * F = new Item {"Fedora", NULL};
-    Item * G = new Item {"Goosebumps", NULL};
-    Item * H = new Item {"House", NULL};
-    Item * I = new Item {"Insects", NULL};
-    Item * J = new Item {"Jam", NULL};
-    Item * K = new Item {"Kite", NULL};
-    Item * L = new Item {"Limestone", NULL};
-    Item * M = new Item {"Mountaineering", NULL};
-    Item * N = new Item {"Night", NULL};
-    Item * O = new Item {"Open Sesame", NULL};
-    Item * P = new Item {"Potatoes", NULL};
-    Item * Q = new Item {"Quantum Mechanics", NULL};
-    Item * R = new Item {"Rrrrrrrrrrawr", NULL};
-    Item * S = new Item {"Snakes", NULL};
-    Item * T = new Item {"Tizzy Tube", NULL};
-    Item * U = new Item {"Underworld", NULL};
-    Item * V = new Item {"Volcanic Ash", NULL};
-    Item * W = new Item {"Who When What Why", NULL};
-    Item * X = new Item {"XXX", NULL};
-    Item * Y = new Item {"Yellow", NULL};
-    Item * Z = new Item {"Zest of Lemon", NULL};
+    Node * A = new Node {"Apple", NULL};
+    Node * B = new Node {"Banana", NULL};
+    Node * C = new Node {"Caterpillar", NULL};
+    Node * D = new Node {"Dog", NULL};
+    Node * E = new Node {"Elephant", NULL};
+    Node * F = new Node {"Fedora", NULL};
+    Node * G = new Node {"Goosebumps", NULL};
+    Node * H = new Node {"House", NULL};
+    Node * I = new Node {"Insects", NULL};
+    Node * J = new Node {"Jam", NULL};
+    Node * K = new Node {"Kite", NULL};
+    Node * L = new Node {"Limestone", NULL};
+    Node * M = new Node {"Mountaineering", NULL};
+    Node * N = new Node {"Night", NULL};
+    Node * O = new Node {"Open Sesame", NULL};
+    Node * P = new Node {"Potatoes", NULL};
+    Node * Q = new Node {"Quantum Mechanics", NULL};
+    Node * R = new Node {"Rrrrrrrrrrawr", NULL};
+    Node * S = new Node {"Snakes", NULL};
+    Node * T = new Node {"Tizzy Tube", NULL};
+    Node * U = new Node {"Underworld", NULL};
+    Node * V = new Node {"Volcanic Ash", NULL};
+    Node * W = new Node {"Who When What Why", NULL};
+    Node * X = new Node {"XXX", NULL};
+    Node * Y = new Node {"Yellow", NULL};
+    Node * Z = new Node {"Zest of Lemon", NULL};
 
     // Create a Hash Table of 13 Linked List elements.
     HashTabl table;
@@ -73,8 +73,8 @@ int main() {
     table.printTable();
     table.pringHashTable();
 
-    // Look up an Item in the Hash Table.
-    Item * result = table.getItemByKey("Snakes");
-    cout << result->key << endl;
+    // Look up an Node in the Hash Table.
+    bool result = table.getItemByKey("Peener");
+    cout << "Result of search: " << result << endl;
     return 0;
 }

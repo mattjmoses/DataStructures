@@ -11,18 +11,18 @@
 using namespace std;
 
 //The ol struct which will carry our data on to glory
-struct Item
+struct Node
 {
-    string key;
+    string value;
     //Pointing to the next thing in the thing.
-    Item * next;
+    Node * next;
 };
 
 class LinkedList_The_Revenge
 {
  private:
     //The head of our mighty linked list
-    Item * head;
+    Node * head;
 
     //The length of our list of things
     int length;
@@ -32,13 +32,13 @@ class LinkedList_The_Revenge
     ~LinkedList_The_Revenge(); //The ol' default destructor
 
     //Adds a new item to the list
-    void insertItem(Item * newItem);
+    void insertItem(Node * newItem);
 
     //Removes an item from the list
     bool removeItem(string itemKey);
 
     //Searches for an item in the list
-    Item * getItem(string itemKey);
+    bool getItem(string itemKey);
 
     //Vomits out the contents of the list
     void printList();

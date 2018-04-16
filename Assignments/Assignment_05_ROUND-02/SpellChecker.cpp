@@ -19,7 +19,7 @@ void SpellChecker::CheckSpelling(string textFile, string dictionary)
 
     //
     bool search;
-
+    HashTabl table;
 
 
     ifstream file;
@@ -35,8 +35,12 @@ void SpellChecker::CheckSpelling(string textFile, string dictionary)
 
         while(file >> word)
         {
-            //Inserting our word from the dictionary into our HashTable
-            root = tree.insertNode(root, word);
+            //Here's a new null containing the word from the dictionary.
+         //   Node * wurd = new Node(word, nullptr);
+            //And so we insert the word.
+           // table.insertItem(wurd);
+
+
         }
     }
     file.close();
@@ -63,10 +67,10 @@ void SpellChecker::CheckSpelling(string textFile, string dictionary)
             {
 
                 //Here now we're checking the words against the dictionary
-                if(!(search= tree.searchTree(cleanedWord,root)))
-                {
-                    RecordWrongWords(cleanedWord);
-                }
+//                if(!(search= tree.searchTree(cleanedWord,root)))
+//                {
+//                    RecordWrongWords(cleanedWord);
+//                }
             }
 
         }
@@ -76,8 +80,8 @@ void SpellChecker::CheckSpelling(string textFile, string dictionary)
 
 
     //cout << search << endl;
-
-    tree.preOrderTree(root);
+    //SO we need to print out our hash table at the end.
+    //tree.preOrderTree(root);
 
 
 
