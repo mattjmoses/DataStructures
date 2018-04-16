@@ -3,4 +3,4 @@ project(Assignment_05_ROUND_02)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Assignment_05_ROUND_02 main.cpp LinkedList_The_Revenge.cpp LinkedList_The_Revenge.h HashTabl.cpp HashTabl.h)
+add_executable(Assignment_05_ROUND_02 main.cpp LinkedList_The_Revenge.cpp LinkedList_The_Revenge.h HashTabl.cpp HashTabl.h StringManager.cpp StringManager.h SpellChecker.cpp SpellChecker.h)
