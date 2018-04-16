@@ -30,7 +30,7 @@ class HashTabl
     ~HashTabl();
 
     //Adds a new item to the hash table
-    void inssertItem(Item * newItem);
+    void insertItem(Item *newItem);
 
     //Removes an item from the hash table
     bool removeItem(string itemKey);
