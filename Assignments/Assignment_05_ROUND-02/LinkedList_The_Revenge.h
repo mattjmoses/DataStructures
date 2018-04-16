@@ -24,6 +24,9 @@ class LinkedList_The_Revenge
     //The head of our mighty linked list
     Item * head;
 
+    //The length of our list of things
+    int length;
+
  public:
     LinkedList_The_Revenge(); //The ol' default constructor
     ~LinkedList_The_Revenge(); //The ol' default destructor
