@@ -11,7 +11,7 @@ HashTabl::HashTabl(int tableLength)
 {
     if(tableLength <= 0)
     {
-        tableLength = 53;
+        tableLength = 13;
     }
     //Here we're setting a new array of linked lists
     array = new LinkedList_The_Revenge[tableLength];
