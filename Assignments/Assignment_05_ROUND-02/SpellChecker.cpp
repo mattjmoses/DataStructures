@@ -35,10 +35,21 @@ void SpellChecker::CheckSpelling(string textFile, string dictionary)
 
         while(file >> word)
         {
-            //Here's a new null containing the word from the dictionary.
-           inWord = new Node{word, NULL};
-            //And so we insert the word.
-            table.insertItem(inWord);
+            //Trying to tamp down on collisions by searching the table to see if the word is already
+            //present. If it IS, we skip it and move on to the next one.
+            if(table.getItemByKey(word))
+            {
+                continue;
+            }
+            else
+                {
+                    //Here's a new null containing the word from the dictionary.
+                    inWord = new Node{word, nullptr};
+                    //And so we insert the word.
+                    table.insertItem(inWord);
+
+                }
+
 
 
         }

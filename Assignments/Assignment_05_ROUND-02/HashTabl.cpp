@@ -2,8 +2,10 @@
 // Created by matt on 16/04/18.
 //
 
+#include <fstream>
 #include "HashTabl.h"
 
+//code referenced from pumpkinprogrammerdotcom4.wordpress.com
 
 HashTabl::HashTabl(int tableLength)
 {
@@ -65,6 +67,7 @@ void HashTabl::printTable()
     {
         cout << "Bucket " << i+1 <<": ";
         array[i].printList();
+
     }
 }
 
