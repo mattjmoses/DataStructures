@@ -65,7 +65,7 @@ void HashTabl::printTable()
 
     for(int i = 0; i < length; i++)
     {
-        cout << "Bucket " << i+1 <<": ";
+        cout << "||Bucket " << i+1 <<": ";
         array[i].printList();
 
     }
@@ -73,7 +73,7 @@ void HashTabl::printTable()
 
 void HashTabl::pringHashTable()
 {
-    cout << "Hash table contents: ";
+    cout << "Hash table contents distribution: ";
     cout << getNumberOfItems() << " items in table" << endl;
 
     for(int i = 0; i < length; i++)
