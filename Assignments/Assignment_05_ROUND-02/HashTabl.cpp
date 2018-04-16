@@ -58,16 +58,38 @@ Item *HashTabl::getItemByKey(string itemKey)
     return array[index].getItem(itemKey);
 }
 
-void HashTabl::printTable() {
+//Barfing out our linked lists from within the hash table
+void HashTabl::printTable()
+{
+    cout << "Our venerable hash table: "<<endl;
+
+    for(int i = 0; i < length; i++)
+    {
+        cout << "Bucket " << i+1 <<": ";
+        array[i].printList();
+    }
+}
+
+void HashTabl::pringHashTable()
+{
+    cout << "Hash table contents: ";
+    cout << getNumberOfItems() << " items in table" << endl;
+
+    for(int i = 0; i < length; i++)
+    {
+        cout << i + 1 << ":\t";
+        for(int w = 0; w < array[i].getLength(); w++)
+        {
+            cout << "X";
+        }
+        cout << endl;
+    }
 
 }
 
-void HashTabl::printHistogram() {
-
-}
-
-int HashTabl::getLength() {
-    return 0;
+int HashTabl::getLength()
+{
+    return length;
 }
 
 int HashTabl::getNumberOfItems() {

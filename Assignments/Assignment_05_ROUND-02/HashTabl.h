@@ -42,7 +42,7 @@ class HashTabl
     void printTable();
 
     //Displays the baby developing
-    void printHistogram();
+    void pringHashTable();
 
     //Returns the lenghth of our venerable hash table
     int getLength();
