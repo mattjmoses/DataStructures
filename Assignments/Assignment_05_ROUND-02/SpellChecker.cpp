@@ -44,6 +44,11 @@ void SpellChecker::CheckSpelling(string textFile, string dictionary)
         }
     }
     file.close();
+    table.printTable();
+    cout<<endl;
+    cout<<"======================================================================================================"<<endl;
+    cout<<"======================================================================================================"<<endl;
+    table.pringHashTable();
     //Once our dictionary is pulled into the AVL tree we can check the spelling.
 
     ifstream file02;

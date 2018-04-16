@@ -90,6 +90,11 @@ int HashTabl::getLength()
     return length;
 }
 
-int HashTabl::getNumberOfItems() {
-    return 0;
+//Returning the number of items in the table.
+int HashTabl::getNumberOfItems()
+{
+    int itemCount = 0;
+    for (int i = 0; i < length; i++)
+        itemCount += array[i].getLength();
+    return itemCount;
 }
